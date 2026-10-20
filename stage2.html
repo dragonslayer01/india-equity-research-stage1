@@ -104,22 +104,6 @@ nav#mainnav button:nth-child(6) {
   border-left: 2px solid #e0e6f0;
   margin-left: 4px;
 }
-nav#mainnav a.nav-link {
-  padding: 12px 18px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #1565c0;
-  text-decoration: none;
-  border-bottom: 3px solid transparent;
-  white-space: nowrap;
-  display: inline-block;
-  transition: all .18s ease;
-}
-nav#mainnav a.nav-link:hover {
-  color: #1a3a8f;
-  background: #f4f7ff;
-  border-bottom-color: #f0a500;
-}
 
 /* ─── Tab Layout ───────────────────────────────────────────────────────── */
 .tab { display: none; padding: 24px 28px; max-width: 1440px; margin: 0 auto; }
@@ -268,35 +252,9 @@ tr.row-total td   { background: #eef2ff; font-weight: 700; border-top: 2px solid
 
 /* ─── Scenario table ───────────────────────────────────────────────────── */
 .scenario-table thead tr { background: #283593; }
-
-/* ─── Stage switcher ───────────────────────────────────────────────────── */
-.stage-nav {
-  background: #0d1642;
-  display: flex;
-  flex-wrap: wrap;
-  border-bottom: 1px solid rgba(255,255,255,.12);
-}
-.stage-nav a {
-  padding: 10px 18px;
-  font-size: 12px;
-  font-weight: 700;
-  color: rgba(255,255,255,.65);
-  text-decoration: none;
-  border-bottom: 3px solid transparent;
-}
-.stage-nav a:hover { color: #fff; background: rgba(255,255,255,.06); }
-.stage-nav a.active {
-  color: #fff;
-  border-bottom-color: #f0a500;
-  background: rgba(255,255,255,.08);
-}
 </style>
 </head>
 <body>
-<div class="stage-nav">
-  <a href="index.html">Stage 1 — Market &amp; Sector Framework</a>
-  <a href="stage2.html" class="active">Stage 2 — Banking &amp; New-Age Deep Dive</a>
-</div>
 <div class="header">
   <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap">
     <div>
@@ -319,6 +277,7 @@ tr.row-total td   { background: #eef2ff; font-weight: 700; border-top: 2px solid
   <strong>SOURCES:</strong> All prices &amp; financials from Screener.in (19 Oct 2026). RBI rates from rbi.org.in (MPC Oct 5–7, 2026). Nifty data: Yahoo Finance/Investing.com. Analyst recommendations represent our independent analysis — not from a specific brokerage. For investment decisions, verify with a SEBI-registered advisor.
 </div>
 <nav id="mainnav">
+  <a class="nav-link" href="index.html" style="display:flex;align-items:center;padding:12px 16px;color:#546e8a;font-size:12px;font-weight:600;text-decoration:none;border-right:1px solid #e0e6f0;white-space:nowrap">← Stage 1</a>
   <button class="active" onclick="showTab('bkg_overview')">🏦 Banking Overview</button>
   <button onclick="showTab('bkg_peer')">📊 Banking Peer Table</button>
   <button onclick="showTab('bkg_quarterly')">📅 Banking Quarterly</button>
@@ -328,6 +287,7 @@ tr.row-total td   { background: #eef2ff; font-weight: 700; border-top: 2px solid
   <button onclick="showTab('na_peer')">📊 New-Age Peer Table</button>
   <button onclick="showTab('na_rank')">🏆 New-Age Rankings</button>
   <button onclick="showTab('portfolio')">💼 Portfolio</button>
+  <a class="nav-link" href="stage3.html" style="display:flex;align-items:center;padding:12px 16px;color:#546e8a;font-size:12px;font-weight:600;text-decoration:none;border-left:1px solid #e0e6f0;white-space:nowrap;margin-left:auto">Stage 3 →</a>
 </nav>
 
 <div class="container">

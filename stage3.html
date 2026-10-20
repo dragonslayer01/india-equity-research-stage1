@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India Equity — Stage 3: New-Age Unit Economics & Top 25 Rankings | Oct 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; background: #f0f4f8; color: #1e2533; font-size: 13px; line-height: 1.5; }
+
+/* Header */
+.header { background: linear-gradient(135deg, #1a0d4b 0%, #3a1a8f 60%, #6515c0 100%); color: #fff; padding: 22px 32px; border-bottom: 3px solid #f0a500; }
+.header h1 { font-size: 22px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+.header .sub { font-size: 13px; opacity: .88; margin-top: 5px; }
+.header .meta { font-size: 11px; opacity: .72; margin-top: 10px; display: flex; gap: 22px; flex-wrap: wrap; }
+.disclaimer { background: #fffbea; border-left: 4px solid #f0a500; padding: 10px 20px; font-size: 11px; color: #7d5a00; line-height: 1.6; }
+
+/* Nav */
+nav#mainnav { background: #fff; border-bottom: 2px solid #e0e6f0; display: flex; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+nav#mainnav button { padding: 12px 16px; border: none; background: transparent; cursor: pointer; font-size: 12px; font-weight: 600; color: #546e8a; border-bottom: 3px solid transparent; white-space: nowrap; transition: all .18s ease; }
+nav#mainnav button:hover { color: #3a1a8f; background: #f4f0ff; }
+nav#mainnav button.active { color: #3a1a8f; border-bottom-color: #3a1a8f; background: #f0eeff; }
+nav#mainnav a.nav-link { display: flex; align-items: center; padding: 12px 16px; color: #546e8a; font-size: 12px; font-weight: 600; text-decoration: none; border-right: 1px solid #e0e6f0; white-space: nowrap; transition: all .18s; }
+nav#mainnav a.nav-link:last-child { border-right: none; border-left: 1px solid #e0e6f0; margin-left: auto; }
+nav#mainnav a.nav-link:hover { color: #3a1a8f; background: #f4f0ff; }
+
+/* Tabs */
+.tab { display: none; padding: 24px 28px; max-width: 1440px; margin: 0 auto; }
+.tab.active { display: block; }
+.tab > h2 { font-size: 18px; font-weight: 700; color: #1a0d4b; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #6515c0; }
+
+/* Cards */
+.card { background: #fff; border-radius: 10px; padding: 18px 22px; margin-bottom: 20px; box-shadow: 0 1px 6px rgba(0,0,0,.07), 0 0 0 1px rgba(0,0,0,.04); }
+.card-title { font-size: 12px; font-weight: 700; color: #3a1a8f; text-transform: uppercase; letter-spacing: .6px; padding-bottom: 10px; margin-bottom: 14px; border-bottom: 2px solid #ede8ff; }
+.card p { color: #374151; font-size: 13px; margin-bottom: 8px; }
+.mt { margin-top: 20px; }
+
+/* Grids */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+@media (max-width: 960px) { .two-col, .three-col { grid-template-columns: 1fr; } }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+thead tr { background: #3a1a8f; color: #fff; }
+thead th { padding: 9px 12px; text-align: left; font-weight: 600; white-space: nowrap; font-size: 11px; letter-spacing: .3px; }
+thead th.bull { background: #2e7d32; } thead th.base { background: #1565c0; } thead th.bear { background: #c62828; }
+tbody tr { transition: background .12s; }
+tbody tr:nth-child(even) { background: #f7f5fd; }
+tbody tr:hover { background: #ede8ff; }
+tbody td { padding: 8px 12px; border-bottom: 1px solid #eee8ff; vertical-align: middle; line-height: 1.4; }
+tbody td:first-child { font-weight: 500; border-right: 1px solid #e8e0f8; }
+.tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.tbl-wrap table { min-width: 700px; }
+
+/* Rating cells */
+td.sb   { color: #0a4d22; font-weight: 700; background: #e6f4ea; }
+td.buy  { color: #1a6b2e; font-weight: 700; background: #f0faf2; }
+td.acc  { color: #0d47a1; font-weight: 600; background: #e8f0fd; }
+td.hold { color: #37474f; font-weight: 600; background: #f4f5f7; }
+td.uw   { color: #b45309; font-weight: 600; background: #fef3c7; }
+td.avoid{ color: #991b1b; font-weight: 700; background: #fde8e8; }
+td.bull { background: #f0faf2; color: #1a6b2e; font-weight: 600; }
+td.base { background: #e8f4fd; color: #1565c0; font-weight: 600; }
+td.bear { background: #fef2f2; color: #b91c1c; font-weight: 600; }
+td.neu-b { background: #f4f5f7; color: #4b5563; }
+td.red-b { color: #991b1b; font-weight: 600; background: #fef2f2; }
+.bull { color: #1a6b2e; font-weight: 600; }
+.base { color: #1565c0; font-weight: 600; }
+.bear, .red-b { color: #b91c1c; font-weight: 600; }
+.neu-b { color: #4b5563; }
+
+/* Misc */
+ul { padding-left: 18px; } li { margin-bottom: 5px; }
+.note { font-size: 10px; color: #9ca3af; font-style: italic; margin-top: 6px; }
+hr { border: none; border-top: 1px solid #e5e9f2; margin: 14px 0; }
+
+/* Company profile card */
+.co-card { background: #fff; border-radius: 10px; box-shadow: 0 1px 6px rgba(0,0,0,.07), 0 0 0 1px rgba(0,0,0,.04); overflow: hidden; margin-bottom: 20px; }
+.co-header { background: linear-gradient(90deg, #1a0d4b, #3a1a8f); color: #fff; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; }
+.co-name { font-size: 15px; font-weight: 700; } .co-tag { font-size: 11px; opacity: .8; margin-top: 2px; }
+.co-rating { font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
+.co-body { padding: 16px 20px; }
+.metric-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; margin-bottom: 14px; }
+.metric { background: #f7f5fd; border: 1px solid #ddd5f5; border-radius: 6px; padding: 9px 12px; border-top: 3px solid #6515c0; }
+.metric .lbl { font-size: 9px; color: #6b7280; text-transform: uppercase; letter-spacing: .4px; }
+.metric .val { font-size: 15px; font-weight: 700; color: #1a0d4b; margin-top: 3px; }
+.metric.g { border-top-color: #16a34a; } .metric.g .val { color: #15803d; }
+.metric.r { border-top-color: #dc2626; } .metric.r .val { color: #dc2626; }
+.metric.a { border-top-color: #d97706; } .metric.a .val { color: #d97706; }
+
+/* Rank badge */
+.rank-badge { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; font-weight: 800; font-size: 14px; color: #fff; }
+.r1 { background: #d4af37; } .r2 { background: #9ca3af; } .r3 { background: #c97c3f; }
+.r-buy { background: #1a6b2e; } .r-acc { background: #0d47a1; }
+.r-hold { background: #4b5563; } .r-avoid { background: #b91c1c; }
+
+/* Progress bar */
+.pbar { background: #e5e7eb; border-radius: 4px; height: 8px; overflow: hidden; margin-top: 4px; }
+.pbar-fill { height: 100%; border-radius: 4px; }
+.pbar-fill.g { background: #16a34a; } .pbar-fill.b { background: #3a1a8f; } .pbar-fill.r { background: #dc2626; } .pbar-fill.a { background: #d97706; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px">
+    <div>
+      <h1>INDIA EQUITY — STAGE 3</h1>
+      <div class="sub">New-Age Unit Economics Deep Dive | Reverse Valuation | Top 25 Rankings</div>
+    </div>
+    <div style="text-align:right;font-size:11px">
+      <div><strong>Analysis Date: 20 October 2026</strong></div>
+      <div>Data: Screener.in / Company Annual Reports / DRHP</div>
+      <div style="color:#c5b4f5;margin-top:2px">📐 Profitability Stage 1–5 Framework</div>
+    </div>
+  </div>
+  <div class="meta">
+    <span>🚀 15 New-Age Companies | GOV/GMV/GTV Unit Economics</span>
+    <span>📊 FY = Apr–Mar | FY27 = Apr 2026–Mar 2027</span>
+    <span>💱 All figures INR unless stated</span>
+  </div>
+</div>
+<div class="disclaimer">
+  <strong>SOURCES:</strong> Screener.in (19 Oct 2026), company annual reports FY26, DRHP filings. Unit economics: management commentary from earnings calls, investor presentations. Reverse DCF assumptions: WACC 13%, terminal growth 5%. For investment decisions, verify with a SEBI-registered advisor.
+</div>
+<nav id="mainnav">
+  <a class="nav-link" href="stage2.html">← Stage 2</a>
+  <button class="active" onclick="showTab('framework')">📐 Framework</button>
+  <button onclick="showTab('unit_econ')">⚙️ Unit Economics</button>
+  <button onclick="showTab('co_profiles')">🏢 Company Profiles</button>
+  <button onclick="showTab('reverse_dcf')">🔭 Reverse Valuation</button>
+  <button onclick="showTab('top25')">🏆 Top 25 Rankings</button>
+  <button onclick="showTab('s3_risks')">⚠️ Risks</button>
+  <a class="nav-link" href="stage4.html">Stage 4 →</a>
+</nav>
+
+<div class="container" style="background:#f0f4f8">
+
+
+<!-- ===== TAB: FRAMEWORK ===== -->
+<div id="framework" class="tab active">
+  <h2>📐 Unit Economics Framework — New-Age Digital Companies</h2>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">The Profitability Stage Ladder</div>
+      <table>
+        <tr><th>Stage</th><th>Threshold</th><th>Key Metric</th><th>Investor Lens</th><th>Companies (Oct 2026)</th></tr>
+        <tr><td><strong style="color:#15803d">Stage 5</strong></td><td>PAT +ve, FCF +ve, scaling</td><td>P/E, FCF Yield</td><td>Traditional compounder</td><td class="bull">IndiaMART, Naukri, CarTrade, PB Fintech, Ixigo</td></tr>
+        <tr><td><strong style="color:#1d4ed8">Stage 4</strong></td><td>EBITDA +ve, PAT break-even</td><td>EV/EBITDA, P/S</td><td>Margin expansion story</td><td class="base">Eternal (Zomato), Paytm, Honasa, Delhivery</td></tr>
+        <tr><td><strong style="color:#d97706">Stage 3</strong></td><td>Contribution margin +ve</td><td>EV/Gross Profit</td><td>Unit economics viability</td><td class="neu-b">Nykaa (borderline), FirstCry</td></tr>
+        <tr><td><strong style="color:#dc2626">Stage 2</strong></td><td>Gross margin +ve, CM –ve</td><td>EV/Revenue</td><td>Speculative; avoid</td><td class="bear">Swiggy (marginal CM), Ola Electric</td></tr>
+        <tr><td><strong style="color:#7f1d1d">Stage 1</strong></td><td>Gross margin –ve</td><td>Burn rate</td><td>Pre-revenue-model</td><td class="bear">—</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">The Cohort Economics Framework</div>
+      <p>For new-age companies, the <strong>LTV:CAC ratio</strong> is the single most important forward-looking metric. It tells you whether each new customer creates value or destroys it.</p>
+      <table style="margin-top:10px">
+        <tr><th>Metric</th><th>Definition</th><th>Threshold</th></tr>
+        <tr><td>CAC</td><td>Total sales & mktg cost ÷ new customers acquired</td><td>&lt;₹500 for mass market</td></tr>
+        <tr><td>LTV (3-year)</td><td>Avg revenue per customer × gross margin × 3 years</td><td>LTV:CAC &gt; 3x</td></tr>
+        <tr><td>Payback Period</td><td>CAC ÷ monthly contribution per customer</td><td>&lt;12 months ideally</td></tr>
+        <tr><td>Cohort Retention (Y3)</td><td>% of Year-1 cohort still active in Year-3</td><td>&gt;50% for strong moat</td></tr>
+        <tr><td>Take Rate</td><td>Net revenue ÷ GMV/GOV</td><td>Rising trend = pricing power</td></tr>
+        <tr><td>Contribution Margin</td><td>Revenue − COGS − delivery − promotions</td><td>&gt;5% operating leverage begins</td></tr>
+        <tr><td>EBITDA per Order</td><td>EBITDA ÷ total orders</td><td>Positive trend matters most</td></tr>
+        <tr><td>FCF Conversion</td><td>FCF ÷ EBITDA</td><td>&gt;80% = capital-light model</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Sector-Wide Benchmarks — Indian New-Age (FY26 actuals)</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Sector Vertical</th><th>Best-in-Class CAC</th><th>Best LTV:CAC</th><th>Best Take Rate</th><th>Best CM%</th><th>Best FCF Conv.</th><th>Leader</th></tr>
+      <tr><td>Food Delivery</td><td>₹180–250 (Eternal)</td><td>5.8x (Eternal)</td><td>16.5% (Eternal)</td><td class="bull">8.2% (Eternal)</td><td class="bull">85%</td><td class="bull">Eternal (Zomato)</td></tr>
+      <tr><td>Quick Commerce</td><td>₹320 (Blinkit)</td><td>3.5x (Blinkit)</td><td>17% (Blinkit)</td><td>2.1% (Blinkit)</td><td class="neu-b">Breakeven</td><td class="neu-b">Blinkit (part of Eternal)</td></tr>
+      <tr><td>Q-Comm Challenger</td><td>₹380 (Swiggy Instamart)</td><td>2.2x</td><td>19% (Swiggy)</td><td class="red-b">-3.8%</td><td class="red-b">Negative</td><td class="red-b">Swiggy (losing)</td></tr>
+      <tr><td>Insurance Distrib.</td><td>₹1,200 (PB Fintech)</td><td>8.5x</td><td>25.5%</td><td class="bull">32%</td><td class="bull">92%</td><td class="bull">PB Fintech (dominant)</td></tr>
+      <tr><td>B2B Marketplace</td><td>₹800 (IndiaMART)</td><td>12.0x</td><td>N/A (sub-based)</td><td class="bull">45%</td><td class="bull">95%</td><td class="bull">IndiaMART (monopoly)</td></tr>
+      <tr><td>OTA / Travel</td><td>₹380 (Ixigo)</td><td>6.2x</td><td>9.0%</td><td class="bull">22%</td><td class="bull">88%</td><td class="bull">Ixigo (Tier 2/3 moat)</td></tr>
+      <tr><td>Digital Payments</td><td>₹95 (Paytm)</td><td>9.1x</td><td>0.4% (payment processing)</td><td>4.1% (fin.services)</td><td class="bull">62% (improving)</td><td class="base">Paytm (recovery)</td></tr>
+      <tr><td>Beauty / D2C</td><td>₹680 (Nykaa)</td><td>2.8x</td><td>36% (own inventory)</td><td>4.0%</td><td class="neu-b">68%</td><td class="neu-b">Nykaa (challenged)</td></tr>
+      <tr><td>EV (2-Wheeler)</td><td>₹2,200 (Ola Electric)</td><td>1.1x</td><td>N/A</td><td class="red-b">-18%</td><td class="red-b">Strongly negative</td><td class="red-b">Ola (losing share)</td></tr>
+      <tr><td>Auto Classified</td><td>₹1,500 (CarTrade)</td><td>11.2x</td><td>N/A</td><td class="bull">33%</td><td class="bull">92%</td><td class="bull">CarTrade (asset-light)</td></tr>
+      <tr><td>Recruitment</td><td>₹950 (Naukri)</td><td>7.8x</td><td>N/A (sub-based)</td><td class="bull">31%</td><td class="bull">90%</td><td class="bull">Naukri (dominant)</td></tr>
+      <tr><td>3PL Logistics</td><td>₹180/shipment</td><td>4.1x</td><td>N/A</td><td>1.5%</td><td class="neu-b">55%</td><td class="neu-b">Delhivery (scale game)</td></tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">What Makes a "Moat" in Indian New-Age?</div>
+      <table>
+        <tr><th>Moat Type</th><th>Example</th><th>Durability</th></tr>
+        <tr><td>Network Effects (2-sided)</td><td>IndiaMART, Naukri</td><td class="bull">Very High</td></tr>
+        <tr><td>Data / AI Personalization</td><td>PB Fintech, Eternal</td><td class="bull">High</td></tr>
+        <tr><td>Distribution scale (dark stores)</td><td>Blinkit (Eternal)</td><td class="base">Medium-High</td></tr>
+        <tr><td>Regulatory / License moat</td><td>PB Fintech (IRDA)</td><td class="bull">High</td></tr>
+        <tr><td>Low-cost brand recall</td><td>Ixigo (Tier 2/3)</td><td class="base">Medium</td></tr>
+        <tr><td>Tech platform lock-in (SME)</td><td>IndiaMART</td><td class="bull">High</td></tr>
+        <tr><td>Brand premium (beauty)</td><td>Nykaa</td><td class="neu-b">Challenged</td></tr>
+        <tr><td>First-mover (EV infra)</td><td>Ola Electric</td><td class="red-b">Losing</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">Red Flags to Screen Out Losers</div>
+      <ul style="margin-top:4px">
+        <li><strong class="red-b">CAC Rising YoY:</strong> Shows market saturation or competitive pressure — Swiggy, Ola Electric both show rising CAC</li>
+        <li><strong class="red-b">Take Rate Declining:</strong> Indicates competitive pricing pressure or GMV mix shift — watch Paytm's blended take rate</li>
+        <li><strong class="red-b">Contribution Margin Negative Despite Scale:</strong> Structural issue, not just timing — Swiggy Q-comm, Ola Electric</li>
+        <li><strong class="red-b">Cash Runway &lt; 18 Months:</strong> Dilution risk — Ola Electric at 14 months, Swiggy at 18 months</li>
+        <li><strong class="red-b">Cohort Degradation:</strong> If Year-3 retention is falling vs Year-2 cohorts — structural demand issue</li>
+        <li><strong class="red-b">Revenue Recognition Risk:</strong> GOV vs net revenue confusion, rebates reclassification — read footnotes</li>
+        <li><strong class="red-b">Founder Selling at Lock-up Expiry:</strong> Honasa promoters sold ₹1,655Cr at IPO; Nykaa promoter stake decline</li>
+        <li><strong class="red-b">Regulatory Tail Risk:</strong> BNPL regulations (Paytm history), RBI digital lending norms</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== TAB: UNIT ECONOMICS ===== -->
+<div id="unit_econ" class="tab">
+  <h2>⚙️ Unit Economics Comparison — All 15 New-Age Companies</h2>
+  <p style="color:#6b7280;font-size:12px;margin-bottom:18px">FY26 actuals from annual reports, investor presentations, Screener.in. Where not explicitly disclosed, derived from segment disclosures and management commentary.</p>
+
+  <div class="card">
+    <div class="card-title">Core Unit Economics Table — FY26</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr>
+        <th>Company</th><th>GMV/GOV/GTV (₹Cr)</th><th>YoY Growth</th>
+        <th>Net Revenue (₹Cr)</th><th>Take Rate %</th>
+        <th>Gross Margin %</th><th>CM % (est)</th>
+        <th>EBITDA Margin %</th><th>CAC (₹)</th>
+        <th>LTV:CAC</th><th>Payback (months)</th><th>Stage</th>
+      </tr>
+      <tr>
+        <td><strong>Eternal (Zomato)</strong></td>
+        <td>1,20,000 (GOV)</td><td class="bull">+68%</td>
+        <td>19,748</td><td>16.5%</td>
+        <td class="bull">65%</td><td class="bull">8.2%</td>
+        <td class="bull">+2.1%</td>
+        <td>₹180</td><td class="bull">5.8x</td><td class="bull">8</td>
+        <td class="bull">4→5</td>
+      </tr>
+      <tr>
+        <td><strong>Swiggy</strong></td>
+        <td>95,000 (GOV)</td><td class="bull">+42%</td>
+        <td>22,100</td><td>23.3%</td>
+        <td>52%</td><td class="red-b">-3.8%</td>
+        <td class="red-b">-14%</td>
+        <td>₹380</td><td class="red-b">2.2x</td><td class="red-b">28</td>
+        <td class="bear">2</td>
+      </tr>
+      <tr>
+        <td><strong>PB Fintech</strong></td>
+        <td>₹22,000Cr GWP</td><td class="bull">+32%</td>
+        <td>5,600</td><td>25.5%</td>
+        <td class="bull">78%</td><td class="bull">32%</td>
+        <td class="bull">+12%</td>
+        <td>₹1,200</td><td class="bull">8.5x</td><td class="bull">9</td>
+        <td class="bull">5</td>
+      </tr>
+      <tr>
+        <td><strong>Paytm (One97)</strong></td>
+        <td>₹2.4L Cr GMV</td><td class="bull">+25%</td>
+        <td>9,750</td><td>0.41%</td>
+        <td>55%</td><td>4.1%</td>
+        <td>+6%</td>
+        <td>₹95</td><td>9.1x</td><td>11</td>
+        <td class="base">4</td>
+      </tr>
+      <tr>
+        <td><strong>Naukri (Info Edge)</strong></td>
+        <td>N/A (subscriptions)</td><td>N/A</td>
+        <td>5,700</td><td>N/A</td>
+        <td class="bull">82%</td><td class="bull">38%</td>
+        <td class="bull">+31%</td>
+        <td>₹950</td><td class="bull">7.8x</td><td class="bull">7</td>
+        <td class="bull">5</td>
+      </tr>
+      <tr>
+        <td><strong>IndiaMART</strong></td>
+        <td>N/A (B2B leads)</td><td>N/A</td>
+        <td>1,250</td><td>N/A</td>
+        <td class="bull">88%</td><td class="bull">45%</td>
+        <td class="bull">+35%</td>
+        <td>₹800</td><td class="bull">12.0x</td><td class="bull">5</td>
+        <td class="bull">5</td>
+      </tr>
+      <tr>
+        <td><strong>Nykaa (FSN)</strong></td>
+        <td>₹18,000Cr GMV</td><td class="bull">+22%</td>
+        <td>6,500</td><td>36%</td>
+        <td>42%</td><td>4.0%</td>
+        <td>+4%</td>
+        <td>₹680</td><td>2.8x</td><td>18</td>
+        <td class="neu-b">3→4</td>
+      </tr>
+      <tr>
+        <td><strong>Delhivery</strong></td>
+        <td>1.2Bn parcels</td><td class="bull">+22%</td>
+        <td>8,300</td><td>N/A</td>
+        <td>35%</td><td>1.5%</td>
+        <td>+1.5%</td>
+        <td>₹180/shipment</td><td>4.1x</td><td>22</td>
+        <td class="base">4</td>
+      </tr>
+      <tr>
+        <td><strong>Ola Electric</strong></td>
+        <td>3.8L EV units</td><td class="red-b">-8%</td>
+        <td>10,000</td><td>N/A</td>
+        <td class="red-b">-8%</td><td class="red-b">-18%</td>
+        <td class="red-b">-18%</td>
+        <td>₹2,200</td><td class="red-b">1.1x</td><td class="red-b">40+</td>
+        <td class="bear">2</td>
+      </tr>
+      <tr>
+        <td><strong>Honasa (Mamaearth)</strong></td>
+        <td>₹8,900Cr GMV est.</td><td class="bull">+18%</td>
+        <td>3,550</td><td>40%</td>
+        <td>60%</td><td>14%</td>
+        <td>+10%</td>
+        <td>₹420</td><td>3.8x</td><td>14</td>
+        <td class="base">4</td>
+      </tr>
+      <tr>
+        <td><strong>CarTrade Tech</strong></td>
+        <td>8.5L listings</td><td class="bull">+18%</td>
+        <td>600</td><td>N/A</td>
+        <td class="bull">72%</td><td class="bull">38%</td>
+        <td class="bull">+33%</td>
+        <td>₹1,500</td><td class="bull">11.2x</td><td class="bull">6</td>
+        <td class="bull">5</td>
+      </tr>
+      <tr>
+        <td><strong>Ixigo</strong></td>
+        <td>₹15,000Cr GTV</td><td class="bull">+38%</td>
+        <td>1,350</td><td>9.0%</td>
+        <td class="bull">72%</td><td class="bull">22%</td>
+        <td class="bull">+15%</td>
+        <td>₹380</td><td class="bull">6.2x</td><td class="bull">10</td>
+        <td class="bull">5</td>
+      </tr>
+      <tr>
+        <td><strong>FirstCry (Brainbees)</strong></td>
+        <td>₹9,500Cr GMV</td><td class="bull">+19%</td>
+        <td>6,480</td><td>68%</td>
+        <td>38%</td><td>2.8%</td>
+        <td>-1.2%</td>
+        <td>₹850</td><td>2.5x</td><td>24</td>
+        <td class="neu-b">3</td>
+      </tr>
+      <tr>
+        <td><strong>Go Digit Insurance</strong></td>
+        <td>₹8,500Cr GWP</td><td class="bull">+28%</td>
+        <td>8,500</td><td>N/A</td>
+        <td>28%</td><td>12%</td>
+        <td>+5%</td>
+        <td>₹1,800</td><td>3.2x</td><td>20</td>
+        <td class="base">4</td>
+      </tr>
+      <tr>
+        <td><strong>MakeMyTrip</strong></td>
+        <td>₹28,000Cr GTV</td><td class="bull">+22%</td>
+        <td>4,200</td><td>15%</td>
+        <td class="bull">75%</td><td class="bull">25%</td>
+        <td class="bull">+18%</td>
+        <td>₹520</td><td class="bull">5.5x</td><td class="bull">11</td>
+        <td class="bull">5</td>
+      </tr>
+    </table>
+    </div>
+    <p class="note">* CM = Contribution Margin; GWP = Gross Written Premium; GOV = Gross Order Value; GTV = Gross Transaction Value. Take Rate not applicable for platform/subscription models.</p>
+  </div>
+
+  <div class="two-col mt">
+    <div class="card">
+      <div class="card-title">Eternal (Zomato) — Segment Unit Economics Deep Dive</div>
+      <table>
+        <tr><th>Segment</th><th>GOV (₹Cr)</th><th>GOV Growth</th><th>Take Rate</th><th>CM%</th><th>EBITDA%</th><th>Assessment</th></tr>
+        <tr><td>Food Delivery</td><td>65,000</td><td class="bull">+22%</td><td>22%</td><td class="bull">8.2%</td><td class="bull">+6%</td><td class="bull">Mature, profitable</td></tr>
+        <tr><td>Blinkit (Q-comm)</td><td>42,000</td><td class="bull">+122%</td><td>17%</td><td>2.1%</td><td>-2%</td><td class="base">Scale-up phase</td></tr>
+        <tr><td>Hyperpure (B2B)</td><td>5,500</td><td class="bull">+55%</td><td>N/A</td><td>12%</td><td>+4%</td><td class="bull">Profitable</td></tr>
+        <tr><td>District (events)</td><td>7,500</td><td class="bull">+200%</td><td>10%</td><td>5%</td><td>-8%</td><td class="neu-b">Early stage</td></tr>
+        <tr style="background:#f0faf2"><td><strong>Blended</strong></td><td><strong>1,20,000</strong></td><td class="bull"><strong>+68%</strong></td><td><strong>16.5%</strong></td><td><strong>5.5%</strong></td><td><strong>+2.1%</strong></td><td class="bull"><strong>Inflecting</strong></td></tr>
+      </table>
+      <p class="note">Blinkit dark store count: 1,024 (Oct 2026) vs 639 (Oct 2025). Each store reaches EBITDA breakeven at ~800 orders/day; current avg ~720 → approaching inflection.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Swiggy — Why Unit Economics Are Structurally Broken</div>
+      <table>
+        <tr><th>Segment</th><th>GOV (₹Cr)</th><th>Take Rate</th><th>CM%</th><th>Issue</th></tr>
+        <tr><td>Food Delivery</td><td>62,000</td><td>21%</td><td class="bull">+5%</td><td class="bull">OK — profitable</td></tr>
+        <tr><td>Instamart (Q-comm)</td><td>28,000</td><td>22%</td><td class="red-b">-14%</td><td class="red-b">Dark stores too thin (418 stores vs Blinkit 1,024)</td></tr>
+        <tr><td>Snacc/Others</td><td>5,000</td><td>18%</td><td class="red-b">-22%</td><td class="red-b">New venture, no density</td></tr>
+        <tr style="background:#fef2f2"><td><strong>Blended</strong></td><td><strong>95,000</strong></td><td><strong>23.3%</strong></td><td class="red-b"><strong>-3.8%</strong></td><td class="red-b"><strong>Scale gap vs Eternal</strong></td></tr>
+      </table>
+      <p class="note">Core problem: Swiggy has 418 dark stores vs Blinkit's 1,024. At 2.4x the store count, Blinkit has density economics that Swiggy cannot replicate without ₹5,000–8,000Cr in additional capex — which requires dilution. Hence AVOID.</p>
+    </div>
+  </div>
+
+  <div class="two-col mt">
+    <div class="card">
+      <div class="card-title">PB Fintech — Insurance Distribution Economics</div>
+      <table>
+        <tr><th>Metric</th><th>FY24</th><th>FY25</th><th>FY26</th><th>Trend</th></tr>
+        <tr><td>GWP (₹Cr)</td><td>12,500</td><td>17,200</td><td>22,000</td><td class="bull">+28% CAGR</td></tr>
+        <tr><td>Take Rate (Commission)</td><td>22.0%</td><td>24.0%</td><td>25.5%</td><td class="bull">↑ Improving</td></tr>
+        <tr><td>Renewal Rate</td><td>68%</td><td>71%</td><td>74%</td><td class="bull">↑ Improving</td></tr>
+        <tr><td>CAC (₹)</td><td>1,650</td><td>1,380</td><td>1,200</td><td class="bull">↓ Falling</td></tr>
+        <tr><td>LTV:CAC</td><td>5.8x</td><td>7.1x</td><td>8.5x</td><td class="bull">↑ Expanding</td></tr>
+        <tr><td>EBITDA Margin</td><td>+3%</td><td>+8%</td><td>+12%</td><td class="bull">↑ Operating leverage</td></tr>
+        <tr><td>FCF (₹Cr)</td><td>+90</td><td>+280</td><td>+480</td><td class="bull">↑ Scaling</td></tr>
+      </table>
+      <p class="note">PB Fintech has the best unit economics trajectory in Indian new-age. Each marginal renewal costs near-zero CAC — the "flywheel" is working. Insurance penetration in India at 4.2% vs 11% global = massive TAM ahead.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">IndiaMART — B2B Marketplace Economics</div>
+      <table>
+        <tr><th>Metric</th><th>FY24</th><th>FY25</th><th>FY26</th><th>Trend</th></tr>
+        <tr><td>Paying Subscribers</td><td>1,68,000</td><td>1,88,000</td><td>2,08,000</td><td class="bull">+11% CAGR</td></tr>
+        <tr><td>ARPU (₹/year)</td><td>47,000</td><td>51,000</td><td>55,000</td><td class="bull">↑ Pricing power</td></tr>
+        <tr><td>Revenue (₹Cr)</td><td>1,040</td><td>1,130</td><td>1,250</td><td class="bull">+10% CAGR</td></tr>
+        <tr><td>Free-to-Paid Conv.</td><td>1.2%</td><td>1.4%</td><td>1.6%</td><td class="bull">↑ Funnel deepening</td></tr>
+        <tr><td>Gross Margin</td><td>85%</td><td>87%</td><td>88%</td><td class="bull">↑ Near-peak</td></tr>
+        <tr><td>EBITDA Margin</td><td>30%</td><td>32%</td><td>35%</td><td class="bull">↑ Operating leverage</td></tr>
+        <tr><td>Net Cash (₹Cr)</td><td>2,850</td><td>3,280</td><td>3,792</td><td class="bull">↑ Cash compounding</td></tr>
+      </table>
+      <p class="note">IndiaMART is the closest to a "toll bridge" model in Indian digital — SME suppliers cannot afford NOT to be listed. Churn is &lt;8% annually (industry-leading). Cash = 38% of market cap = hidden value.</p>
+    </div>
+  </div>
+
+  <div class="two-col mt">
+    <div class="card">
+      <div class="card-title">Paytm — Recovery Unit Economics (Post-RBI Reset)</div>
+      <table>
+        <tr><th>Metric</th><th>FY25 (trough)</th><th>FY26 (recovery)</th><th>FY27E</th><th>Trend</th></tr>
+        <tr><td>Payment GMV (₹L Cr)</td><td>18.2</td><td>24.0</td><td>28.0</td><td class="bull">+25% YoY</td></tr>
+        <tr><td>Financial Services GMV</td><td>₹28,000Cr</td><td>₹42,000Cr</td><td>₹58,000Cr</td><td class="bull">+38% YoY</td></tr>
+        <tr><td>Revenue (₹Cr)</td><td>8,220</td><td>9,750</td><td>11,200</td><td class="bull">+15%</td></tr>
+        <tr><td>EBITDA Margin</td><td>-2%</td><td>+6%</td><td>+10%</td><td class="bull">↑ Inflecting</td></tr>
+        <tr><td>Payment Processing Margin</td><td>0.18%</td><td>0.22%</td><td>0.25%</td><td class="bull">↑ Mix shift</td></tr>
+        <tr><td>MTU (Monthly Transact. Users)</td><td>7.2Cr</td><td>9.8Cr</td><td>11.5Cr</td><td class="bull">↑ Recovery</td></tr>
+        <tr><td>FCF (₹Cr)</td><td>-420</td><td>+350</td><td>+680</td><td class="bull">↑ Positive</td></tr>
+      </table>
+      <p class="note">Post-RBI's Paytm Payments Bank action (Jan 2024), Paytm lost ~25% of payment volume but recovered via Axis/Yes/SBI banking partnerships. Financial services GMV (loans, insurance) is the key value driver going forward — BNPL caution remains.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Ola Electric — Why It Is Structurally Broken</div>
+      <table>
+        <tr><th>Metric</th><th>FY25</th><th>FY26</th><th>Trend</th></tr>
+        <tr><td>2W EV Market Share</td><td class="bull">43%</td><td class="red-b">28%</td><td class="red-b">↓ Losing share</td></tr>
+        <tr><td>Revenue (₹Cr)</td><td>10,500</td><td class="red-b">10,000</td><td class="red-b">↓ Declining</td></tr>
+        <tr><td>Gross Margin</td><td>-5%</td><td class="red-b">-8%</td><td class="red-b">↓ Worsening</td></tr>
+        <tr><td>Loss (₹Cr)</td><td>-1,584</td><td class="red-b">-1,833</td><td class="red-b">↑ Widening</td></tr>
+        <tr><td>Cash Runway</td><td>22 months</td><td class="red-b">14 months</td><td class="red-b">↓ Burning</td></tr>
+        <tr><td>After-sales NPS</td><td>32</td><td class="red-b">18</td><td class="red-b">↓ Quality crisis</td></tr>
+        <tr><td>Competition</td><td colspan="3" class="red-b">Bajaj Chetak +85% YoY, TVS iQube +62% YoY — taking share aggressively</td></tr>
+      </table>
+      <p class="note">Ola Electric is losing market share from 43% → 28% in one year despite massive discounting. Gross margin is negative. Cash runway 14 months. No path to profitability without yet another round of equity dilution. AVOID.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== TAB: COMPANY PROFILES ===== -->
+<div id="co_profiles" class="tab">
+  <h2>🏢 Company Profiles — New-Age Deep Dive (Top 10 Investable)</h2>
+
+  <!-- IndiaMART -->
+  <div class="co-card">
+    <div class="co-header">
+      <div>
+        <div class="co-name">IndiaMART InterMESH Ltd</div>
+        <div class="co-tag">NSE: INDIAMART | B2B Marketplace | Stage 5</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <span style="color:#fff;font-size:13px">CMP ₹1,596 | TP ₹2,200</span>
+        <span class="co-rating" style="background:#1b5e20;color:#fff">🏆 STRONG BUY</span>
+      </div>
+    </div>
+    <div class="co-body">
+      <div class="metric-row">
+        <div class="metric g"><div class="lbl">Revenue FY26</div><div class="val">₹1,250Cr</div></div>
+        <div class="metric g"><div class="lbl">EBITDA Margin</div><div class="val">35%</div></div>
+        <div class="metric g"><div class="lbl">Net Cash</div><div class="val">₹3,792Cr</div></div>
+        <div class="metric g"><div class="lbl">ROCE</div><div class="val">28%</div></div>
+        <div class="metric"><div class="lbl">P/E FY26</div><div class="val">52x</div></div>
+        <div class="metric g"><div class="lbl">LTV:CAC</div><div class="val">12.0x</div></div>
+        <div class="metric g"><div class="lbl">FCF FY26</div><div class="val">₹420Cr</div></div>
+        <div class="metric"><div class="lbl">Mcap</div><div class="val">₹10,000Cr</div></div>
+      </div>
+      <div class="two-col">
+        <div>
+          <strong>Investment Thesis:</strong>
+          <ul style="margin-top:6px">
+            <li>Near-monopoly B2B SME marketplace (80%+ market share in India B2B discovery)</li>
+            <li>Recurring subscription model: 2.08L paying subscribers at ₹55,000 ARPU → low churn (&lt;8%)</li>
+            <li>Net cash ₹3,792Cr = <strong>38% of market cap</strong> → ex-cash P/E ~32x for a 35% EBITDA margin business</li>
+            <li>Capital-light: zero capex; FCF conversion &gt;95%; can fund any growth from internal accruals</li>
+            <li>India SME formalization + GST compliance driving digital B2B adoption — long structural runway</li>
+            <li>Potential: If ARPU grows to ₹70,000 and subscribers to 2.5L → Revenue ₹1,750Cr; at 37% margin → PAT ~₹380Cr → TP ₹2,200 at 50x P/E</li>
+          </ul>
+        </div>
+        <div>
+          <table>
+            <tr><th>Bear / Base / Bull</th><th class="bear">Bear</th><th class="base">Base</th><th class="bull">Bull</th></tr>
+            <tr><td>Subscriber growth</td><td class="bear">8%</td><td class="base">11%</td><td class="bull">15%</td></tr>
+            <tr><td>ARPU growth</td><td class="bear">4%</td><td class="base">8%</td><td class="bull">12%</td></tr>
+            <tr><td>EBITDA Margin FY28E</td><td class="bear">33%</td><td class="base">37%</td><td class="bull">41%</td></tr>
+            <tr><td>Target P/E</td><td class="bear">38x</td><td class="base">50x</td><td class="bull">65x</td></tr>
+            <tr><td>TP (₹)</td><td class="bear">1,200</td><td class="base">2,200</td><td class="bull">3,100</td></tr>
+            <tr><td>Upside from ₹1,596</td><td class="bear">-25%</td><td class="base">+38%</td><td class="bull">+94%</td></tr>
+            <tr><td>Probability</td><td class="bear">15%</td><td class="base">60%</td><td class="bull">25%</td></tr>
+            <tr><td colspan="4" class="bull"><strong>Expected Value: ₹2,150 (+35%) — STRONG BUY</strong></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ixigo -->
+  <div class="co-card">
+    <div class="co-header" style="background:linear-gradient(90deg,#0d4a1a,#1a8f3a)">
+      <div>
+        <div class="co-name">Ixigo (Le Travenues Technology)</div>
+        <div class="co-tag">NSE: IXIGO | OTA / Travel Tech | Stage 5</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <span style="color:#fff;font-size:13px">CMP ₹157 | TP ₹225</span>
+        <span class="co-rating" style="background:#d4edda;color:#155724">BUY</span>
+      </div>
+    </div>
+    <div class="co-body">
+      <div class="metric-row">
+        <div class="metric g"><div class="lbl">Revenue FY26</div><div class="val">₹1,350Cr</div></div>
+        <div class="metric g"><div class="lbl">EBITDA Margin</div><div class="val">15%</div></div>
+        <div class="metric g"><div class="lbl">GTV FY26</div><div class="val">₹15,000Cr</div></div>
+        <div class="metric g"><div class="lbl">Revenue CAGR 5Y</div><div class="val">55%</div></div>
+        <div class="metric"><div class="lbl">P/E FY26</div><div class="val">55x</div></div>
+        <div class="metric g"><div class="lbl">LTV:CAC</div><div class="val">6.2x</div></div>
+        <div class="metric g"><div class="lbl">FCF FY26</div><div class="val">₹165Cr</div></div>
+        <div class="metric"><div class="lbl">Mcap</div><div class="val">₹8,100Cr</div></div>
+      </div>
+      <div class="two-col">
+        <div>
+          <strong>Investment Thesis:</strong>
+          <ul style="margin-top:6px">
+            <li><strong>India's undiscovered travel gem:</strong> Dominant in Tier 2/3 India (regional language apps, low-cost UX for 2nd/3rd tier users)</li>
+            <li>IRCTC integration = captive train booking flow; 55% of all Indian rail bookings go through Ixigo/IRCTC ecosystem</li>
+            <li>PEG ratio &lt;1.6x: P/E 55x for 35% EPS CAGR = genuinely cheap for quality</li>
+            <li>CAC declining: ₹490 (FY24) → ₹380 (FY26) = word-of-mouth + retention improving</li>
+            <li>Air + Bus + Hotel cross-sell driving ARPU expansion from ₹420 → ₹580</li>
+          </ul>
+        </div>
+        <div>
+          <table>
+            <tr><th>Scenario</th><th class="bear">Bear</th><th class="base">Base</th><th class="bull">Bull</th></tr>
+            <tr><td>GTV Growth FY27E</td><td class="bear">22%</td><td class="base">38%</td><td class="bull">52%</td></tr>
+            <tr><td>EBITDA Margin FY28E</td><td class="bear">12%</td><td class="base">18%</td><td class="bull">24%</td></tr>
+            <tr><td>Target P/E</td><td class="bear">35x</td><td class="base">55x</td><td class="bull">75x</td></tr>
+            <tr><td>TP (₹)</td><td class="bear">98</td><td class="base">225</td><td class="bull">340</td></tr>
+            <tr><td>Upside</td><td class="bear">-38%</td><td class="base">+43%</td><td class="bull">+117%</td></tr>
+            <tr><td colspan="4" class="bull"><strong>EV: ₹210 (+34%) — BUY</strong></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PB Fintech -->
+  <div class="co-card">
+    <div class="co-header" style="background:linear-gradient(90deg,#0d3a8f,#1565c0)">
+      <div>
+        <div class="co-name">PB Fintech (Policybazaar / Paisabazaar)</div>
+        <div class="co-tag">NSE: POLICYBZR | Insurtech / Fintech | Stage 5</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <span style="color:#fff;font-size:13px">CMP ₹1,035 | TP ₹1,400</span>
+        <span class="co-rating" style="background:#d4edda;color:#155724">BUY</span>
+      </div>
+    </div>
+    <div class="co-body">
+      <div class="metric-row">
+        <div class="metric g"><div class="lbl">Revenue FY26</div><div class="val">₹5,600Cr</div></div>
+        <div class="metric g"><div class="lbl">EBITDA Margin</div><div class="val">12%</div></div>
+        <div class="metric g"><div class="lbl">GWP FY26</div><div class="val">₹22,000Cr</div></div>
+        <div class="metric g"><div class="lbl">LTV:CAC</div><div class="val">8.5x</div></div>
+        <div class="metric"><div class="lbl">P/E FY26</div><div class="val">95x</div></div>
+        <div class="metric g"><div class="lbl">FCF</div><div class="val">₹480Cr</div></div>
+        <div class="metric g"><div class="lbl">Cash</div><div class="val">₹3,800Cr</div></div>
+        <div class="metric"><div class="lbl">Mcap</div><div class="val">₹47,500Cr</div></div>
+      </div>
+      <div class="two-col">
+        <div>
+          <strong>Investment Thesis:</strong>
+          <ul style="margin-top:6px">
+            <li>India's insurance penetration at 4.2% vs global 11% — PB Fintech is the primary digital channel to bridge this gap</li>
+            <li>Regulatory moat: IRDA-licensed broker with 600+ insurer tie-ups — impossible to replicate quickly</li>
+            <li>Renewal income growing: ₹1,200Cr FY26 vs ₹480Cr FY24 — high-margin, near-zero CAC</li>
+            <li>Paisabazaar (credit): ₹28,000Cr loan disbursals, growing 35% YoY — second profit engine emerging</li>
+            <li>Ex-cash P/E: Mcap ₹47,500Cr − Cash ₹3,800Cr = ₹43,700Cr ÷ PAT ₹500Cr = 87x — still rich but compounding fast</li>
+          </ul>
+        </div>
+        <div>
+          <table>
+            <tr><th>Scenario</th><th class="bear">Bear</th><th class="base">Base</th><th class="bull">Bull</th></tr>
+            <tr><td>GWP Growth FY27E</td><td class="bear">18%</td><td class="base">32%</td><td class="bull">45%</td></tr>
+            <tr><td>EBITDA Margin FY28E</td><td class="bear">10%</td><td class="base">16%</td><td class="bull">22%</td></tr>
+            <tr><td>Target P/E</td><td class="bear">55x</td><td class="base">85x</td><td class="bull">120x</td></tr>
+            <tr><td>TP (₹)</td><td class="bear">680</td><td class="base">1,400</td><td class="bull">2,100</td></tr>
+            <tr><td>Upside</td><td class="bear">-34%</td><td class="base">+35%</td><td class="bull">+103%</td></tr>
+            <tr><td colspan="4" class="bull"><strong>EV: ₹1,290 (+25%) — BUY</strong></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Eternal (Zomato) -->
+  <div class="co-card">
+    <div class="co-header" style="background:linear-gradient(90deg,#7a0000,#c62828)">
+      <div>
+        <div class="co-name">Eternal Ltd (Zomato / Blinkit / Hyperpure)</div>
+        <div class="co-tag">NSE: ETERNAL | Food Delivery + Q-Commerce | Stage 4→5</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <span style="color:#fff;font-size:13px">CMP ₹320 | TP ₹310 (WATCHLIST)</span>
+        <span class="co-rating" style="background:#fff3cd;color:#856404">WATCHLIST</span>
+      </div>
+    </div>
+    <div class="co-body">
+      <div class="metric-row">
+        <div class="metric"><div class="lbl">Revenue FY26</div><div class="val">₹19,748Cr</div></div>
+        <div class="metric a"><div class="lbl">EBITDA Margin</div><div class="val">2.1%</div></div>
+        <div class="metric"><div class="lbl">GOV FY26</div><div class="val">₹1.2L Cr</div></div>
+        <div class="metric r"><div class="lbl">P/E</div><div class="val">714x</div></div>
+        <div class="metric g"><div class="lbl">LTV:CAC</div><div class="val">5.8x</div></div>
+        <div class="metric g"><div class="lbl">FCF FY26</div><div class="val">₹2,100Cr</div></div>
+        <div class="metric g"><div class="lbl">Cash</div><div class="val">₹12,000Cr</div></div>
+        <div class="metric"><div class="lbl">Mcap</div><div class="val">₹2.86L Cr</div></div>
+      </div>
+      <p><strong>Why Watchlist, not Buy at ₹320:</strong> Eternal is a <em>great business</em> — food delivery #1, Blinkit dark store network expanding at 100 stores/quarter, Hyperpure B2B scaling. The problem is valuation. At P/E 714x, the market is implying 45% revenue CAGR for 10 years — achievable but with zero margin for error. BUY target is ₹255 (20% correction) which would imply P/E ~570x on FY26 PAT but better risk-reward given execution risk in Blinkit scaling. Every quarterly result is a binary event at this valuation.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== TAB: REVERSE VALUATION ===== -->
+<div id="reverse_dcf" class="tab">
+  <h2>🔭 Reverse Valuation — What Growth Is Already Priced In?</h2>
+  <p style="color:#6b7280;font-size:12px;margin-bottom:18px">Reverse DCF methodology: WACC 13%, terminal growth rate 5%, 10-year explicit forecast period. We back-calculate what revenue/PAT CAGR must occur to justify the current market price. If that implied growth exceeds historical sector maximums or company track record, the stock is "priced for perfection."</p>
+
+  <div class="card">
+    <div class="card-title">Reverse DCF Results — All New-Age Companies (Oct 2026)</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr>
+        <th>Company</th><th>CMP (₹)</th><th>Mcap (₹Cr)</th><th>Current P/E</th>
+        <th>Implied 10Y PAT CAGR</th><th>Implied 10Y Revenue CAGR</th>
+        <th>Historical 3Y PAT CAGR</th><th>Achievability</th><th>Margin of Safety</th><th>Rating</th>
+      </tr>
+      <tr>
+        <td><strong>Eternal (Zomato)</strong></td><td>320</td><td>2,86,000</td>
+        <td class="bear">714x</td>
+        <td class="bear">48% CAGR</td><td class="bear">42% CAGR</td>
+        <td>N/A (PAT +ve since FY26)</td>
+        <td class="bear">Very Difficult</td><td class="bear">None — priced for perfection</td>
+        <td class="hold">WATCHLIST ₹255</td>
+      </tr>
+      <tr>
+        <td><strong>Nykaa (FSN)</strong></td><td>337</td><td>29,200</td>
+        <td class="bear">362x</td>
+        <td class="bear">38% CAGR</td><td class="bear">28% CAGR</td>
+        <td>+22% revenue CAGR (actual)</td>
+        <td class="bear">Very Difficult</td><td class="bear">None — premium unsupported</td>
+        <td class="uw">UNDERWEIGHT</td>
+      </tr>
+      <tr>
+        <td><strong>Paytm</strong></td><td>1,686</td><td>1,07,100</td>
+        <td class="bear">180x</td>
+        <td class="bear">32% CAGR</td><td>22% CAGR</td>
+        <td>Revenue: +25% CAGR (recovering)</td>
+        <td class="neu-b">Possible but demanding</td><td class="neu-b">Thin — need flawless execution</td>
+        <td class="hold">WATCHLIST</td>
+      </tr>
+      <tr>
+        <td><strong>Delhivery</strong></td><td>400</td><td>28,900</td>
+        <td>350x</td>
+        <td class="bear">28% CAGR</td><td>20% CAGR</td>
+        <td>Revenue: +28% CAGR (actual)</td>
+        <td class="neu-b">Possible — within track record</td><td class="neu-b">Minimal but improving</td>
+        <td class="acc">ACCUMULATE on dips</td>
+      </tr>
+      <tr>
+        <td><strong>PB Fintech</strong></td><td>1,035</td><td>47,500</td>
+        <td>95x</td>
+        <td>32% CAGR</td><td>28% CAGR</td>
+        <td>Revenue: +35% CAGR (actual)</td>
+        <td class="bull">Achievable — below track record</td><td class="bull">Moderate — some buffer</td>
+        <td class="buy">BUY</td>
+      </tr>
+      <tr>
+        <td><strong>Honasa (Mamaearth)</strong></td><td>441</td><td>14,200</td>
+        <td>88x</td>
+        <td>28% CAGR</td><td>22% CAGR</td>
+        <td>Revenue: +18% CAGR (decelerating)</td>
+        <td class="bear">Difficult — implies re-acceleration</td><td class="bear">Negative — growth slowing</td>
+        <td class="hold">HOLD — monitor</td>
+      </tr>
+      <tr>
+        <td><strong>Naukri (Info Edge)</strong></td><td>7,935</td><td>68,500</td>
+        <td>56x</td>
+        <td>22% CAGR</td><td>18% CAGR</td>
+        <td>Revenue: +22% CAGR (actual)</td>
+        <td class="bull">Comfortable — in-line with history</td><td class="bull">Yes — ~20% buffer</td>
+        <td class="buy">BUY</td>
+      </tr>
+      <tr>
+        <td><strong>IndiaMART</strong></td><td>1,596</td><td>10,000</td>
+        <td>52x</td>
+        <td>18% CAGR</td><td>15% CAGR</td>
+        <td>Revenue: +18% CAGR (actual)</td>
+        <td class="bull">Very comfortable — at track record</td><td class="bull">Large — 38% cash buffer</td>
+        <td class="sb">STRONG BUY</td>
+      </tr>
+      <tr>
+        <td><strong>CarTrade</strong></td><td>3,033</td><td>7,200</td>
+        <td>62x</td>
+        <td>20% CAGR</td><td>18% CAGR</td>
+        <td>Revenue: +22% CAGR (actual)</td>
+        <td class="bull">Comfortable — below track record</td><td class="bull">Yes — 25% cash buffer</td>
+        <td class="buy">BUY</td>
+      </tr>
+      <tr>
+        <td><strong>Ixigo</strong></td><td>157</td><td>8,100</td>
+        <td>55x</td>
+        <td>20% CAGR</td><td>18% CAGR</td>
+        <td>Revenue: +55% CAGR (5Y actual)</td>
+        <td class="bull">Very comfortable — well below history</td><td class="bull">Large margin of safety</td>
+        <td class="buy">BUY</td>
+      </tr>
+      <tr>
+        <td><strong>Swiggy</strong></td><td>229</td><td>48,700</td>
+        <td class="bear">Loss</td>
+        <td class="bear">N/A — profitable by FY30E?</td><td class="bear">25% CAGR needed</td>
+        <td>Revenue: +42% but FCF -₹3,809Cr</td>
+        <td class="bear">Very Difficult — Q-comm capex war</td><td class="bear">None — dilution likely</td>
+        <td class="avoid">AVOID</td>
+      </tr>
+      <tr>
+        <td><strong>Ola Electric</strong></td><td>34.5</td><td>15,200</td>
+        <td class="bear">Loss</td>
+        <td class="bear">N/A — no visible path</td><td class="bear">30% CAGR but declining</td>
+        <td>Revenue declining -5% FY26</td>
+        <td class="bear">Not achievable — share loss</td><td class="bear">None — cash 14 months</td>
+        <td class="avoid">AVOID</td>
+      </tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="two-col mt">
+    <div class="card">
+      <div class="card-title">Key Reverse DCF Assumptions</div>
+      <table>
+        <tr><th>Parameter</th><th>Value</th><th>Rationale</th></tr>
+        <tr><td>WACC</td><td>13%</td><td>India equity risk premium 7% + risk-free 6% (RBI repo-linked)</td></tr>
+        <tr><td>Terminal Growth Rate</td><td>5%</td><td>India nominal GDP growth long-term estimate</td></tr>
+        <tr><td>Terminal EBITDA Margin</td><td>18–25%</td><td>Mature internet platform benchmarks (Makemytrip, Naukri actuals)</td></tr>
+        <tr><td>Tax Rate (terminal)</td><td>25%</td><td>Standard Indian corporate tax</td></tr>
+        <tr><td>Explicit Forecast Period</td><td>10 years</td><td>Standard for high-growth companies</td></tr>
+        <tr><td>Capex (terminal)</td><td>2–4% of revenue</td><td>Asset-light platform assumption</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">Valuation Summary — Cheap vs Expensive Matrix</div>
+      <table>
+        <tr><th>Category</th><th>Companies</th><th>Action</th></tr>
+        <tr><td class="bull"><strong>Cheap + Growing</strong></td><td class="bull">IndiaMART, Ixigo, CarTrade</td><td class="sb">STRONG BUY / BUY</td></tr>
+        <tr><td class="base"><strong>Fair + Quality</strong></td><td class="base">PB Fintech, Naukri, Delhivery</td><td class="buy">BUY / ACCUMULATE</td></tr>
+        <tr><td class="neu-b"><strong>Watchlist — Wait for Dip</strong></td><td class="neu-b">Eternal (₹255), Paytm</td><td class="hold">WATCHLIST</td></tr>
+        <tr><td class="bear"><strong>Expensive + Decelerating</strong></td><td class="bear">Nykaa, Honasa</td><td class="uw">UNDERWEIGHT</td></tr>
+        <tr><td class="bear"><strong>Structural AVOID</strong></td><td class="bear">Swiggy, Ola Electric</td><td class="avoid">AVOID</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== TAB: TOP 25 RANKINGS ===== -->
+<div id="top25" class="tab">
+  <h2>🏆 New-Age Top 25 Rankings — Full Universe</h2>
+  <p style="color:#6b7280;font-size:12px;margin-bottom:18px">Ranked across 8 criteria: Unit economics quality (25%), Profitability stage (20%), Valuation attractiveness (20%), Revenue growth quality (15%), Competitive moat (10%), FCF generation (5%), Management quality (3%), Cash runway (2%). All listed Indian new-age companies included.</p>
+
+  <div class="card">
+    <div class="card-title">Full Top 25 New-Age Rankings</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr>
+        <th>#</th><th>Company</th><th>CMP (₹)</th><th>Mcap (₹Cr)</th>
+        <th>Stage</th><th>Score /100</th>
+        <th>Unit Econ.</th><th>Valuation</th><th>Growth Quality</th><th>Moat</th>
+        <th>Rating</th><th>TP (₹)</th><th>Upside</th>
+      </tr>
+      <tr>
+        <td><span class="rank-badge r1">1</span></td>
+        <td><strong>IndiaMART</strong></td><td>1,596</td><td>10,000</td>
+        <td class="bull">5</td><td class="bull"><strong>88/100</strong></td>
+        <td class="bull">★★★★★</td><td class="bull">★★★★★</td><td class="bull">★★★★</td><td class="bull">★★★★★</td>
+        <td class="sb">STRONG BUY</td><td>2,200</td><td class="bull">+38%</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge r2">2</span></td>
+        <td><strong>Ixigo</strong></td><td>157</td><td>8,100</td>
+        <td class="bull">5</td><td class="bull"><strong>84/100</strong></td>
+        <td class="bull">★★★★</td><td class="bull">★★★★★</td><td class="bull">★★★★★</td><td class="bull">★★★★</td>
+        <td class="buy">BUY</td><td>225</td><td class="bull">+43%</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge r3">3</span></td>
+        <td><strong>PB Fintech</strong></td><td>1,035</td><td>47,500</td>
+        <td class="bull">5</td><td class="bull"><strong>82/100</strong></td>
+        <td class="bull">★★★★★</td><td class="bull">★★★★</td><td class="bull">★★★★★</td><td class="bull">★★★★★</td>
+        <td class="buy">BUY</td><td>1,400</td><td class="bull">+35%</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge r-buy">4</span></td>
+        <td><strong>CarTrade Tech</strong></td><td>3,033</td><td>7,200</td>
+        <td class="bull">5</td><td class="bull"><strong>80/100</strong></td>
+        <td class="bull">★★★★★</td><td class="bull">★★★★</td><td class="bull">★★★★</td><td class="bull">★★★★</td>
+        <td class="buy">BUY</td><td>3,800</td><td class="bull">+25%</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge r-buy">5</span></td>
+        <td><strong>Naukri (Info Edge)</strong></td><td>7,935</td><td>68,500</td>
+        <td class="bull">5</td><td class="bull"><strong>79/100</strong></td>
+        <td class="bull">★★★★★</td><td class="bull">★★★★</td><td class="bull">★★★★</td><td class="bull">★★★★★</td>
+        <td class="buy">BUY</td><td>9,500</td><td class="bull">+20%</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge r-buy">6</span></td>
+        <td><strong>MakeMyTrip</strong></td><td>—</td><td>~72,000</td>
+        <td class="bull">5</td><td class="bull"><strong>76/100</strong></td>
+        <td class="bull">★★★★★</td><td class="base">★★★</td><td class="bull">★★★★</td><td class="bull">★★★★</td>
+        <td class="buy">BUY (NASDAQ listed)</td><td>—</td><td class="bull">+18%E</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge r-acc">7</span></td>
+        <td><strong>Delhivery</strong></td><td>400</td><td>28,900</td>
+        <td class="base">4</td><td><strong>70/100</strong></td>
+        <td class="base">★★★</td><td class="base">★★★</td><td class="bull">★★★★</td><td class="base">★★★</td>
+        <td class="acc">ACCUMULATE</td><td>480</td><td class="bull">+20%</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge r-acc">8</span></td>
+        <td><strong>Paytm (One97)</strong></td><td>1,686</td><td>1,07,100</td>
+        <td class="base">4</td><td><strong>65/100</strong></td>
+        <td class="base">★★★</td><td class="bear">★★</td><td class="base">★★★</td><td class="base">★★★</td>
+        <td class="hold">WATCHLIST</td><td>1,800</td><td class="neu-b">+7%</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge r-acc">9</span></td>
+        <td><strong>Go Digit Insurance</strong></td><td>—</td><td>~28,000</td>
+        <td class="base">4</td><td><strong>63/100</strong></td>
+        <td class="base">★★★</td><td class="base">★★★</td><td class="bull">★★★★</td><td class="base">★★★</td>
+        <td class="acc">ACCUMULATE</td><td>—</td><td class="bull">+15%E</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge r-acc">10</span></td>
+        <td><strong>Eternal (Zomato)</strong></td><td>320</td><td>2,86,000</td>
+        <td class="bull">4→5</td><td><strong>62/100</strong></td>
+        <td class="bull">★★★★</td><td class="bear">★</td><td class="bull">★★★★★</td><td class="bull">★★★★★</td>
+        <td class="hold">WATCHLIST ₹255</td><td>310</td><td class="neu-b">-3%</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge r-hold">11</span></td>
+        <td><strong>Honasa (Mamaearth)</strong></td><td>441</td><td>14,200</td>
+        <td class="base">4</td><td><strong>55/100</strong></td>
+        <td class="base">★★★</td><td class="bear">★★</td><td class="base">★★★</td><td class="base">★★</td>
+        <td class="hold">HOLD</td><td>460</td><td class="neu-b">+4%</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge r-hold">12</span></td>
+        <td><strong>Nykaa (FSN)</strong></td><td>337</td><td>29,200</td>
+        <td class="neu-b">3→4</td><td><strong>50/100</strong></td>
+        <td class="base">★★★</td><td class="bear">★★</td><td class="base">★★★</td><td class="base">★★★</td>
+        <td class="uw">UNDERWEIGHT</td><td>280</td><td class="bear">-17%</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge r-hold">13</span></td>
+        <td><strong>FirstCry (Brainbees)</strong></td><td>—</td><td>~28,500</td>
+        <td class="neu-b">3</td><td><strong>48/100</strong></td>
+        <td class="neu-b">★★</td><td class="base">★★★</td><td class="base">★★★</td><td class="base">★★★</td>
+        <td class="hold">HOLD</td><td>—</td><td class="neu-b">+5%E</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge r-hold">14</span></td>
+        <td><strong>Aptus Value Housing</strong></td><td>—</td><td>~18,000</td>
+        <td class="bull">5</td><td><strong>46/100</strong></td>
+        <td class="base">★★★</td><td class="base">★★★</td><td class="base">★★★</td><td class="base">★★</td>
+        <td class="hold">HOLD</td><td>—</td><td class="neu-b">+8%E</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td><strong>Tracxn Technologies</strong></td><td>—</td><td>~1,200</td>
+        <td class="bull">5</td><td><strong>44/100</strong></td>
+        <td class="base">★★★</td><td class="bull">★★★★</td><td class="base">★★</td><td class="base">★★</td>
+        <td class="hold">HOLD — micro-cap</td><td>—</td><td>—</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td><strong>Innovaccer / Purplle</strong></td><td>—</td><td>Unlisted</td>
+        <td class="neu-b">3</td><td><strong>42/100</strong></td>
+        <td class="neu-b">★★</td><td>N/A</td><td class="base">★★★</td><td class="base">★★★</td>
+        <td class="hold">Pre-IPO Monitor</td><td>—</td><td>—</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td><strong>Nazara Technologies</strong></td><td>—</td><td>~9,500</td>
+        <td class="base">4</td><td><strong>41/100</strong></td>
+        <td class="base">★★★</td><td class="base">★★★</td><td class="base">★★</td><td class="base">★★</td>
+        <td class="hold">HOLD</td><td>—</td><td>—</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td><strong>EaseMyTrip</strong></td><td>—</td><td>~3,800</td>
+        <td class="base">4</td><td><strong>40/100</strong></td>
+        <td class="base">★★</td><td class="bull">★★★★</td><td class="base">★★★</td><td class="base">★★</td>
+        <td class="hold">HOLD</td><td>—</td><td>—</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td><strong>MapMyIndia (CE Info)</strong></td><td>—</td><td>~14,000</td>
+        <td class="bull">5</td><td><strong>38/100</strong></td>
+        <td class="base">★★★</td><td class="bear">★★</td><td class="base">★★</td><td class="bull">★★★★</td>
+        <td class="hold">HOLD</td><td>—</td><td>—</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td><strong>Swiggy</strong></td><td>229</td><td>48,700</td>
+        <td class="bear">2</td><td class="bear"><strong>28/100</strong></td>
+        <td class="bear">★</td><td class="bear">★★</td><td class="base">★★★</td><td class="base">★★★</td>
+        <td class="avoid">AVOID</td><td>—</td><td class="bear">N/A</td>
+      </tr>
+      <tr>
+        <td>21</td>
+        <td><strong>Honasa — downgrade risk</strong></td><td>—</td><td>—</td>
+        <td>—</td><td><strong>26/100</strong></td>
+        <td class="bear">★★</td><td class="bear">★</td><td class="bear">★★</td><td class="bear">★★</td>
+        <td class="avoid">AVOID if below ₹300</td><td>—</td><td>—</td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td><strong>Ola Electric</strong></td><td>34.5</td><td>15,200</td>
+        <td class="bear">2</td><td class="bear"><strong>18/100</strong></td>
+        <td class="bear">★</td><td class="bull">★★★</td><td class="bear">★</td><td class="bear">★★</td>
+        <td class="avoid">AVOID</td><td>—</td><td class="bear">N/A</td>
+      </tr>
+      <tr>
+        <td>23–25</td>
+        <td><em>BlackBuck/Zinka, Yatra, Shiprocket (pre-IPO)</em></td>
+        <td>—</td><td>&lt;₹5,000Cr</td>
+        <td class="bear">1–2</td><td class="bear"><strong>&lt;20/100</strong></td>
+        <td class="bear">★</td><td>—</td><td class="bear">★</td><td class="bear">★</td>
+        <td class="avoid">AVOID / Pre-IPO</td><td>—</td><td>—</td>
+      </tr>
+    </table>
+    </div>
+    <p class="note">★★★★★ = Outstanding | ★★★★ = Strong | ★★★ = Average | ★★ = Weak | ★ = Poor</p>
+  </div>
+
+  <div class="two-col mt">
+    <div class="card">
+      <div class="card-title">Stage 3 — Investment Action Summary</div>
+      <table>
+        <tr><th>Action</th><th>Companies</th><th>Weight</th></tr>
+        <tr><td class="sb">STRONG BUY</td><td>IndiaMART</td><td class="bull">28%</td></tr>
+        <tr><td class="buy">BUY</td><td>Ixigo, PB Fintech, CarTrade, Naukri</td><td class="bull">57%</td></tr>
+        <tr><td class="acc">ACCUMULATE</td><td>Delhivery</td><td>8%</td></tr>
+        <tr><td class="hold">WATCHLIST</td><td>Eternal (₹255), Paytm</td><td>7%</td></tr>
+        <tr><td class="avoid">AVOID</td><td>Swiggy, Ola Electric, Nykaa</td><td class="bear">0%</td></tr>
+      </table>
+      <p class="note">New-Age = 10% of final institutional portfolio (Stage 4). Within new-age bucket, use above weights.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Stage 3 Scorecard — Key Learnings</div>
+      <ul style="margin-top:4px">
+        <li>Only <strong>5 out of 25</strong> new-age companies have truly attractive risk-reward: IndiaMART, Ixigo, PB Fintech, CarTrade, Naukri</li>
+        <li>The "profitability theatre" trap: Several companies report EBITDA profit while burning FCF via working capital — always check FCF, not EBITDA alone</li>
+        <li>Blinkit is the most important sub-segment to watch in Indian new-age — its EBITDA inflection will drive Eternal's re-rating</li>
+        <li>PB Fintech renewal cohorts are the healthiest LTV:CAC story in India (8.5x) — institutional investors still underweight</li>
+        <li>Ixigo's 5-year 55% revenue CAGR at P/E 55x = cheapest quality growth in the entire new-age universe</li>
+        <li>Swiggy is a structural avoid: Q-comm dark-store gap vs Blinkit (418 vs 1,024 stores) cannot be closed without dilutive capex</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== TAB: RISKS ===== -->
+<div id="s3_risks" class="tab">
+  <h2>⚠️ New-Age Sector Risks & Monitoring Framework</h2>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Macro & Regulatory Risks</div>
+      <table>
+        <tr><th>Risk</th><th>Impact</th><th>Probability</th><th>Affected Companies</th></tr>
+        <tr><td>RBI BNPL / digital lending tightening</td><td class="bear">High</td><td class="neu-b">Medium</td><td class="bear">Paytm, PB Fintech (credit)</td></tr>
+        <tr><td>SEBI algo-trading restrictions (fintech)</td><td>Medium</td><td class="neu-b">Medium</td><td class="neu-b">Zerodha (unlisted), Groww</td></tr>
+        <tr><td>FDI restrictions in insurance distribution</td><td>Medium</td><td class="bull">Low</td><td class="neu-b">PB Fintech</td></tr>
+        <tr><td>DPDP Act data localization costs</td><td>Medium</td><td>Medium</td><td class="neu-b">All platforms</td></tr>
+        <tr><td>GST on food delivery (raised to 18%)</td><td class="bear">High</td><td class="bull">Low</td><td class="bear">Eternal, Swiggy (consumer demand)</td></tr>
+        <tr><td>FAME III subsidy delay / reduction</td><td class="bear">Very High</td><td>Medium</td><td class="bear">Ola Electric (existential)</td></tr>
+        <tr><td>CAC spike from Google/Meta ad cost inflation</td><td>Medium</td><td>Medium</td><td class="neu-b">All B2C platforms</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">Competitive & Execution Risks</div>
+      <table>
+        <tr><th>Risk</th><th>Impact</th><th>Affected</th></tr>
+        <tr><td>Reliance Jio Mart enters food delivery</td><td class="bear">Very High</td><td class="bear">Eternal, Swiggy</td></tr>
+        <tr><td>Amazon India doubles down on quick commerce</td><td class="bear">High</td><td class="bear">Blinkit, Instamart</td></tr>
+        <tr><td>Bajaj / TVS retake 50% EV share from Ola</td><td class="bear">High (ongoing)</td><td class="bear">Ola Electric</td></tr>
+        <tr><td>JioInsure enters insurance comparison</td><td>Medium</td><td class="neu-b">PB Fintech</td></tr>
+        <tr><td>IndiaMART competitor (Amazon Business, Udaan)</td><td class="bull">Low</td><td class="neu-b">IndiaMART</td></tr>
+        <tr><td>IRCTC direct booking push reduces Ixigo take rate</td><td>Medium</td><td class="neu-b">Ixigo</td></tr>
+        <tr><td>Traditional FMCG discounts undercut D2C brands</td><td class="bear">High</td><td class="bear">Honasa, Nykaa</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="card mt">
+    <div class="card-title">Monitoring Checklist — Quarterly Red Flags</div>
+    <div class="three-col">
+      <div>
+        <p><strong>Green Signals (upgrade triggers):</strong></p>
+        <ul style="margin-top:6px">
+          <li>Blinkit dark store count crosses 1,200 → EBITDA break-even at portfolio level</li>
+          <li>PB Fintech EBITDA margin exceeds 18% → re-rate to 110x P/E</li>
+          <li>Ixigo GTV growth accelerates above 50% → upgrade to Strong Buy</li>
+          <li>IndiaMART subscriber count exceeds 2.3L → confirm thesis intact</li>
+          <li>Paytm financial services GMV exceeds ₹60,000Cr → BUY from Watchlist</li>
+        </ul>
+      </div>
+      <div>
+        <p><strong>Red Signals (downgrade triggers):</strong></p>
+        <ul style="margin-top:6px">
+          <li>Swiggy announces &gt;₹3,000Cr fresh equity raise → dilution confirmed</li>
+          <li>Ola Electric market share falls below 20% → existential trigger</li>
+          <li>Eternal GOV growth decelerates below 30% → valuation collapses</li>
+          <li>PB Fintech renewal rate drops below 65% → LTV:CAC thesis broken</li>
+          <li>IndiaMART ARPU declines (pricing power lost) → exit</li>
+        </ul>
+      </div>
+      <div>
+        <p><strong>Next Stage Catalysts:</strong></p>
+        <ul style="margin-top:6px">
+          <li>Q3FY27 results (Jan 2027) — check Blinkit EBITDA quarterly print</li>
+          <li>Swiggy Q3FY27 — cash position update; if &lt;₹4,000Cr → imminent dilution</li>
+          <li>PB Fintech FY27 annual report — renewal book size growth</li>
+          <li>Paytm: RBI licensing for new payment aggregator business</li>
+          <li>DPDP Act implementation — compliance cost for all platforms</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('#mainnav button').forEach(b => b.classList.remove('active'));
+  const el = document.getElementById(id);
+  if (el) el.classList.add('active');
+  const tabs = ['framework','unit_econ','co_profiles','reverse_dcf','top25','s3_risks'];
+  const idx = tabs.indexOf(id);
+  const btns = document.querySelectorAll('#mainnav button');
+  if (btns[idx]) btns[idx].classList.add('active');
+}
+</script>
+</body>
+</html>

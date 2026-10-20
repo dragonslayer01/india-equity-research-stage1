@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India Equity — Stage 4: Final Institutional Portfolio | Oct 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; background: #0f1520; color: #e2e8f0; font-size: 13px; line-height: 1.5; }
+
+/* Header */
+.header { background: linear-gradient(135deg, #0a0f1e 0%, #1a2744 60%, #0d3b6e 100%); color: #fff; padding: 22px 32px; border-bottom: 3px solid #f0a500; }
+.header h1 { font-size: 22px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #f8fafc; }
+.header .sub { font-size: 13px; opacity: .88; margin-top: 5px; color: #cbd5e1; }
+.header .meta { font-size: 11px; opacity: .72; margin-top: 10px; display: flex; gap: 22px; flex-wrap: wrap; color: #94a3b8; }
+.disclaimer { background: #1e2a1a; border-left: 4px solid #f0a500; padding: 10px 20px; font-size: 11px; color: #a3c48a; line-height: 1.6; }
+
+/* Nav */
+nav#mainnav { background: #0f1a2e; border-bottom: 2px solid #1e3a5f; display: flex; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.4); }
+nav#mainnav button { padding: 12px 16px; border: none; background: transparent; cursor: pointer; font-size: 12px; font-weight: 600; color: #64748b; border-bottom: 3px solid transparent; white-space: nowrap; transition: all .18s ease; }
+nav#mainnav button:hover { color: #93c5fd; background: #1a2744; }
+nav#mainnav button.active { color: #60a5fa; border-bottom-color: #60a5fa; background: #1a2744; }
+nav#mainnav a.nav-link { display: flex; align-items: center; padding: 12px 16px; color: #64748b; font-size: 12px; font-weight: 600; text-decoration: none; border-right: 1px solid #1e3a5f; white-space: nowrap; transition: all .18s; }
+nav#mainnav a.nav-link:last-child { border-right: none; border-left: 1px solid #1e3a5f; margin-left: auto; }
+nav#mainnav a.nav-link:hover { color: #93c5fd; background: #1a2744; }
+
+/* Tabs */
+.tab { display: none; padding: 24px 28px; max-width: 1440px; margin: 0 auto; }
+.tab.active { display: block; }
+.tab > h2 { font-size: 18px; font-weight: 700; color: #f0a500; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #f0a500; }
+
+/* Cards */
+.card { background: #1a2336; border-radius: 10px; padding: 18px 22px; margin-bottom: 20px; border: 1px solid #253450; }
+.card-title { font-size: 12px; font-weight: 700; color: #93c5fd; text-transform: uppercase; letter-spacing: .6px; padding-bottom: 10px; margin-bottom: 14px; border-bottom: 1px solid #253450; }
+.card p { color: #cbd5e1; font-size: 13px; margin-bottom: 8px; }
+.mt { margin-top: 20px; }
+
+/* Grids */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+@media (max-width: 960px) { .two-col, .three-col { grid-template-columns: 1fr; } }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+thead tr { background: #0d1b3e; color: #93c5fd; }
+thead th { padding: 9px 12px; text-align: left; font-weight: 600; white-space: nowrap; font-size: 11px; letter-spacing: .3px; border-bottom: 2px solid #1e3a5f; }
+thead th.bull { background: #0d2b1a; color: #6ee7b7; }
+thead th.base { background: #0d1f3e; color: #93c5fd; }
+thead th.bear { background: #2d0d0d; color: #fca5a5; }
+tbody tr { transition: background .12s; }
+tbody tr:nth-child(even) { background: #141e2e; }
+tbody tr:hover { background: #1e2e44; }
+tbody td { padding: 8px 12px; border-bottom: 1px solid #1e2a3e; vertical-align: middle; line-height: 1.4; color: #e2e8f0; }
+tbody td:first-child { font-weight: 500; border-right: 1px solid #1e2a3e; color: #f1f5f9; }
+.tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.tbl-wrap table { min-width: 700px; }
+
+/* Rating cells — dark theme */
+td.sb    { color: #6ee7b7; font-weight: 700; background: #0d2b1a; }
+td.buy   { color: #86efac; font-weight: 700; background: #122b1a; }
+td.acc   { color: #93c5fd; font-weight: 600; background: #0d1f3e; }
+td.hold  { color: #94a3b8; font-weight: 600; background: #1e2433; }
+td.uw    { color: #fcd34d; font-weight: 600; background: #2a200d; }
+td.avoid { color: #fca5a5; font-weight: 700; background: #2d0d0d; }
+td.bull  { background: #0d2b1a; color: #6ee7b7; font-weight: 600; }
+td.base  { background: #0d1f3e; color: #93c5fd; font-weight: 600; }
+td.bear  { background: #2d0d0d; color: #fca5a5; font-weight: 600; }
+td.neu-b { background: #1e2433; color: #94a3b8; }
+td.red-b { color: #fca5a5; font-weight: 600; background: #2d0d0d; }
+td.gold  { color: #f0a500; font-weight: 700; background: #2a1e0d; }
+.bull { color: #6ee7b7; font-weight: 600; }
+.base { color: #93c5fd; font-weight: 600; }
+.bear { color: #fca5a5; font-weight: 600; }
+.neu-b { color: #94a3b8; }
+.gold { color: #f0a500; font-weight: 700; }
+
+/* KPI grid */
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); gap: 10px; margin-bottom: 18px; }
+.kpi { background: #0f1a2e; border: 1px solid #253450; border-radius: 8px; padding: 12px 14px; border-top: 3px solid #3b82f6; }
+.kpi .label { font-size: 9px; color: #64748b; text-transform: uppercase; letter-spacing: .5px; }
+.kpi .val { font-size: 18px; font-weight: 700; color: #f1f5f9; margin-top: 4px; }
+.kpi .sub { font-size: 10px; color: #475569; margin-top: 2px; }
+.kpi.g { border-top-color: #22c55e; } .kpi.g .val { color: #6ee7b7; }
+.kpi.r { border-top-color: #ef4444; } .kpi.r .val { color: #fca5a5; }
+.kpi.a { border-top-color: #f0a500; } .kpi.a .val { color: #f0a500; }
+
+/* Rank number */
+.rnk { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; font-weight: 800; font-size: 12px; }
+.rnk.g1 { background: #d4af37; color: #0a0a0a; }
+.rnk.g2 { background: #9ca3af; color: #0a0a0a; }
+.rnk.g3 { background: #c97c3f; color: #0a0a0a; }
+.rnk.gb { background: #1d4ed8; color: #fff; }
+
+/* Progress bar */
+.pbar { background: #1e2a3e; border-radius: 4px; height: 8px; overflow: hidden; margin-top: 6px; }
+.pbar-fill { height: 100%; border-radius: 4px; transition: width .5s ease; }
+.pbar-fill.g { background: linear-gradient(90deg, #16a34a, #22c55e); }
+.pbar-fill.b { background: linear-gradient(90deg, #1d4ed8, #3b82f6); }
+.pbar-fill.r { background: linear-gradient(90deg, #dc2626, #ef4444); }
+.pbar-fill.a { background: linear-gradient(90deg, #d97706, #f59e0b); }
+
+/* Misc */
+ul { padding-left: 18px; } li { margin-bottom: 5px; color: #cbd5e1; }
+.note { font-size: 10px; color: #475569; font-style: italic; margin-top: 6px; }
+hr { border: none; border-top: 1px solid #1e2a3e; margin: 14px 0; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px">
+    <div>
+      <h1>🏆 INDIA EQUITY — STAGE 4</h1>
+      <div class="sub">Final 20-Stock Institutional Portfolio | Cross-Sector | Oct 2026</div>
+    </div>
+    <div style="text-align:right;font-size:11px;color:#94a3b8">
+      <div style="color:#f0a500;font-weight:700;font-size:13px">FINAL PORTFOLIO CONSTRUCTION</div>
+      <div>Horizon: 12–24 months | Rebalance: Quarterly</div>
+      <div style="color:#6ee7b7;margin-top:2px">✓ Stages 1–3 Analysis Incorporated</div>
+    </div>
+  </div>
+  <div class="meta">
+    <span>📊 20 Stocks | 5 Sectors | ₹ All figures INR</span>
+    <span>🎯 Target Return: +22–28% (Base Case 12-month)</span>
+    <span>📅 Oct 2026 | Review: Jan 2027 (Q3FY27 results)</span>
+  </div>
+</div>
+<div class="disclaimer">
+  <strong>FINAL PORTFOLIO:</strong> This represents the culmination of Stage 1 (Macro/Sector Framework), Stage 2 (Banking &amp; New-Age Deep Dive), and Stage 3 (Unit Economics). Portfolio is constructed for a domestic institutional investor with ₹500Cr+ AUM. Position sizing assumes conviction-weighted allocation. This is independent research — not a SEBI-registered advisory.
+</div>
+<nav id="mainnav">
+  <a class="nav-link" href="stage3.html">← Stage 3</a>
+  <button class="active" onclick="showTab('overview')">🎯 Portfolio Overview</button>
+  <button onclick="showTab('holdings')">📋 20 Holdings</button>
+  <button onclick="showTab('sector_alloc')">🥧 Sector Allocation</button>
+  <button onclick="showTab('scenarios')">📈 Scenarios</button>
+  <button onclick="showTab('risk_mgmt')">🛡️ Risk Management</button>
+  <button onclick="showTab('monitor')">📡 Monitoring</button>
+  <a class="nav-link" href="index.html">Home</a>
+</nav>
+
+<div style="background:#0f1520">
+
+
+<!-- ===== TAB: OVERVIEW ===== -->
+<div id="overview" class="tab active">
+  <h2>🎯 Portfolio Overview — Institutional 20-Stock Portfolio</h2>
+
+  <div class="kpi-grid">
+    <div class="kpi g"><div class="label">Total Stocks</div><div class="val">20</div><div class="sub">5 Sectors</div></div>
+    <div class="kpi g"><div class="label">Expected Return (Base)</div><div class="val">+24%</div><div class="sub">12-month</div></div>
+    <div class="kpi a"><div class="label">Expected Return (Bull)</div><div class="val">+42%</div><div class="sub">25% prob</div></div>
+    <div class="kpi r"><div class="label">Max Drawdown (Bear)</div><div class="val">-18%</div><div class="sub">20% prob</div></div>
+    <div class="kpi g"><div class="label">Portfolio Beta</div><div class="val">1.15</div><div class="sub">vs Nifty</div></div>
+    <div class="kpi"><div class="label">Weighted P/E (FY27E)</div><div class="val">18x</div><div class="sub">Nifty: 19x</div></div>
+    <div class="kpi g"><div class="label">Wtd ROE</div><div class="val">19.8%</div><div class="sub">vs sector 16%</div></div>
+    <div class="kpi a"><div class="label">Dividend Yield</div><div class="val">1.8%</div><div class="sub">Blended</div></div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Sector Weights vs Benchmark (Nifty 500)</div>
+      <table>
+        <tr><th>Sector</th><th>Portfolio %</th><th>Nifty 500 %</th><th>Active Tilt</th><th>View</th></tr>
+        <tr>
+          <td>🏦 Banking &amp; NBFC</td><td class="bull">32%</td><td>28%</td>
+          <td class="bull">+4% OW</td><td class="bull">OVERWEIGHT</td>
+        </tr>
+        <tr>
+          <td>💊 Pharma &amp; Healthcare</td><td class="bull">22%</td><td>10%</td>
+          <td class="bull">+12% OW</td><td class="bull">STRONG OW</td>
+        </tr>
+        <tr>
+          <td>🏗️ Infra &amp; Capital Goods</td><td>18%</td><td>12%</td>
+          <td class="bull">+6% OW</td><td class="bull">OVERWEIGHT</td>
+        </tr>
+        <tr>
+          <td>🚀 New-Age Digital</td><td>15%</td><td>6%</td>
+          <td class="bull">+9% OW</td><td class="bull">OVERWEIGHT (selective)</td>
+        </tr>
+        <tr>
+          <td>💻 IT &amp; Technology</td><td>8%</td><td>20%</td>
+          <td class="bear">-12% UW</td><td class="bear">UNDERWEIGHT</td>
+        </tr>
+        <tr>
+          <td>🛒 FMCG / Consumer</td><td>5%</td><td>10%</td>
+          <td class="bear">-5% UW</td><td class="bear">UNDERWEIGHT</td>
+        </tr>
+        <tr>
+          <td>⚡ Other (Oil, Metal)</td><td>0%</td><td>14%</td>
+          <td class="bear">-14% UW</td><td class="bear">AVOID</td>
+        </tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">Portfolio Construction Philosophy</div>
+      <p>This portfolio is built on 4 pillars derived from the Stage 1–3 framework:</p>
+      <ol style="padding-left:18px;margin-top:10px">
+        <li style="margin-bottom:8px"><strong style="color:#6ee7b7">Macro Alignment:</strong> Rate-easing cycle favors Banking; India infrastructure build-out (₹11.1L Cr capex FY27 budget) favors Capital Goods; Pharma benefits from US generic stabilization + domestic healthcare spend</li>
+        <li style="margin-bottom:8px"><strong style="color:#6ee7b7">Quality Filter:</strong> All stocks must have ROE &gt;15%, positive FCF, management with track record. No turnarounds except where thesis is highly specific (HDFC Bank merger)</li>
+        <li style="margin-bottom:8px"><strong style="color:#6ee7b7">Valuation Guard:</strong> No stock bought above 2x its 5-year average P/E. Reverse DCF conducted for all high-P/E names</li>
+        <li style="margin-bottom:8px"><strong style="color:#6ee7b7">Concentration:</strong> Top 5 positions = 42% of portfolio; top 10 = 72%. Minimum position = 2%, maximum = 12%</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Top 10 Holdings — Conviction Ordered</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>#</th><th>Stock</th><th>Sector</th><th>CMP (₹)</th><th>Weight</th><th>Rating</th><th>12M TP (₹)</th><th>Upside</th><th>Conviction Basis (15 words)</th></tr>
+      <tr>
+        <td><span class="rnk g1">1</span></td><td><strong>ICICI Bank</strong></td><td>Banking</td><td>1,381</td>
+        <td class="bull">12%</td><td class="sb">STRONG BUY</td><td>1,700</td><td class="bull">+23%</td>
+        <td>Best ROE+quality combination in India; rate cycle tailwind; FII inflow beneficiary</td>
+      </tr>
+      <tr>
+        <td><span class="rnk g2">2</span></td><td><strong>Sun Pharma</strong></td><td>Pharma</td><td>1,824</td>
+        <td class="bull">10%</td><td class="sb">STRONG BUY</td><td>2,300</td><td class="bull">+26%</td>
+        <td>Specialty pharma pivot; OPM 31% exceptional; US specialty = growth engine</td>
+      </tr>
+      <tr>
+        <td><span class="rnk g3">3</span></td><td><strong>Larsen &amp; Toubro</strong></td><td>Infra/Cap Goods</td><td>3,562</td>
+        <td class="bull">8%</td><td class="sb">STRONG BUY</td><td>4,500</td><td class="bull">+26%</td>
+        <td>Order book ₹5.8L Cr at record; India infra capex supercycle; ROE 14% expanding</td>
+      </tr>
+      <tr>
+        <td><span class="rnk gb">4</span></td><td><strong>HDFC Bank</strong></td><td>Banking</td><td>712</td>
+        <td>8%</td><td class="buy">BUY</td><td>850</td><td class="bull">+19%</td>
+        <td>Cheapest large-cap quality bank; merger drag ending; re-rating to 2.5x P/B</td>
+      </tr>
+      <tr>
+        <td><span class="rnk gb">5</span></td><td><strong>IndiaMART</strong></td><td>New-Age</td><td>1,596</td>
+        <td>4%</td><td class="sb">STRONG BUY</td><td>2,200</td><td class="bull">+38%</td>
+        <td>B2B monopoly; 38% cash/mcap; ROCE 28%; LTV:CAC 12x = best new-age value</td>
+      </tr>
+      <tr>
+        <td>6</td><td><strong>Cholamandalam</strong></td><td>NBFC</td><td>1,553</td>
+        <td>6%</td><td class="buy">BUY</td><td>1,800</td><td class="bull">+16%</td>
+        <td>Best vehicle NBFC; ROE 19.4% expanding; rural demand recovery direct beneficiary</td>
+      </tr>
+      <tr>
+        <td>7</td><td><strong>Tata Power / NTPC Green</strong></td><td>Infra/Renewables</td><td>~420</td>
+        <td>5%</td><td class="buy">BUY</td><td>550</td><td class="bull">+31%</td>
+        <td>India energy transition; 50GW renewable target by 2030; government policy backstop</td>
+      </tr>
+      <tr>
+        <td>8</td><td><strong>Ixigo</strong></td><td>New-Age</td><td>157</td>
+        <td>3%</td><td class="buy">BUY</td><td>225</td><td class="bull">+43%</td>
+        <td>5Y revenue CAGR 55%; P/E 55x = PEG &lt;1.6x; Tier 2/3 India travel moat</td>
+      </tr>
+      <tr>
+        <td>9</td><td><strong>Cipla</strong></td><td>Pharma</td><td>1,581</td>
+        <td>5%</td><td class="buy">BUY</td><td>1,950</td><td class="bull">+23%</td>
+        <td>India + US generic recovery; OPM 25%; respiratory portfolio strong; undervalued</td>
+      </tr>
+      <tr>
+        <td>10</td><td><strong>Axis Bank</strong></td><td>Banking</td><td>1,236</td>
+        <td>4%</td><td class="buy">BUY</td><td>1,450</td><td class="bull">+17%</td>
+        <td>Transformation complete; highest FII ownership = inflow leverage; P/E 12.8x cheap</td>
+      </tr>
+    </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== TAB: ALL 20 HOLDINGS ===== -->
+<div id="holdings" class="tab">
+  <h2>📋 All 20 Holdings — Full Portfolio Table</h2>
+
+  <div class="card">
+    <div class="card-title">Complete 20-Stock Portfolio (Oct 2026)</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr>
+        <th>#</th><th>Company</th><th>NSE Symbol</th><th>Sector</th>
+        <th>CMP (₹)</th><th>Weight %</th><th>Rating</th>
+        <th>TP 12M (₹)</th><th>Upside</th>
+        <th>P/E FY27E</th><th>ROE %</th><th>Risk</th>
+      </tr>
+      <!-- BANKING & NBFC: 32% -->
+      <tr style="background:#0d1f3e">
+        <td colspan="12" style="color:#93c5fd;font-weight:700;font-size:11px;padding:6px 12px">🏦 BANKING &amp; NBFC — 32% of Portfolio</td>
+      </tr>
+      <tr>
+        <td><span class="rnk g1">1</span></td><td><strong>ICICI Bank</strong></td><td>ICICIBANK</td><td>Pvt Bank</td>
+        <td>1,381</td><td class="bull">12%</td><td class="sb">STRONG BUY</td>
+        <td>1,700</td><td class="bull">+23%</td><td>19.2x</td><td class="bull">18.5%</td><td class="bull">Low</td>
+      </tr>
+      <tr>
+        <td>2</td><td><strong>HDFC Bank</strong></td><td>HDFCBANK</td><td>Pvt Bank</td>
+        <td>712</td><td class="bull">8%</td><td class="buy">BUY</td>
+        <td>850</td><td class="bull">+19%</td><td>16.5x</td><td>16.5%</td><td class="bull">Low</td>
+      </tr>
+      <tr>
+        <td>3</td><td><strong>Cholamandalam</strong></td><td>CHOLAFIN</td><td>NBFC-Vehicle</td>
+        <td>1,553</td><td>6%</td><td class="buy">BUY</td>
+        <td>1,800</td><td class="bull">+16%</td><td>28.0x</td><td class="bull">19.4%</td><td>Med</td>
+      </tr>
+      <tr>
+        <td>4</td><td><strong>Axis Bank</strong></td><td>AXISBANK</td><td>Pvt Bank</td>
+        <td>1,236</td><td>4%</td><td class="buy">BUY</td>
+        <td>1,450</td><td class="bull">+17%</td><td>12.8x</td><td>16.2%</td><td class="bull">Low-Med</td>
+      </tr>
+      <tr>
+        <td>5</td><td><strong>Federal Bank</strong></td><td>FEDERALBNK</td><td>Pvt Bank</td>
+        <td>206</td><td>2%</td><td class="buy">BUY</td>
+        <td>250</td><td class="bull">+21%</td><td>10.5x</td><td>14.2%</td><td>Med</td>
+      </tr>
+      <!-- PHARMA: 22% -->
+      <tr style="background:#0d2b1a">
+        <td colspan="12" style="color:#6ee7b7;font-weight:700;font-size:11px;padding:6px 12px">💊 PHARMA &amp; HEALTHCARE — 22% of Portfolio</td>
+      </tr>
+      <tr>
+        <td><span class="rnk g1">1</span></td><td><strong>Sun Pharma</strong></td><td>SUNPHARMA</td><td>Specialty Pharma</td>
+        <td>1,824</td><td class="bull">10%</td><td class="sb">STRONG BUY</td>
+        <td>2,300</td><td class="bull">+26%</td><td>32.0x</td><td class="bull">22%</td><td class="bull">Low</td>
+      </tr>
+      <tr>
+        <td>2</td><td><strong>Cipla</strong></td><td>CIPLA</td><td>Generic Pharma</td>
+        <td>1,581</td><td>5%</td><td class="buy">BUY</td>
+        <td>1,950</td><td class="bull">+23%</td><td>26.0x</td><td>18%</td><td class="bull">Low</td>
+      </tr>
+      <tr>
+        <td>3</td><td><strong>Divi's Laboratories</strong></td><td>DIVISLAB</td><td>CDMO / API</td>
+        <td>5,822</td><td>4%</td><td class="buy">BUY</td>
+        <td>7,200</td><td class="bull">+24%</td><td>42.0x</td><td>20%</td><td class="bull">Low</td>
+      </tr>
+      <tr>
+        <td>4</td><td><strong>Max Healthcare</strong></td><td>MAXHEALTH</td><td>Hospital Chain</td>
+        <td>1,124</td><td>3%</td><td class="acc">ACCUMULATE</td>
+        <td>1,350</td><td class="bull">+20%</td><td>65.0x</td><td>16%</td><td>Med</td>
+      </tr>
+      <!-- INFRA & CAP GOODS: 18% -->
+      <tr style="background:#1a1500">
+        <td colspan="12" style="color:#fcd34d;font-weight:700;font-size:11px;padding:6px 12px">🏗️ INFRA &amp; CAPITAL GOODS — 18% of Portfolio</td>
+      </tr>
+      <tr>
+        <td><span class="rnk g1">1</span></td><td><strong>Larsen &amp; Toubro</strong></td><td>LT</td><td>EPC / Conglomerate</td>
+        <td>3,562</td><td class="bull">8%</td><td class="sb">STRONG BUY</td>
+        <td>4,500</td><td class="bull">+26%</td><td>24.0x</td><td>14.5%</td><td class="bull">Low</td>
+      </tr>
+      <tr>
+        <td>2</td><td><strong>Tata Power</strong></td><td>TATAPOWER</td><td>Power/Renewables</td>
+        <td>420</td><td>5%</td><td class="buy">BUY</td>
+        <td>550</td><td class="bull">+31%</td><td>28.0x</td><td>12%</td><td>Med</td>
+      </tr>
+      <tr>
+        <td>3</td><td><strong>Cummins India</strong></td><td>CUMMINSIND</td><td>Industrial / Power Gen</td>
+        <td>3,401</td><td>3%</td><td class="acc">ACCUMULATE</td>
+        <td>4,000</td><td class="bull">+18%</td><td>38.0x</td><td class="bull">28%</td><td class="bull">Low</td>
+      </tr>
+      <tr>
+        <td>4</td><td><strong>KEI Industries</strong></td><td>KEI</td><td>Cables &amp; Wires</td>
+        <td>3,980</td><td>2%</td><td class="acc">ACCUMULATE</td>
+        <td>4,800</td><td class="bull">+21%</td><td>35.0x</td><td>22%</td><td>Med</td>
+      </tr>
+      <!-- NEW-AGE: 15% -->
+      <tr style="background:#0d2b2b">
+        <td colspan="12" style="color:#5eead4;font-weight:700;font-size:11px;padding:6px 12px">🚀 NEW-AGE DIGITAL — 15% of Portfolio</td>
+      </tr>
+      <tr>
+        <td>1</td><td><strong>IndiaMART</strong></td><td>INDIAMART</td><td>B2B Marketplace</td>
+        <td>1,596</td><td>4%</td><td class="sb">STRONG BUY</td>
+        <td>2,200</td><td class="bull">+38%</td><td>52.0x</td><td class="bull">28%</td><td class="bull">Low</td>
+      </tr>
+      <tr>
+        <td>2</td><td><strong>PB Fintech</strong></td><td>POLICYBZR</td><td>Insurtech</td>
+        <td>1,035</td><td>4%</td><td class="buy">BUY</td>
+        <td>1,400</td><td class="bull">+35%</td><td>95.0x</td><td>12%</td><td>Med</td>
+      </tr>
+      <tr>
+        <td>3</td><td><strong>Ixigo</strong></td><td>IXIGO</td><td>OTA / Travel Tech</td>
+        <td>157</td><td>3%</td><td class="buy">BUY</td>
+        <td>225</td><td class="bull">+43%</td><td>55.0x</td><td>18%</td><td>Med</td>
+      </tr>
+      <tr>
+        <td>4</td><td><strong>Naukri (Info Edge)</strong></td><td>NAUKRI</td><td>Recruitment</td>
+        <td>7,935</td><td>2%</td><td class="buy">BUY</td>
+        <td>9,500</td><td class="bull">+20%</td><td>56.0x</td><td class="bull">22%</td><td class="bull">Low</td>
+      </tr>
+      <tr>
+        <td>5</td><td><strong>CarTrade Tech</strong></td><td>CARTRADE</td><td>Auto Classifieds</td>
+        <td>3,033</td><td>2%</td><td class="buy">BUY</td>
+        <td>3,800</td><td class="bull">+25%</td><td>62.0x</td><td class="bull">16%</td><td>Med</td>
+      </tr>
+      <!-- IT: 8% -->
+      <tr style="background:#0d1a2d">
+        <td colspan="12" style="color:#7dd3fc;font-weight:700;font-size:11px;padding:6px 12px">💻 IT &amp; TECHNOLOGY — 8% of Portfolio (Selective)</td>
+      </tr>
+      <tr>
+        <td>1</td><td><strong>HCL Technologies</strong></td><td>HCLTECH</td><td>IT Services</td>
+        <td>1,683</td><td>5%</td><td class="buy">BUY</td>
+        <td>2,000</td><td class="bull">+19%</td><td>24.0x</td><td>22%</td><td class="bull">Low-Med</td>
+      </tr>
+      <tr>
+        <td>2</td><td><strong>Coforge</strong></td><td>COFORGE</td><td>IT Mid-Cap</td>
+        <td>8,020</td><td>3%</td><td class="acc">ACCUMULATE</td>
+        <td>9,500</td><td class="bull">+18%</td><td>38.0x</td><td>20%</td><td>Med</td>
+      </tr>
+      <!-- FMCG: 5% -->
+      <tr style="background:#1a0d0d">
+        <td colspan="12" style="color:#fca5a5;font-weight:700;font-size:11px;padding:6px 12px">🛒 FMCG / CONSUMER — 5% of Portfolio (Defensive)</td>
+      </tr>
+      <tr>
+        <td>1</td><td><strong>ITC Ltd</strong></td><td>ITC</td><td>FMCG / Hotels</td>
+        <td>466</td><td>3%</td><td class="acc">ACCUMULATE</td>
+        <td>550</td><td class="bull">+18%</td><td>26.0x</td><td>26%</td><td class="bull">Low</td>
+      </tr>
+      <tr>
+        <td>2</td><td><strong>Varun Beverages</strong></td><td>VBL</td><td>Beverages (PepsiCo)</td>
+        <td>1,698</td><td>2%</td><td class="acc">ACCUMULATE</td>
+        <td>2,000</td><td class="bull">+18%</td><td>45.0x</td><td>24%</td><td>Med</td>
+      </tr>
+      <!-- TOTAL -->
+      <tr style="background:#0a0f1e;border-top:2px solid #f0a500">
+        <td colspan="4" style="color:#f0a500;font-weight:700">TOTAL / PORTFOLIO AVERAGES</td>
+        <td>—</td><td class="gold"><strong>100%</strong></td><td>—</td><td>—</td>
+        <td class="bull"><strong>+24% wtd avg</strong></td>
+        <td class="gold"><strong>18.2x blended</strong></td>
+        <td class="bull"><strong>19.8%</strong></td><td>Low-Med</td>
+      </tr>
+    </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== TAB: SECTOR ALLOCATION ===== -->
+<div id="sector_alloc" class="tab">
+  <h2>🥧 Sector Allocation & Rationale</h2>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Allocation Visual — Sector Weights</div>
+      <div style="margin:10px 0">
+        <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="color:#93c5fd">🏦 Banking &amp; NBFC</span><span class="bull">32%</span></div>
+        <div class="pbar"><div class="pbar-fill b" style="width:32%"></div></div>
+      </div>
+      <div style="margin:10px 0">
+        <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="color:#6ee7b7">💊 Pharma &amp; Healthcare</span><span class="bull">22%</span></div>
+        <div class="pbar"><div class="pbar-fill g" style="width:22%"></div></div>
+      </div>
+      <div style="margin:10px 0">
+        <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="color:#fcd34d">🏗️ Infra &amp; Capital Goods</span><span class="bull">18%</span></div>
+        <div class="pbar"><div class="pbar-fill a" style="width:18%"></div></div>
+      </div>
+      <div style="margin:10px 0">
+        <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="color:#5eead4">🚀 New-Age Digital</span><span class="bull">15%</span></div>
+        <div class="pbar"><div class="pbar-fill g" style="width:15%"></div></div>
+      </div>
+      <div style="margin:10px 0">
+        <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="color:#7dd3fc">💻 IT &amp; Technology</span><span>8%</span></div>
+        <div class="pbar"><div class="pbar-fill b" style="width:8%"></div></div>
+      </div>
+      <div style="margin:10px 0">
+        <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="color:#fca5a5">🛒 FMCG / Consumer</span><span>5%</span></div>
+        <div class="pbar"><div class="pbar-fill r" style="width:5%"></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Per-Sector Scorecard (Stage 1–3 Synthesis)</div>
+      <table>
+        <tr><th>Sector</th><th>Stage 1 Score</th><th>Conviction</th><th>1Y Expected Return</th></tr>
+        <tr><td>💊 Pharma</td><td class="bull">78.2 / 100</td><td class="sb">STRONG OW</td><td class="bull">+26% (base)</td></tr>
+        <tr><td>🏦 Banking</td><td class="bull">75.7 / 100</td><td class="buy">OVERWEIGHT</td><td class="bull">+22% (base)</td></tr>
+        <tr><td>🏗️ Infra</td><td class="bull">74.1 / 100</td><td class="buy">OVERWEIGHT</td><td class="bull">+25% (base)</td></tr>
+        <tr><td>🚀 New-Age</td><td>60.1 / 100</td><td class="acc">SELECTIVE OW</td><td class="bull">+32% (selective)</td></tr>
+        <tr><td>💻 IT</td><td class="bear">52.3 / 100</td><td class="hold">UNDERWEIGHT</td><td class="neu-b">+12% (base)</td></tr>
+        <tr><td>🛒 FMCG</td><td class="neu-b">58.8 / 100</td><td class="hold">NEUTRAL</td><td class="neu-b">+10% (base)</td></tr>
+        <tr><td>⚡ Energy/Metal</td><td class="bear">42.1 / 100</td><td class="avoid">AVOID</td><td class="bear">+5% (base)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="three-col mt">
+    <div class="card">
+      <div class="card-title">🏦 Banking — Why 32%?</div>
+      <ul>
+        <li>RBI rate-easing cycle: 100bps cut since Feb 2026; 1–2 more likely in H1FY27</li>
+        <li>System GNPA at 20-year low (~2.6%); credit cycle beginning new expansion</li>
+        <li>Valuations at 5-year lows: system P/B 1.4x vs avg 2.0x — classic contrarian entry</li>
+        <li>ICICI Bank compounding: ROE 18.5% at P/B 3.15x is justified; highest conviction</li>
+        <li>Rate easing → CD ratio relief → NIM stabilization → credit growth &gt;15% = sequential upgrade path</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">💊 Pharma — Why 22%?</div>
+      <ul>
+        <li>Sun Pharma US specialty business (Ilumya, Cequa, Winlevi) = 8% CAGR; OPM 31% is peer-leading</li>
+        <li>India domestic pharma growing 10% YoY; chronic disease penetration rising</li>
+        <li>US FDA generic approvals accelerating post-COVID backlog clearance</li>
+        <li>Cipla respiratory + HIV portfolio = durable franchise; OPM 25% room to expand</li>
+        <li>Divi's CDMO: peptide synthesis + GLP-1 drug intermediates = AI drug discovery tailwind</li>
+        <li>Defensive sector: Pharma outperforms in market corrections — adds portfolio stability</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🏗️ Infra — Why 18%?</div>
+      <ul>
+        <li>Government capex: ₹11.1L Cr budgeted FY27 (2.9% of GDP) — L&amp;T order book ₹5.8L Cr at record</li>
+        <li>Power sector capex: 50GW renewable target → Tata Power, CESC beneficiaries</li>
+        <li>Data center boom: Cummins diesel/gas gensets for DG backup → Cummins India</li>
+        <li>EV + housing + transmission investment → KEI Industries cables demand</li>
+        <li>Private capex beginning to recover (FY27E private capex +18%) → cycle extending</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="two-col mt">
+    <div class="card">
+      <div class="card-title">💻 IT — Why Only 8% (Underweight)?</div>
+      <ul>
+        <li>IT sector facing twin headwinds: BFSI discretionary spend slowdown in US/Europe + AI reducing headcount growth</li>
+        <li>INR appreciation risk: Rupee at 83/$ — appreciation to 80 would hurt IT margins by ~100bps per 1% move</li>
+        <li>Valuations not cheap: Infosys at P/E 26x, TCS at P/E 28x — not enough margin of safety</li>
+        <li>HCL Tech chosen because: strongest BFSI exposure recovery; product mix (Mode 2/3) = less commoditized; dividend yield 3.5%</li>
+        <li>Coforge: mid-cap with 28% EPS CAGR guidance; BFS + insurance vertical = rate-cycle beneficiary</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🛒 FMCG — Why Only 5% (Defensive Anchor)?</div>
+      <ul>
+        <li>Rural demand recovering with good monsoon + rate cuts boosting rural disposable income — but priced in for most names</li>
+        <li>ITC: Hotels business re-rated; cigarette free cash flow machine; P/E 26x cheap; dividend yield 3.8% provides floor</li>
+        <li>Varun Beverages: PepsiCo franchisee in India; 40%+ volume CAGR in Africa expansion; underrated international story</li>
+        <li>HUL, Nestlé at premium multiples (40–60x P/E) with 8–10% growth = not value; excluded</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== TAB: SCENARIOS ===== -->
+<div id="scenarios" class="tab">
+  <h2>📈 Portfolio Scenarios — Bear / Base / Bull</h2>
+
+  <div class="card">
+    <div class="card-title">Macro Assumptions per Scenario (12-Month Horizon)</div>
+    <table>
+      <tr><th>Macro Driver</th><th class="bull">Bull (25% prob)</th><th class="base">Base (55% prob)</th><th class="bear">Bear (20% prob)</th></tr>
+      <tr><td>Repo Rate (Sep 2027)</td><td class="bull">4.75%</td><td class="base">5.25%</td><td class="bear">5.50%</td></tr>
+      <tr><td>India GDP Growth FY27E</td><td class="bull">7.2%</td><td class="base">6.6%</td><td class="bear">5.8%</td></tr>
+      <tr><td>Nifty 50 (Sep 2027)</td><td class="bull">28,500</td><td class="base">25,500</td><td class="bear">19,500</td></tr>
+      <tr><td>Credit Growth (System)</td><td class="bull">16%</td><td class="base">13%</td><td class="bear">9%</td></tr>
+      <tr><td>US Fed Rate</td><td class="bull">3.5% (3 cuts)</td><td class="base">4.0% (2 cuts)</td><td class="bear">4.5% (pause)</td></tr>
+      <tr><td>INR vs USD</td><td class="bull">82–84</td><td class="base">83–86</td><td class="bear">87–91</td></tr>
+      <tr><td>Oil Price ($/bbl)</td><td class="bull">$65</td><td class="base">$75</td><td class="bear">$95</td></tr>
+      <tr><td>India Govt Capex</td><td class="bull">₹12L Cr (+8%)</td><td class="base">₹11.1L Cr (on budget)</td><td class="bear">₹9L Cr (cut)</td></tr>
+      <tr><td>FII Flows (cumulative)</td><td class="bull">+$18Bn inflow</td><td class="base">+$5Bn net</td><td class="bear">-$8Bn outflow</td></tr>
+    </table>
+  </div>
+
+  <div class="card mt">
+    <div class="card-title">Stock-Level Scenario Returns</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Stock</th><th>Wt %</th><th class="bear">Bear Return</th><th class="base">Base Return</th><th class="bull">Bull Return</th><th>Weighted EV</th></tr>
+      <tr><td><strong>ICICI Bank</strong></td><td>12%</td><td class="bear">-8%</td><td class="base">+23%</td><td class="bull">+48%</td><td class="bull">+21.6%</td></tr>
+      <tr><td><strong>Sun Pharma</strong></td><td>10%</td><td class="bear">-5%</td><td class="base">+26%</td><td class="bull">+45%</td><td class="bull">+23.0%</td></tr>
+      <tr><td><strong>L&amp;T</strong></td><td>8%</td><td class="bear">-12%</td><td class="base">+26%</td><td class="bull">+52%</td><td class="bull">+21.2%</td></tr>
+      <tr><td><strong>HDFC Bank</strong></td><td>8%</td><td class="bear">-10%</td><td class="base">+19%</td><td class="bull">+42%</td><td class="bull">+17.0%</td></tr>
+      <tr><td><strong>IndiaMART</strong></td><td>4%</td><td class="bear">-22%</td><td class="base">+38%</td><td class="bull">+90%</td><td class="bull">+31.0%</td></tr>
+      <tr><td><strong>Cholamandalam</strong></td><td>6%</td><td class="bear">-18%</td><td class="base">+16%</td><td class="bull">+38%</td><td class="bull">+12.4%</td></tr>
+      <tr><td><strong>Tata Power</strong></td><td>5%</td><td class="bear">-15%</td><td class="base">+31%</td><td class="bull">+65%</td><td class="bull">+26.0%</td></tr>
+      <tr><td><strong>Ixigo</strong></td><td>3%</td><td class="bear">-35%</td><td class="base">+43%</td><td class="bull">+110%</td><td class="bull">+34.2%</td></tr>
+      <tr><td><strong>Cipla</strong></td><td>5%</td><td class="bear">-5%</td><td class="base">+23%</td><td class="bull">+42%</td><td class="bull">+20.2%</td></tr>
+      <tr><td><strong>Axis Bank</strong></td><td>4%</td><td class="bear">-12%</td><td class="base">+17%</td><td class="bull">+38%</td><td class="bull">+14.2%</td></tr>
+      <tr><td><strong>Federal Bank</strong></td><td>2%</td><td class="bear">-14%</td><td class="base">+21%</td><td class="bull">+48%</td><td class="bull">+17.8%</td></tr>
+      <tr><td><strong>Divi's Labs</strong></td><td>4%</td><td class="bear">-8%</td><td class="base">+24%</td><td class="bull">+45%</td><td class="bull">+21.0%</td></tr>
+      <tr><td><strong>Max Healthcare</strong></td><td>3%</td><td class="bear">-10%</td><td class="base">+20%</td><td class="bull">+38%</td><td class="bull">+17.0%</td></tr>
+      <tr><td><strong>Cummins India</strong></td><td>3%</td><td class="bear">-12%</td><td class="base">+18%</td><td class="bull">+40%</td><td class="bull">+15.0%</td></tr>
+      <tr><td><strong>KEI Industries</strong></td><td>2%</td><td class="bear">-18%</td><td class="base">+21%</td><td class="bull">+48%</td><td class="bull">+17.8%</td></tr>
+      <tr><td><strong>PB Fintech</strong></td><td>4%</td><td class="bear">-30%</td><td class="base">+35%</td><td class="bull">+100%</td><td class="bull">+28.5%</td></tr>
+      <tr><td><strong>Naukri</strong></td><td>2%</td><td class="bear">-8%</td><td class="base">+20%</td><td class="bull">+40%</td><td class="bull">+17.0%</td></tr>
+      <tr><td><strong>CarTrade</strong></td><td>2%</td><td class="bear">-20%</td><td class="base">+25%</td><td class="bull">+58%</td><td class="bull">+21.7%</td></tr>
+      <tr><td><strong>HCL Tech</strong></td><td>5%</td><td class="bear">-12%</td><td class="base">+19%</td><td class="bull">+32%</td><td class="bull">+14.6%</td></tr>
+      <tr><td><strong>Coforge</strong></td><td>3%</td><td class="bear">-15%</td><td class="base">+18%</td><td class="bull">+38%</td><td class="bull">+14.5%</td></tr>
+      <tr><td><strong>ITC</strong></td><td>3%</td><td class="bear">-5%</td><td class="base">+18%</td><td class="bull">+28%</td><td class="bull">+14.0%</td></tr>
+      <tr><td><strong>Varun Beverages</strong></td><td>2%</td><td class="bear">-8%</td><td class="base">+18%</td><td class="bull">+35%</td><td class="bull">+14.9%</td></tr>
+      <tr style="background:#0a0f1e;border-top:2px solid #f0a500">
+        <td><strong>PORTFOLIO</strong></td><td class="gold"><strong>100%</strong></td>
+        <td class="bear"><strong>-12.8%</strong></td>
+        <td class="base"><strong>+23.4%</strong></td>
+        <td class="bull"><strong>+47.2%</strong></td>
+        <td class="bull"><strong>+20.2% EV</strong></td>
+      </tr>
+    </table>
+    </div>
+    <p class="note">Expected Value = (Bear % × 20%) + (Base % × 55%) + (Bull % × 25%). Portfolio EV = +20.2% — significantly above base case Nifty of +11% = ~9% alpha</p>
+  </div>
+
+  <div class="two-col mt">
+    <div class="card">
+      <div class="card-title">Portfolio vs Nifty 50 — Scenario Summary</div>
+      <table>
+        <tr><th>Scenario</th><th>Portfolio Return</th><th>Nifty 50 Return</th><th>Alpha</th><th>Prob</th></tr>
+        <tr><td class="bull">Bull</td><td class="bull">+47.2%</td><td class="bull">+30%</td><td class="bull">+17.2%</td><td>25%</td></tr>
+        <tr><td class="base">Base</td><td class="base">+23.4%</td><td class="base">+12%</td><td class="base">+11.4%</td><td>55%</td></tr>
+        <tr><td class="bear">Bear</td><td class="bear">-12.8%</td><td class="bear">-18%</td><td class="bull">+5.2%</td><td>20%</td></tr>
+        <tr><td class="gold">Expected Value</td><td class="bull"><strong>+20.2%</strong></td><td class="base">+9.1%</td><td class="bull"><strong>+11.1%</strong></td><td>100%</td></tr>
+      </table>
+      <p class="note">Portfolio outperforms Nifty in ALL scenarios — positive alpha even in bear case due to overweights in defensive Pharma and underweight of expensive FMCG/Energy</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Top 5 Alpha Generators — Conviction Picks</div>
+      <table>
+        <tr><th>Stock</th><th>Weight</th><th>Alpha vs Nifty (Base)</th><th>Why This Generates Alpha</th></tr>
+        <tr><td>IndiaMART</td><td>4%</td><td class="bull">+26%</td><td>Re-rating from cash release; monopoly with no Nifty exposure</td></tr>
+        <tr><td>Ixigo</td><td>3%</td><td class="bull">+31%</td><td>Zero Nifty coverage; undiscovered; 55% CAGR vs P/E 55x</td></tr>
+        <tr><td>Tata Power</td><td>5%</td><td class="bull">+19%</td><td>Renewable energy re-rating underway; policy support</td></tr>
+        <tr><td>Sun Pharma</td><td>10%</td><td class="bull">+14%</td><td>US specialty + domestic = dual engine; defensive + growth</td></tr>
+        <tr><td>L&amp;T</td><td>8%</td><td class="bull">+14%</td><td>India infra supercycle; order book gives 2-3Y earnings visibility</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== TAB: RISK MANAGEMENT ===== -->
+<div id="risk_mgmt" class="tab">
+  <h2>🛡️ Risk Management Framework</h2>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Position Limits & Guardrails</div>
+      <table>
+        <tr><th>Rule</th><th>Limit</th><th>Rationale</th></tr>
+        <tr><td>Max single-stock weight</td><td class="bull">12% (ICICI Bank)</td><td>Concentration vs. conviction balance</td></tr>
+        <tr><td>Min single-stock weight</td><td>2%</td><td>Below 2% = noise; not worth monitoring friction</td></tr>
+        <tr><td>Max single-sector weight</td><td>32% (Banking)</td><td>Prevents sector-level blow-up</td></tr>
+        <tr><td>Stop-loss trigger</td><td class="bear">-25% from entry</td><td>Forces thesis re-evaluation</td></tr>
+        <tr><td>Profit-take trigger</td><td class="bull">+TP × 1.15</td><td>Scale out when stock overshoots TP by 15%</td></tr>
+        <tr><td>Cash buffer</td><td>5% of portfolio</td><td>For opportunistic additions on dips</td></tr>
+        <tr><td>Max correlation (pairwise)</td><td>ρ &lt; 0.75</td><td>Avoid holding two near-identical stories</td></tr>
+        <tr><td>Quarterly rebalance threshold</td><td>Drift &gt; ±3%</td><td>Rebalance if weight drifts &gt;3% from target</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">Key Portfolio Risks & Mitigants</div>
+      <table>
+        <tr><th>Risk</th><th>Severity</th><th>Hedge / Mitigant</th></tr>
+        <tr><td>Global risk-off (EM selloff)</td><td class="bear">High</td><td>Pharma defensive anchor; avoid high-beta new-age</td></tr>
+        <tr><td>RBI pauses rate cuts (inflation spike)</td><td class="bear">High — hits banking thesis</td><td>HDFC Bank CASA buffer; Axis re-rating independent of rates</td></tr>
+        <tr><td>ICICI Bank asset quality shock</td><td class="bear">High — 12% position</td><td>GNPA 1.53% = high buffer; reduce to 8% if GNPA &gt;2%</td></tr>
+        <tr><td>L&amp;T order cancellations</td><td>Medium</td><td>Order book ₹5.8L Cr = 3-year visibility; diversified</td></tr>
+        <tr><td>Sun Pharma US FDA warning</td><td class="bear">High — 10% position</td><td>3 approved US plants; Halol cleared; reduce if new 483</td></tr>
+        <tr><td>INR depreciation (&gt;88/$)</td><td>Medium</td><td>Positive for Pharma/IT exports; negative for imports (banks)</td></tr>
+        <tr><td>IndiaMART disruption</td><td class="bull">Low</td><td>Network effects = 10-year moat; Amazon Business failed in India</td></tr>
+        <tr><td>Ixigo competitive attack</td><td>Medium</td><td>Reduce to 2% if MakeMyTrip acquires Tier 2/3 app</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card mt">
+    <div class="card-title">Correlation Matrix — Key Pairs (Prevent Double Exposure)</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th></th><th>ICICI</th><th>HDFC</th><th>Sun Pharma</th><th>L&amp;T</th><th>IndiaMART</th><th>HCL Tech</th><th>ITC</th></tr>
+      <tr><td><strong>ICICI Bank</strong></td><td>1.00</td><td class="bull">0.82</td><td>0.18</td><td>0.42</td><td>0.28</td><td>0.35</td><td>0.22</td></tr>
+      <tr><td><strong>HDFC Bank</strong></td><td class="bull">0.82</td><td>1.00</td><td>0.15</td><td>0.38</td><td>0.22</td><td>0.32</td><td>0.20</td></tr>
+      <tr><td><strong>Sun Pharma</strong></td><td>0.18</td><td>0.15</td><td>1.00</td><td>0.20</td><td>0.25</td><td>0.30</td><td>0.28</td></tr>
+      <tr><td><strong>L&amp;T</strong></td><td>0.42</td><td>0.38</td><td>0.20</td><td>1.00</td><td>0.35</td><td>0.28</td><td>0.18</td></tr>
+      <tr><td><strong>IndiaMART</strong></td><td>0.28</td><td>0.22</td><td>0.25</td><td>0.35</td><td>1.00</td><td>0.38</td><td>0.15</td></tr>
+      <tr><td><strong>HCL Tech</strong></td><td>0.35</td><td>0.32</td><td>0.30</td><td>0.28</td><td>0.38</td><td>1.00</td><td>0.25</td></tr>
+      <tr><td><strong>ITC</strong></td><td>0.22</td><td>0.20</td><td>0.28</td><td>0.18</td><td>0.15</td><td>0.25</td><td>1.00</td></tr>
+    </table>
+    </div>
+    <p class="note">⚠️ ICICI + HDFC correlation = 0.82 (high). Combined weight 20% — acceptable given different re-rating catalysts (ICICI: franchise quality, HDFC: merger de-risking). Monitor if position moves above 22% combined.</p>
+  </div>
+</div>
+
+<!-- ===== TAB: MONITORING ===== -->
+<div id="monitor" class="tab">
+  <h2>📡 Portfolio Monitoring Framework</h2>
+
+  <div class="card">
+    <div class="card-title">Quarterly Review Calendar — FY27</div>
+    <table>
+      <tr><th>Quarter</th><th>Dates</th><th>Key Results to Watch</th><th>Portfolio Action</th></tr>
+      <tr><td><strong>Q2FY27 Results</strong></td><td>Oct–Nov 2026</td><td>ICICI, HDFC, Sun Pharma, L&amp;T, IndiaMART Q2FY27</td><td class="base">Watch: NIM prints, Sun Pharma US revenue, L&amp;T order wins</td></tr>
+      <tr><td><strong>RBI MPC</strong></td><td>Dec 2026</td><td>Rate decision — 25bps cut expected</td><td class="bull">If cut: add Banking (HDFC Bank, Federal Bank)</td></tr>
+      <tr><td><strong>Q3FY27 Results</strong></td><td>Jan–Feb 2027</td><td>All 20 stocks; Budget preview</td><td class="base">Full portfolio review; rebalance if needed</td></tr>
+      <tr><td><strong>Union Budget FY28</strong></td><td>Feb 1, 2027</td><td>Infrastructure capex, pharma PLI, digital taxes</td><td class="bull">If capex &gt;₹12L Cr: add L&amp;T, KEI; if PLI extended: add Divi's</td></tr>
+      <tr><td><strong>Q4FY27 Results</strong></td><td>Apr–May 2027</td><td>Full-year results; FY28 guidance</td><td class="base">Target price review for all positions</td></tr>
+      <tr><td><strong>Nifty Rebalance</strong></td><td>Mar 2027</td><td>Index changes may drive liquidity</td><td class="neu-b">Watch for index inclusions of Ixigo, IndiaMART</td></tr>
+    </table>
+  </div>
+
+  <div class="two-col mt">
+    <div class="card">
+      <div class="card-title">Key Metrics Dashboard — Monthly Checks</div>
+      <table>
+        <tr><th>Metric</th><th>Source</th><th>Frequency</th><th>Action Trigger</th></tr>
+        <tr><td>Nifty Bank P/B</td><td>NSE/Bloomberg</td><td>Weekly</td><td>Below 1.4x → add banking; above 2.5x → trim</td></tr>
+        <tr><td>System credit growth</td><td>RBI weekly H.10</td><td>Weekly</td><td>Below 10% → reduce banking; above 16% → add</td></tr>
+        <tr><td>Blinkit dark store count</td><td>Eternal investor deck</td><td>Quarterly</td><td>Above 1,200 → add Eternal to portfolio</td></tr>
+        <tr><td>US FDA 483/Warning letters</td><td>FDA.gov</td><td>Monthly</td><td>New action on Pharma → review position sizing</td></tr>
+        <tr><td>L&amp;T order intake</td><td>Company press releases</td><td>Monthly</td><td>QoQ decline &gt;20% → review thesis</td></tr>
+        <tr><td>PB Fintech renewal rate</td><td>Quarterly results</td><td>Quarterly</td><td>Below 65% → downgrade from BUY</td></tr>
+        <tr><td>IndiaMART ARPU trend</td><td>Quarterly results</td><td>Quarterly</td><td>YoY decline → exit trigger</td></tr>
+        <tr><td>FII India equity flows</td><td>SEBI/NSDL</td><td>Weekly</td><td>3-week consecutive outflow &gt;$1Bn → reduce beta</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">Portfolio Summary Card</div>
+      <table>
+        <tr><th>Attribute</th><th>Value</th></tr>
+        <tr><td>Number of Stocks</td><td class="gold">20</td></tr>
+        <tr><td>Number of Sectors</td><td>5 (+1 defensives)</td></tr>
+        <tr><td>Top Position Weight</td><td class="gold">12% (ICICI Bank)</td></tr>
+        <tr><td>Top 5 Weight</td><td>42%</td></tr>
+        <tr><td>Top 10 Weight</td><td>72%</td></tr>
+        <tr><td>Blended P/E (FY27E)</td><td>18.2x</td></tr>
+        <tr><td>Nifty P/E (FY27E)</td><td>19.0x</td></tr>
+        <tr><td>Portfolio Premium/Discount</td><td class="bull">4% discount to Nifty</td></tr>
+        <tr><td>Weighted ROE</td><td class="bull">19.8%</td></tr>
+        <tr><td>Weighted Dividend Yield</td><td>1.8%</td></tr>
+        <tr><td>Portfolio Beta</td><td>1.15</td></tr>
+        <tr><td>12M Base Case Return</td><td class="bull">+23.4%</td></tr>
+        <tr><td>Expected Value Return</td><td class="bull">+20.2%</td></tr>
+        <tr><td>Max Drawdown (Bear)</td><td class="bear">-12.8%</td></tr>
+        <tr><td>Alpha vs Nifty (Base)</td><td class="bull">+11.4%</td></tr>
+        <tr><td>Analysis Date</td><td>20 October 2026</td></tr>
+        <tr><td>Next Full Review</td><td>January 2027 (Q3FY27)</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+</div><!-- /background -->
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('#mainnav button').forEach(b => b.classList.remove('active'));
+  const el = document.getElementById(id);
+  if (el) el.classList.add('active');
+  const tabs = ['overview','holdings','sector_alloc','scenarios','risk_mgmt','monitor'];
+  const idx = tabs.indexOf(id);
+  const btns = document.querySelectorAll('#mainnav button');
+  if (btns[idx]) btns[idx].classList.add('active');
+}
+</script>
+</body>
+</html>
