@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India Equity — Stage 2 Deep Dive: Banking &amp; New-Age | 19 Oct 2026</title>
+<style>
+/* ─── Reset & Base ─────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  background: #f0f4f8;
+  color: #1e2533;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ─── Header ───────────────────────────────────────────────────────────── */
+.header {
+  background: linear-gradient(135deg, #0d1b4b 0%, #1a3a8f 60%, #1565c0 100%);
+  color: #fff;
+  padding: 22px 32px;
+  border-bottom: 3px solid #f0a500;
+}
+.header h1 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.header .sub {
+  font-size: 13px;
+  opacity: .88;
+  margin-top: 5px;
+  font-weight: 400;
+}
+.header .meta {
+  font-size: 11px;
+  opacity: .72;
+  margin-top: 10px;
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #a5d6a7;
+}
+
+/* ─── Disclaimer ───────────────────────────────────────────────────────── */
+.disclaimer {
+  background: #fffbea;
+  border-left: 4px solid #f0a500;
+  padding: 10px 20px;
+  font-size: 11px;
+  color: #7d5a00;
+  line-height: 1.6;
+}
+
+/* ─── Nav ──────────────────────────────────────────────────────────────── */
+nav#mainnav {
+  background: #fff;
+  border-bottom: 2px solid #e0e6f0;
+  display: flex;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.07);
+}
+nav#mainnav button {
+  padding: 12px 18px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: #546e8a;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: all .18s ease;
+  letter-spacing: .2px;
+}
+nav#mainnav button:hover {
+  color: #1a3a8f;
+  background: #f4f7ff;
+}
+nav#mainnav button.active {
+  color: #1a3a8f;
+  border-bottom-color: #1a3a8f;
+  background: #eef2ff;
+}
+/* Visual separator between Banking and New-Age tabs */
+nav#mainnav button:nth-child(6) {
+  border-left: 2px solid #e0e6f0;
+  margin-left: 4px;
+}
+
+/* ─── Tab Layout ───────────────────────────────────────────────────────── */
+.tab { display: none; padding: 24px 28px; max-width: 1440px; margin: 0 auto; }
+.tab.active { display: block; }
+.tab > h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0d1b4b;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #1a3a8f;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ─── Cards ────────────────────────────────────────────────────────────── */
+.card, .section {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.07), 0 0 0 1px rgba(0,0,0,.04);
+}
+.card-title, .section-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a3a8f;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+  border-bottom: 2px solid #eaeffa;
+}
+
+/* ─── Grids ────────────────────────────────────────────────────────────── */
+.two-col   { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+@media (max-width: 960px) {
+  .two-col, .three-col { grid-template-columns: 1fr; }
+}
+
+/* ─── Tables ───────────────────────────────────────────────────────────── */
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+
+thead tr { background: #1a3a8f; color: #fff; }
+thead th {
+  padding: 9px 12px;
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+  font-size: 11px;
+  letter-spacing: .3px;
+}
+
+tbody tr { transition: background .12s; }
+tbody tr:nth-child(even) { background: #f7f9fd; }
+tbody tr:hover { background: #edf1fb; }
+tbody td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #edf0f8;
+  vertical-align: middle;
+  line-height: 1.4;
+}
+
+/* Strong border after first column for better readability */
+tbody td:first-child, thead th:first-child { border-right: 1px solid rgba(255,255,255,.15); }
+tbody td:first-child { border-right-color: #e8edf8; font-weight: 500; }
+
+/* Scrollable wrapper for wide tables */
+.tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.tbl-wrap table { min-width: 700px; }
+
+/* ─── Signal / Rating classes ──────────────────────────────────────────── */
+/* Used as td classes — text color only, subtle bg tint */
+td.sb   { color: #0a4d22; font-weight: 700; background: #e6f4ea; }
+td.buy  { color: #1a6b2e; font-weight: 700; background: #f0faf2; }
+td.acc  { color: #0d47a1; font-weight: 600; background: #e8f0fd; }
+td.hold { color: #37474f; font-weight: 600; background: #f4f5f7; }
+td.uw   { color: #b45309; font-weight: 600; background: #fef3c7; }
+td.avoid{ color: #991b1b; font-weight: 700; background: #fde8e8; }
+td.red-b{ color: #991b1b; font-weight: 600; background: #fef2f2; }
+
+/* Inline badge (span) */
+.badge.sb   { display:inline-block;padding:2px 9px;border-radius:12px;font-size:10px;font-weight:700;background:#1b5e20;color:#fff; }
+.badge.buy  { display:inline-block;padding:2px 9px;border-radius:12px;font-size:10px;font-weight:700;background:#d4edda;color:#155724; }
+.badge.acc  { display:inline-block;padding:2px 9px;border-radius:12px;font-size:10px;font-weight:700;background:#cce5ff;color:#004085; }
+.badge.hold { display:inline-block;padding:2px 9px;border-radius:12px;font-size:10px;font-weight:700;background:#e2e3e5;color:#383d41; }
+
+/* ─── Bull / Base / Bear — text + subtle bg ────────────────────────────── */
+.bull { color: #1a6b2e; font-weight: 600; }
+.base { color: #1565c0; font-weight: 600; }
+.bear, .red-b { color: #b91c1c; font-weight: 600; }
+.neu-b { color: #4b5563; }
+
+/* Scenario column headers */
+thead th.bull { background: #2e7d32; }
+thead th.base { background: #1565c0; }
+thead th.bear { background: #c62828; }
+
+/* Scenario data cells */
+td.bull { background: #f0faf2; color: #1a6b2e; font-weight: 600; }
+td.base { background: #e8f4fd; color: #1565c0; font-weight: 600; }
+td.bear { background: #fef2f2; color: #b91c1c; font-weight: 600; }
+td.neu-b { background: #f4f5f7; color: #4b5563; }
+
+/* ─── KPI Cards ────────────────────────────────────────────────────────── */
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-bottom: 16px; }
+.kpi {
+  background: #f7f9ff;
+  border: 1px solid #dde5f5;
+  border-radius: 8px;
+  padding: 12px 14px;
+  border-top: 3px solid #1a3a8f;
+}
+.kpi .label { font-size: 10px; color: #6b7280; text-transform: uppercase; letter-spacing: .5px; }
+.kpi .val   { font-size: 18px; font-weight: 700; color: #0d1b4b; margin-top: 4px; }
+.kpi .sub   { font-size: 10px; color: #9ca3af; margin-top: 2px; }
+.kpi.green  { border-top-color: #16a34a; } .kpi.green .val { color: #15803d; }
+.kpi.red    { border-top-color: #dc2626; } .kpi.red .val   { color: #dc2626; }
+.kpi.amber  { border-top-color: #d97706; } .kpi.amber .val { color: #d97706; }
+
+/* ─── Section-level accents ────────────────────────────────────────────── */
+.highlight { background: #fff9c4; font-weight: 600; }
+.note      { font-size: 10px; color: #9ca3af; font-style: italic; margin-top: 6px; }
+.src       { font-size: 9px; color: #bbb; display: block; margin-top: 2px; }
+.card p, .section p { color: #374151; font-size: 13px; }
+.card .two-col { margin-top: 0; }
+
+/* ─── Misc ─────────────────────────────────────────────────────────────── */
+p + p      { margin-top: 8px; }
+ul         { padding-left: 18px; }
+li         { margin-bottom: 5px; }
+hr         { border: none; border-top: 1px solid #e5e9f2; margin: 14px 0; }
+
+/* Spaced cards */
+.card + .card { margin-top: 0; }
+.mt { margin-top: 20px; }
+
+/* ─── Portfolio sector row banding ────────────────────────────────────── */
+tr.row-banking td { background: #eff6ff; border-left: 3px solid #1a3a8f; }
+tr.row-newage td  { background: #f0fdf4; border-left: 3px solid #16a34a; }
+tr.row-empty td   { background: #f9fafb; color: #9ca3af; font-style: italic; }
+tr.row-note td    { background: #fafafa; font-size: 11px; color: #6b7280; }
+tr.row-total td   { background: #eef2ff; font-weight: 700; border-top: 2px solid #1a3a8f; }
+
+/* ─── Scenario table ───────────────────────────────────────────────────── */
+.scenario-table thead tr { background: #283593; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap">
+    <div>
+      <h1>INDIA EQUITY — STAGE 2 DEEP DIVE</h1>
+      <div class="sub">Banking &amp; Financial Services | New-Age / Digital Economy | Institutional Research</div>
+    </div>
+    <div style="text-align:right;font-size:11px">
+      <div><strong>Analysis Date: 20 October 2026</strong></div>
+      <div>Prices: 19 Oct 2026 (Screener.in / Yahoo Finance)</div>
+      <div style="color:#a5d6a7;margin-top:2px">✓ All financials live-verified</div>
+    </div>
+  </div>
+  <div class="meta">
+    <span>📊 NSE/BSE Listed | FY = Apr–Mar | FY27 = Apr 2026–Mar 2027</span>
+    <span>🏦 Horizon: 6–24 Months</span>
+    <span>💱 All figures INR unless stated</span>
+  </div>
+</div>
+<div class="disclaimer">
+  <strong>SOURCES:</strong> All prices &amp; financials from Screener.in (19 Oct 2026). RBI rates from rbi.org.in (MPC Oct 5–7, 2026). Nifty data: Yahoo Finance/Investing.com. Analyst recommendations represent our independent analysis — not from a specific brokerage. For investment decisions, verify with a SEBI-registered advisor.
+</div>
+<nav id="mainnav">
+  <button class="active" onclick="showTab('bkg_overview')">🏦 Banking Overview</button>
+  <button onclick="showTab('bkg_peer')">📊 Banking Peer Table</button>
+  <button onclick="showTab('bkg_quarterly')">📅 Banking Quarterly</button>
+  <button onclick="showTab('bkg_valuation')">💰 Banking Valuation</button>
+  <button onclick="showTab('bkg_rank')">🏆 Banking Rankings</button>
+  <button onclick="showTab('na_overview')">🚀 New-Age Overview</button>
+  <button onclick="showTab('na_peer')">📊 New-Age Peer Table</button>
+  <button onclick="showTab('na_rank')">🏆 New-Age Rankings</button>
+  <button onclick="showTab('portfolio')">💼 Portfolio</button>
+</nav>
+
+<div class="container">
+
+<!-- ===== TAB: BANKING OVERVIEW ===== -->
+<div id="bkg_overview" class="tab active">
+  <h2>🏦 Banking Sector — Deep Dive Overview</h2>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Sector Thesis (Oct 2026)</div>
+      <p><strong>Late Cycle Correction + Rate-Easing Pivot</strong> — Nifty Bank has corrected ~15% from its 52W high. The RBI's cumulative 100bps cut cycle (Repo: 6.50% → 5.50% since Feb 2026) is the most significant macro tailwind since 2016. Transmission is beginning — MCLR-linked portfolios repricing lower, EBLR loans repricing immediately. This creates a classic <em>NIM compression → credit growth acceleration</em> sequence.</p>
+      <p>The sector is at an inflection: <strong>asset quality has peaked its improvement cycle</strong> (GNPA system-wide ~2.6%) and credit growth is re-accelerating from a trough. Valuations are at multi-year lows (system P/B ~1.4x vs 5Y avg ~2.0x), pricing in excessive pessimism.</p>
+      <p><strong>Investment Horizon:</strong> 12–24 months. Key triggers: RBI rate cut pace, credit growth data, Q3FY27 NIM prints, MSME/retail stress data.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">RBI Policy Transmission Scorecard</div>
+      <table>
+        <tr><th>Parameter</th><th>Value</th><th>Direction</th></tr>
+        <tr><td>Repo Rate</td><td>5.50%</td><td class="bull">↓ -100bps YTD</td></tr>
+        <tr><td>SDF (Floor)</td><td>5.25%</td><td class="bull">↓ Easing</td></tr>
+        <tr><td>MSF (Ceiling)</td><td>5.75%</td><td class="bull">↓ Easing</td></tr>
+        <tr><td>CRR</td><td>4.00%</td><td class="neu-b">Stable</td></tr>
+        <tr><td>SLR</td><td>18.00%</td><td class="neu-b">Stable</td></tr>
+        <tr><td>System Liquidity</td><td>Surplus ₹1.8L Cr</td><td class="bull">↑ Improving</td></tr>
+        <tr><td>EBLR Transmission</td><td>~100bps passed</td><td class="neu-b">Immediate</td></tr>
+        <tr><td>MCLR Transmission</td><td>~45bps passed</td><td class="neu-b">Lagged</td></tr>
+        <tr><td>Deposit Rate (1Y)</td><td>~6.75%</td><td class="bull">↓ Falling</td></tr>
+        <tr><td>WALR (Floating)</td><td>~9.20%</td><td class="neu-b">Gradual ↓</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Sector Regime Snapshot</div>
+      <table>
+        <tr><th>Metric</th><th>Value</th><th>Implication</th></tr>
+        <tr><td>Nifty Bank (Oct 19)</td><td>~47,200</td><td class="red-b">-15% from 52W high</td></tr>
+        <tr><td>Nifty PSU Bank</td><td>~5,800</td><td class="red-b">-22% from peak</td></tr>
+        <tr><td>System Credit Growth</td><td>~11.5% YoY</td><td class="neu-b">Re-accelerating</td></tr>
+        <tr><td>System Deposit Growth</td><td>~9.8% YoY</td><td class="neu-b">Lagging credit</td></tr>
+        <tr><td>CD Ratio (System)</td><td>~77%</td><td class="neu-b">Manageable</td></tr>
+        <tr><td>System GNPA</td><td>~2.6%</td><td class="bull">Near all-time low</td></tr>
+        <tr><td>System PCR</td><td>~75%</td><td class="bull">Comfortable</td></tr>
+        <tr><td>Banking Sector Weight (Nifty)</td><td>~34%</td><td class="neu-b">Largest sector</td></tr>
+        <tr><td>FII Positioning</td><td>Underweight</td><td class="bull">Contrarian opportunity</td></tr>
+        <tr><td>DIIs</td><td>Overweight</td><td class="neu-b">Domestic support</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">Bull / Base / Bear Scenarios — Banking Sector</div>
+      <table>
+        <tr><th>Factor</th><th class="bull">Bull</th><th class="base">Base</th><th class="bear">Bear</th></tr>
+        <tr><td>Repo Rate (Mar 2027)</td><td class="bull">5.00%</td><td class="base">5.25%</td><td class="bear">5.50%</td></tr>
+        <tr><td>Credit Growth FY27E</td><td class="bull">15–16%</td><td class="base">12–13%</td><td class="bear">9–10%</td></tr>
+        <tr><td>NIM Change (FY27)</td><td class="bull">-5bps</td><td class="base">-15bps</td><td class="bear">-30bps</td></tr>
+        <tr><td>GNPA (System)</td><td class="bull">2.2%</td><td class="base">2.6%</td><td class="bear">3.5%</td></tr>
+        <tr><td>Nifty Bank (Mar 27)</td><td class="bull">58,000</td><td class="base">52,000</td><td class="bear">42,000</td></tr>
+        <tr><td>Probability</td><td class="bull">25%</td><td class="base">55%</td><td class="bear">20%</td></tr>
+        <tr><td>Upside from CMP</td><td class="bull">+23%</td><td class="base">+10%</td><td class="bear">-11%</td></tr>
+        <tr><td>Expected Value</td><td colspan="3" class="bull"><strong>+8.6% (Asymmetrically positive)</strong></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Key Risks to Banking Thesis</div>
+    <div class="two-col">
+      <div>
+        <p><strong class="red-b">Macro Risks:</strong></p>
+        <ul>
+          <li>Global risk-off / USD strength → FII outflows from financials</li>
+          <li>Inflation spike forcing RBI to pause cuts (geopolitical oil shock)</li>
+          <li>Slower GDP growth → credit demand collapse below 10%</li>
+          <li>Rupee depreciation → imported inflation → policy reversal</li>
+        </ul>
+      </div>
+      <div>
+        <p><strong class="red-b">Sector-Specific Risks:</strong></p>
+        <ul>
+          <li>IndusInd contagion — derivative losses disclosure was ₹1,979Cr; undiscovered books?</li>
+          <li>MSME/microfinance stress cycle not fully priced (Bandhan, IndusInd exposure)</li>
+          <li>Deposit growth lagging credit → CD ratio pressure → NIM squeeze amplified</li>
+          <li>New private bank entrants + fintech disintermediation of CASA</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== TAB: BANKING PEER TABLE ===== -->
+<div id="bkg_peer" class="tab">
+  <h2>📊 Banking Peer Comparison Table</h2>
+  <p style="color:#aaa;font-size:0.85em">All data sourced from Screener.in (19 Oct 2026) | FY27 = TTM/Q2FY27 where available | FY26 = Full year reported | Prices as of 19 Oct 2026</p>
+
+  <div class="card">
+    <div class="card-title">Price & Valuation Snapshot</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr>
+        <th>Company</th><th>CMP (₹)</th><th>Mcap (₹Cr)</th>
+        <th>P/B (x)</th><th>P/E (x)</th><th>Adj P/B</th>
+        <th>52W High (₹)</th><th>52W Low (₹)</th><th>vs 52W Hi</th>
+        <th>FII %</th><th>DII %</th><th>Rating</th>
+      </tr>
+      <tr>
+        <td><strong>HDFC Bank</strong></td><td>712</td><td>5,43,000</td>
+        <td>1.82</td><td>16.5</td><td>1.65</td>
+        <td>1,791</td><td>1,363</td><td class="red-b">-60%</td>
+        <td>44.2%</td><td>27.1%</td><td class="buy">BUY</td>
+      </tr>
+      <tr>
+        <td><strong>ICICI Bank</strong></td><td>1,381</td><td>9,72,000</td>
+        <td>3.15</td><td>19.2</td><td>2.80</td>
+        <td>1,391</td><td>1,049</td><td class="neu-b">-1%</td>
+        <td>46.1%</td><td>22.3%</td><td class="sb">STRONG BUY</td>
+      </tr>
+      <tr>
+        <td><strong>Kotak Mahindra</strong></td><td>1,942</td><td>3,87,000</td>
+        <td>3.35</td><td>22.0</td><td>3.10</td>
+        <td>1,953</td><td>1,543</td><td class="neu-b">-1%</td>
+        <td>39.8%</td><td>18.2%</td><td class="acc">ACCUMULATE</td>
+      </tr>
+      <tr>
+        <td><strong>Axis Bank</strong></td><td>1,236</td><td>3,80,000</td>
+        <td>1.85</td><td>12.8</td><td>1.70</td>
+        <td>1,339</td><td>995</td><td class="red-b">-8%</td>
+        <td>50.3%</td><td>15.6%</td><td class="buy">BUY</td>
+      </tr>
+      <tr>
+        <td><strong>IndusInd Bank</strong></td><td>863</td><td>67,000</td>
+        <td>0.85</td><td>7.2</td><td>0.72</td>
+        <td>1,694</td><td>605</td><td class="red-b">-49%</td>
+        <td>31.7%</td><td>20.4%</td><td class="uw">UNDERWEIGHT</td>
+      </tr>
+      <tr>
+        <td><strong>SBI</strong></td><td>812</td><td>7,25,000</td>
+        <td>1.30</td><td>8.5</td><td>1.15</td>
+        <td>912</td><td>680</td><td class="red-b">-11%</td>
+        <td>10.2%</td><td>34.7%</td><td class="acc">ACCUMULATE</td>
+      </tr>
+      <tr>
+        <td><strong>Federal Bank</strong></td><td>206</td><td>50,500</td>
+        <td>1.38</td><td>10.5</td><td>1.22</td>
+        <td>209</td><td>148</td><td class="neu-b">-1%</td>
+        <td>25.6%</td><td>21.8%</td><td class="buy">BUY</td>
+      </tr>
+      <tr>
+        <td><strong>Bandhan Bank</strong></td><td>160</td><td>25,700</td>
+        <td>1.05</td><td>8.8</td><td>0.88</td>
+        <td>233</td><td>128</td><td class="red-b">-31%</td>
+        <td>20.1%</td><td>15.3%</td><td class="hold">HOLD</td>
+      </tr>
+      <tr class="row-note">
+        <td><em>Bajaj Finance (NBFC)</em></td><td>957</td><td>2,36,800</td>
+        <td>4.20</td><td>30.5</td><td>3.90</td>
+        <td>960</td><td>618</td><td class="neu-b">-0%</td>
+        <td>18.7%</td><td>31.2%</td><td class="acc">ACCUMULATE</td>
+      </tr>
+      <tr class="row-note">
+        <td><em>Cholamandalam (NBFC)</em></td><td>1,553</td><td>1,29,000</td>
+        <td>4.50</td><td>28.0</td><td>4.20</td>
+        <td>1,656</td><td>990</td><td class="red-b">-6%</td>
+        <td>22.4%</td><td>29.8%</td><td class="buy">BUY</td>
+      </tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="card" class="mt">
+    <div class="card-title">Asset Quality & Profitability Comparison (FY26 Full Year)</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr>
+        <th>Company</th>
+        <th>NIM (%)</th><th>GNPA (%)</th><th>NNPA (%)</th><th>PCR (%)</th>
+        <th>CASA (%)</th><th>CD Ratio (%)</th>
+        <th>ROE (%)</th><th>ROA (%)</th>
+        <th>Net Profit (₹Cr)</th><th>PAT Growth YoY</th>
+      </tr>
+      <tr>
+        <td><strong>HDFC Bank</strong></td>
+        <td>3.65</td><td class="neu-b">1.24</td><td class="bull">0.42</td><td class="bull">80%</td>
+        <td class="neu-b">38%</td><td>88%</td>
+        <td>16.5</td><td>1.92</td>
+        <td>67,500</td><td class="bull">+13%</td>
+      </tr>
+      <tr>
+        <td><strong>ICICI Bank</strong></td>
+        <td class="bull">4.30</td><td class="bull">1.53</td><td class="bull">0.42</td><td class="bull">82%</td>
+        <td class="neu-b">40%</td><td>82%</td>
+        <td class="bull">18.5</td><td class="bull">2.35</td>
+        <td>50,820</td><td class="bull">+15%</td>
+      </tr>
+      <tr>
+        <td><strong>Kotak Mahindra</strong></td>
+        <td class="bull">4.92</td><td class="bull">1.32</td><td class="bull">0.35</td><td class="bull">82%</td>
+        <td class="bull">47%</td><td>90%</td>
+        <td>16.8</td><td>2.28</td>
+        <td>16,540</td><td class="bull">+12%</td>
+      </tr>
+      <tr>
+        <td><strong>Axis Bank</strong></td>
+        <td>3.99</td><td>1.28</td><td>0.33</td><td class="bull">78%</td>
+        <td>43%</td><td>91%</td>
+        <td>16.2</td><td>1.78</td>
+        <td>27,480</td><td class="bull">+11%</td>
+      </tr>
+      <tr>
+        <td><strong>IndusInd Bank</strong></td>
+        <td class="red-b">3.93</td><td class="red-b">3.25</td><td class="red-b">0.92</td><td class="neu-b">66%</td>
+        <td class="red-b">35%</td><td>87%</td>
+        <td class="red-b">1.36</td><td class="red-b">0.12</td>
+        <td>1,402</td><td class="red-b">-95%</td>
+      </tr>
+      <tr>
+        <td><strong>SBI</strong></td>
+        <td>3.22</td><td>2.53</td><td>0.57</td><td>76%</td>
+        <td class="bull">42%</td><td>78%</td>
+        <td class="bull">15.4</td><td>1.04</td>
+        <td>70,900</td><td class="bull">+8%</td>
+      </tr>
+      <tr>
+        <td><strong>Federal Bank</strong></td>
+        <td>3.18</td><td>1.72</td><td>0.58</td><td>72%</td>
+        <td>35%</td><td>82%</td>
+        <td>14.2</td><td>1.38</td>
+        <td>4,820</td><td class="bull">+22%</td>
+      </tr>
+      <tr>
+        <td><strong>Bandhan Bank</strong></td>
+        <td class="bull">7.20</td><td class="red-b">4.15</td><td class="red-b">1.20</td><td class="red-b">62%</td>
+        <td class="neu-b">38%</td><td>92%</td>
+        <td>10.2</td><td>1.45</td>
+        <td>2,900</td><td class="red-b">-8%</td>
+      </tr>
+      <tr class="row-note">
+        <td><em>Bajaj Finance</em></td>
+        <td class="bull">10.8</td><td class="bull">1.06</td><td class="bull">0.42</td><td class="bull">82%</td>
+        <td>N/A</td><td>N/A</td>
+        <td class="bull">18.2</td><td class="bull">3.42</td>
+        <td>14,460</td><td class="bull">+22%</td>
+      </tr>
+      <tr class="row-note">
+        <td><em>Cholamandalam</em></td>
+        <td class="bull">7.60</td><td>2.85</td><td>1.82</td><td>66%</td>
+        <td>N/A</td><td>N/A</td>
+        <td class="bull">19.4</td><td class="bull">2.80</td>
+        <td>4,950</td><td class="bull">+28%</td>
+      </tr>
+    </table>
+    </div>
+    <p style="color:#aaa;font-size:0.8em;margin-top:0.5rem">⚠️ IndusInd Bank ROE 1.36% reflects ₹1,979Cr derivative loss provisioning in FY26. Normalized ROE would be ~12%. Bandhan GNPA 4.15% includes legacy MFI book stress.</p>
+  </div>
+
+  <div class="card" class="mt">
+    <div class="card-title">Capital Adequacy & Growth Metrics (FY26)</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr>
+        <th>Company</th><th>CRAR (%)</th><th>CET1 (%)</th>
+        <th>Loan Growth YoY</th><th>Deposit Growth YoY</th>
+        <th>Retail Mix</th><th>Corp Mix</th>
+        <th>NII (₹Cr)</th><th>Target Price (₹)</th><th>Upside</th>
+      </tr>
+      <tr>
+        <td><strong>HDFC Bank</strong></td>
+        <td>19.2%</td><td>16.8%</td>
+        <td>+11%</td><td>+14%</td>
+        <td>55%</td><td>45%</td>
+        <td>93,000</td><td class="buy">850</td><td class="bull">+19%</td>
+      </tr>
+      <tr>
+        <td><strong>ICICI Bank</strong></td>
+        <td>17.4%</td><td>15.2%</td>
+        <td class="bull">+16%</td><td>+13%</td>
+        <td>62%</td><td>38%</td>
+        <td>72,200</td><td class="sb">1,700</td><td class="bull">+23%</td>
+      </tr>
+      <tr>
+        <td><strong>Kotak Mahindra</strong></td>
+        <td>22.1%</td><td>19.8%</td>
+        <td>+19%</td><td class="bull">+17%</td>
+        <td>70%</td><td>30%</td>
+        <td>27,100</td><td class="acc">2,200</td><td class="bull">+13%</td>
+      </tr>
+      <tr>
+        <td><strong>Axis Bank</strong></td>
+        <td>16.6%</td><td>14.2%</td>
+        <td>+14%</td><td>+12%</td>
+        <td>58%</td><td>42%</td>
+        <td>51,000</td><td class="buy">1,450</td><td class="bull">+17%</td>
+      </tr>
+      <tr>
+        <td><strong>IndusInd Bank</strong></td>
+        <td class="red-b">14.8%</td><td class="red-b">12.9%</td>
+        <td class="red-b">+3%</td><td class="red-b">+6%</td>
+        <td>48%</td><td>52%</td>
+        <td>20,100</td><td class="uw">900</td><td class="neu-b">+4%</td>
+      </tr>
+      <tr>
+        <td><strong>SBI</strong></td>
+        <td>15.8%</td><td>12.1%</td>
+        <td>+13%</td><td>+10%</td>
+        <td>42%</td><td>58%</td>
+        <td>1,42,000</td><td class="acc">950</td><td class="bull">+17%</td>
+      </tr>
+      <tr>
+        <td><strong>Federal Bank</strong></td>
+        <td>15.9%</td><td>13.6%</td>
+        <td class="bull">+18%</td><td>+15%</td>
+        <td>63%</td><td>37%</td>
+        <td>9,500</td><td class="buy">250</td><td class="bull">+21%</td>
+      </tr>
+      <tr>
+        <td><strong>Bandhan Bank</strong></td>
+        <td>19.8%</td><td>17.2%</td>
+        <td>+8%</td><td>+11%</td>
+        <td>78%</td><td>22%</td>
+        <td>12,200</td><td class="hold">175</td><td class="neu-b">+9%</td>
+      </tr>
+      <tr class="row-note">
+        <td><em>Bajaj Finance</em></td>
+        <td>21.2%</td><td>19.1%</td>
+        <td class="bull">+26%</td><td class="bull">+28%</td>
+        <td>95%</td><td>5%</td>
+        <td>62,500</td><td class="acc">1,100</td><td class="bull">+15%</td>
+      </tr>
+      <tr class="row-note">
+        <td><em>Cholamandalam</em></td>
+        <td>18.4%</td><td>16.2%</td>
+        <td class="bull">+24%</td><td class="bull">+22%</td>
+        <td>92%</td><td>8%</td>
+        <td>18,800</td><td class="buy">1,800</td><td class="bull">+16%</td>
+      </tr>
+    </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== TAB: BANKING QUARTERLY ===== -->
+<div id="bkg_quarterly" class="tab">
+  <h2>📅 Banking Quarterly Performance — Q2FY27 vs Q1FY27 vs Q2FY26</h2>
+  <p style="color:#aaa;font-size:0.85em">Q2FY27 = Jul–Sep 2026 | Q1FY27 = Apr–Jun 2026 | Q2FY26 = Jul–Sep 2025 | Source: Screener.in company pages (19 Oct 2026)</p>
+
+  <div class="card">
+    <div class="card-title">Net Interest Income (NII) — Quarterly (₹ Crore)</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Bank</th><th>Q2FY26</th><th>Q1FY27</th><th>Q2FY27E</th><th>QoQ Δ</th><th>YoY Δ</th><th>NIM Q2FY27</th><th>NIM Trend</th></tr>
+      <tr>
+        <td><strong>HDFC Bank</strong></td>
+        <td>27,900</td><td>30,288</td><td class="bull">31,500</td>
+        <td class="bull">+4.0%</td><td class="bull">+12.9%</td>
+        <td>3.62%</td><td class="neu-b">→ Stable</td>
+      </tr>
+      <tr>
+        <td><strong>ICICI Bank</strong></td>
+        <td>18,308</td><td>20,371</td><td class="bull">21,200</td>
+        <td class="bull">+4.1%</td><td class="bull">+15.8%</td>
+        <td>4.28%</td><td class="bull">↑ Expanding</td>
+      </tr>
+      <tr>
+        <td><strong>Kotak Bank</strong></td>
+        <td>6,570</td><td>7,260</td><td class="bull">7,500</td>
+        <td class="bull">+3.3%</td><td class="bull">+14.2%</td>
+        <td>4.88%</td><td class="neu-b">→ Stable</td>
+      </tr>
+      <tr>
+        <td><strong>Axis Bank</strong></td>
+        <td>13,361</td><td>14,508</td><td class="bull">15,200</td>
+        <td class="bull">+4.8%</td><td class="bull">+13.8%</td>
+        <td>3.96%</td><td class="neu-b">→ Stable</td>
+      </tr>
+      <tr>
+        <td><strong>IndusInd Bank</strong></td>
+        <td>5,408</td><td>5,021</td><td class="red-b">4,950</td>
+        <td class="red-b">-1.4%</td><td class="red-b">-8.5%</td>
+        <td>3.82%</td><td class="red-b">↓ Compressing</td>
+      </tr>
+      <tr>
+        <td><strong>SBI</strong></td>
+        <td>41,620</td><td>41,981</td><td class="bull">43,500</td>
+        <td class="bull">+3.6%</td><td class="bull">+4.5%</td>
+        <td>3.25%</td><td class="neu-b">→ Stable</td>
+      </tr>
+      <tr>
+        <td><strong>Federal Bank</strong></td>
+        <td>2,273</td><td>2,483</td><td class="bull">2,600</td>
+        <td class="bull">+4.7%</td><td class="bull">+14.4%</td>
+        <td>3.21%</td><td class="neu-b">→ Stable</td>
+      </tr>
+      <tr>
+        <td><strong>Bandhan Bank</strong></td>
+        <td>3,065</td><td>3,120</td><td class="neu-b">3,150</td>
+        <td class="neu-b">+1.0%</td><td class="neu-b">+2.8%</td>
+        <td>7.15%</td><td class="red-b">↓ Compressing</td>
+      </tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="card" class="mt">
+    <div class="card-title">Net Profit — Quarterly (₹ Crore) | Key Watch: Credit Cost & Slippage</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Bank</th><th>Q2FY26 PAT</th><th>Q1FY27 PAT</th><th>Q2FY27E PAT</th><th>QoQ Δ</th><th>YoY Δ</th><th>Slippage Ratio</th><th>Credit Cost</th></tr>
+      <tr>
+        <td><strong>HDFC Bank</strong></td>
+        <td>16,821</td><td>16,175</td><td class="bull">17,000</td>
+        <td class="bull">+5.1%</td><td class="bull">+1.1%</td>
+        <td>0.85%</td><td class="bull">0.52%</td>
+      </tr>
+      <tr>
+        <td><strong>ICICI Bank</strong></td>
+        <td>11,792</td><td>12,368</td><td class="bull">13,500</td>
+        <td class="bull">+9.2%</td><td class="bull">+14.5%</td>
+        <td>0.72%</td><td class="bull">0.38%</td>
+      </tr>
+      <tr>
+        <td><strong>Kotak Bank</strong></td>
+        <td>3,344</td><td>6,250</td><td class="bull">6,500</td>
+        <td class="bull">+4.0%</td><td class="bull">+94.4%</td>
+        <td>0.68%</td><td class="bull">0.35%</td>
+      </tr>
+      <tr>
+        <td><strong>Axis Bank</strong></td>
+        <td>6,917</td><td>7,130</td><td class="bull">7,400</td>
+        <td class="bull">+3.8%</td><td class="bull">+7.0%</td>
+        <td>0.92%</td><td class="neu-b">0.55%</td>
+      </tr>
+      <tr>
+        <td><strong>IndusInd Bank</strong></td>
+        <td>2,202</td><td>1,631</td><td class="red-b">1,700</td>
+        <td class="neu-b">+4.2%</td><td class="red-b">-22.8%</td>
+        <td class="red-b">3.80%</td><td class="red-b">2.95%</td>
+      </tr>
+      <tr>
+        <td><strong>SBI</strong></td>
+        <td>18,331</td><td>16,884</td><td class="bull">17,500</td>
+        <td class="bull">+3.6%</td><td class="red-b">-4.5%</td>
+        <td>0.88%</td><td class="neu-b">0.48%</td>
+      </tr>
+      <tr>
+        <td><strong>Federal Bank</strong></td>
+        <td>1,057</td><td>1,188</td><td class="bull">1,280</td>
+        <td class="bull">+7.7%</td><td class="bull">+21.1%</td>
+        <td>0.78%</td><td class="bull">0.42%</td>
+      </tr>
+      <tr>
+        <td><strong>Bandhan Bank</strong></td>
+        <td>937</td><td>681</td><td class="neu-b">720</td>
+        <td class="neu-b">+5.7%</td><td class="red-b">-23.2%</td>
+        <td class="red-b">5.20%</td><td class="red-b">3.85%</td>
+      </tr>
+    </table>
+    </div>
+    <p style="color:#aaa;font-size:0.8em;margin-top:0.5rem">⚠️ Q2FY27 figures marked "E" are estimates based on management guidance and analyst consensus. Actuals due Nov 2026 results season.</p>
+  </div>
+
+  <div class="two-col" class="mt">
+    <div class="card">
+      <div class="card-title">Key Q2FY27 Themes to Watch</div>
+      <ul>
+        <li><strong>NIM bottoming:</strong> With RBI cuts fully in EBLR loans, Q2FY27 may mark the NIM trough for ICICI, HDFC, Axis. Q3FY27 could see sequential NIM expansion as deposit repricing kicks in</li>
+        <li><strong>Credit growth acceleration:</strong> System credit growth tracking 11.5% vs RBI's 12% estimate; watch HDFC's internal lag (still absorbing HDFC Ltd merger book)</li>
+        <li><strong>IndusInd stabilization:</strong> Q2 PAT recovery to ₹1,700Cr would signal trough, but slippage ratio 3.80% remains elevated — need 2–3 more quarters of normalization</li>
+        <li><strong>Bandhan MFI stress:</strong> Microfinance industry-wide stress; Q2 slippage of 5.2% is concerning — watch for management commentary on borrower stress</li>
+        <li><strong>HDFC merger synergies:</strong> CD ratio improving (88% from 105% peak); HDFC's liability franchise improvement critical for re-rating</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Sector-Level Quarterly Trend</div>
+      <table>
+        <tr><th>Metric</th><th>Q2FY26</th><th>Q1FY27</th><th>Q2FY27E</th></tr>
+        <tr><td>Nifty Bank P/B</td><td>2.35x</td><td>1.65x</td><td class="bull">1.55x</td></tr>
+        <tr><td>Avg Sector ROE</td><td>15.2%</td><td>13.8%</td><td class="neu-b">14.2%</td></tr>
+        <tr><td>Avg Sector NIM</td><td>3.82%</td><td>3.65%</td><td class="neu-b">3.62%</td></tr>
+        <tr><td>Sector Credit Cost</td><td>0.88%</td><td>0.95%</td><td class="bull">0.85%</td></tr>
+        <tr><td>Sector GNPA</td><td>2.80%</td><td>2.65%</td><td class="bull">2.55%</td></tr>
+        <tr><td>Avg Loan Growth</td><td>+16%</td><td>+11%</td><td class="bull">+13%</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== TAB: BANKING VALUATION ===== -->
+<div id="bkg_valuation" class="tab">
+  <h2>💰 Banking Valuation — P/B vs ROE Framework & Scenario Analysis</h2>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">P/B vs ROE Scatter — Where Is Value?</div>
+      <p style="color:#aaa;font-size:0.85em">Fair Value P/B = ROE / Cost of Equity (Ke ~14%). Banks trading below this line are undervalued vs. ROE delivery.</p>
+      <table>
+        <tr><th>Bank</th><th>ROE (%)</th><th>Fair P/B (x)</th><th>Current P/B (x)</th><th>Premium/Discount</th><th>Verdict</th></tr>
+        <tr>
+          <td>ICICI Bank</td><td>18.5</td><td>1.32</td><td>3.15</td>
+          <td class="red-b">+139%</td><td>Premium justified by franchise quality</td>
+        </tr>
+        <tr>
+          <td>Kotak Bank</td><td>16.8</td><td>1.20</td><td>3.35</td>
+          <td class="red-b">+179%</td><td>Fully priced; await re-rating catalyst</td>
+        </tr>
+        <tr>
+          <td>HDFC Bank</td><td>16.5</td><td>1.18</td><td>1.82</td>
+          <td class="neu-b">+54%</td><td class="bull">Cheapest large-cap — BUY</td>
+        </tr>
+        <tr>
+          <td>Axis Bank</td><td>16.2</td><td>1.16</td><td>1.85</td>
+          <td class="neu-b">+59%</td><td class="bull">Reasonable valuation — BUY</td>
+        </tr>
+        <tr>
+          <td>SBI</td><td>15.4</td><td>1.10</td><td>1.30</td>
+          <td class="bull">+18%</td><td class="bull">Near fair value — ACCUMULATE</td>
+        </tr>
+        <tr>
+          <td>Federal Bank</td><td>14.2</td><td>1.01</td><td>1.38</td>
+          <td class="neu-b">+37%</td><td class="bull">Small premium for growth — BUY</td>
+        </tr>
+        <tr>
+          <td>Bandhan Bank</td><td>10.2</td><td>0.73</td><td>1.05</td>
+          <td class="neu-b">+44%</td><td>Wait for MFI stress to peak</td>
+        </tr>
+        <tr>
+          <td>IndusInd Bank</td><td>1.36*</td><td>0.10*</td><td>0.85</td>
+          <td class="red-b">+750%*</td><td class="red-b">Normalized ROE ~12% justifies 0.85x</td>
+        </tr>
+      </table>
+      <p style="color:#aaa;font-size:0.8em">*IndusInd FY26 ROE distorted by derivative losses. Normalized ROE ~12% gives fair P/B ~0.86x — current 0.85x implies no margin of safety.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">1-Year Forward P/B vs ROE — Top Picks</div>
+      <table>
+        <tr><th>Bank</th><th>FY27E ROE</th><th>FY27E P/B</th><th>FY28E ROE</th><th>FY28E P/B</th><th>Thesis</th></tr>
+        <tr>
+          <td><strong>ICICI Bank</strong></td>
+          <td class="bull">19.5%</td><td>2.85x</td>
+          <td class="bull">20.2%</td><td>2.60x</td>
+          <td>Compounding franchise; re-rating likely</td>
+        </tr>
+        <tr>
+          <td><strong>HDFC Bank</strong></td>
+          <td>17.2%</td><td>1.65x</td>
+          <td>18.5%</td><td>1.50x</td>
+          <td>Merger drag ending; CD ratio improvement</td>
+        </tr>
+        <tr>
+          <td><strong>Axis Bank</strong></td>
+          <td>17.0%</td><td>1.65x</td>
+          <td>18.0%</td><td>1.55x</td>
+          <td>Undervalued vs ROE; execution risk low</td>
+        </tr>
+        <tr>
+          <td><strong>Cholamandalam</strong></td>
+          <td class="bull">20.5%</td><td>3.95x</td>
+          <td class="bull">21.5%</td><td>3.65x</td>
+          <td>Vehicle finance tailwind; ROE expansion</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" class="mt">
+    <div class="card-title">Bear / Base / Bull Scenario — ICICI Bank (Top Pick)</div>
+    <table>
+      <tr><th>Parameter</th><th class="bear">Bear Case</th><th class="base">Base Case</th><th class="bull">Bull Case</th></tr>
+      <tr><td>Loan Growth FY27E</td><td class="bear">10%</td><td class="base">16%</td><td class="bull">20%</td></tr>
+      <tr><td>NIM FY27E</td><td class="bear">4.10%</td><td class="base">4.28%</td><td class="bull">4.45%</td></tr>
+      <tr><td>Credit Cost FY27E</td><td class="bear">0.70%</td><td class="base">0.38%</td><td class="bull">0.25%</td></tr>
+      <tr><td>ROE FY27E</td><td class="bear">16.5%</td><td class="base">19.5%</td><td class="bull">22.0%</td></tr>
+      <tr><td>P/B Target (FY27E)</td><td class="bear">2.30x</td><td class="base">3.00x</td><td class="bull">3.80x</td></tr>
+      <tr><td>BV/Share FY27E (₹)</td><td class="bear">540</td><td class="base">540</td><td class="bull">540</td></tr>
+      <tr><td>Target Price (₹)</td><td class="bear">1,242</td><td class="base">1,620</td><td class="bull">2,052</td></tr>
+      <tr><td>Upside from ₹1,381</td><td class="bear">-10%</td><td class="base">+17%</td><td class="bull">+49%</td></tr>
+      <tr><td>Probability</td><td class="bear">15%</td><td class="base">60%</td><td class="bull">25%</td></tr>
+      <tr><td colspan="4"><strong>Expected Value: ₹1,670 (+21%) — STRONG BUY</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="two-col" class="mt">
+    <div class="card">
+      <div class="card-title">Bear / Base / Bull — HDFC Bank</div>
+      <table>
+        <tr><th>Parameter</th><th class="bear">Bear</th><th class="base">Base</th><th class="bull">Bull</th></tr>
+        <tr><td>CD Ratio (Mar 27)</td><td class="bear">92%</td><td class="base">85%</td><td class="bull">80%</td></tr>
+        <tr><td>Loan Growth FY27E</td><td class="bear">8%</td><td class="base">11%</td><td class="bull">15%</td></tr>
+        <tr><td>NIM FY27E</td><td class="bear">3.45%</td><td class="base">3.62%</td><td class="bull">3.80%</td></tr>
+        <tr><td>P/B Target</td><td class="bear">1.50x</td><td class="base">2.00x</td><td class="bull">2.50x</td></tr>
+        <tr><td>BV/Share FY27E</td><td class="bear">415</td><td class="base">415</td><td class="bull">415</td></tr>
+        <tr><td>Target Price (₹)</td><td class="bear">623</td><td class="base">830</td><td class="bull">1,038</td></tr>
+        <tr><td>Upside from ₹712</td><td class="bear">-12%</td><td class="base">+17%</td><td class="bull">+46%</td></tr>
+        <tr><td>Prob</td><td class="bear">20%</td><td class="base">55%</td><td class="bull">25%</td></tr>
+        <tr><td colspan="4"><strong>EV: ₹847 (+19%) — BUY</strong></td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">Bear / Base / Bull — Cholamandalam</div>
+      <table>
+        <tr><th>Parameter</th><th class="bear">Bear</th><th class="base">Base</th><th class="bull">Bull</th></tr>
+        <tr><td>Loan Growth FY27E</td><td class="bear">14%</td><td class="base">24%</td><td class="bull">30%</td></tr>
+        <tr><td>ROE FY27E</td><td class="bear">16%</td><td class="base">20.5%</td><td class="bull">23%</td></tr>
+        <tr><td>P/B Target</td><td class="bear">3.00x</td><td class="base">4.20x</td><td class="bull">5.50x</td></tr>
+        <tr><td>BV/Share FY27E</td><td class="bear">400</td><td class="base">400</td><td class="bull">400</td></tr>
+        <tr><td>Target Price (₹)</td><td class="bear">1,200</td><td class="base">1,680</td><td class="bull">2,200</td></tr>
+        <tr><td>Upside from ₹1,553</td><td class="bear">-23%</td><td class="base">+8%</td><td class="bull">+42%</td></tr>
+        <tr><td>Prob</td><td class="bear">25%</td><td class="base">50%</td><td class="bull">25%</td></tr>
+        <tr><td colspan="4"><strong>EV: ₹1,640 (+6%) — BUY (Quality)</strong></td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== TAB: BANKING RANKINGS ===== -->
+<div id="bkg_rank" class="tab">
+  <h2>🏆 Banking Sector Rankings & Investment Ratings</h2>
+
+  <div class="card">
+    <div class="card-title">Banking Coverage Rankings — Conviction Order (Oct 2026)</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr>
+        <th>Rank</th><th>Company</th><th>CMP (₹)</th><th>TP (₹)</th><th>Upside</th>
+        <th>Rating</th><th>Weight in Sector</th><th>Investment Thesis (30 words)</th>
+      </tr>
+      <tr>
+        <td><strong>#1</strong></td><td><strong>ICICI Bank</strong></td><td>1,381</td><td>1,700</td>
+        <td class="bull">+23%</td><td class="sb">STRONG BUY</td><td class="bull">30%</td>
+        <td>Best-in-class ROE 18.5%, best asset quality (GNPA 1.53%), retail franchise compounding; re-rating to 3.5x P/B justified</td>
+      </tr>
+      <tr>
+        <td><strong>#2</strong></td><td><strong>HDFC Bank</strong></td><td>712</td><td>850</td>
+        <td class="bull">+19%</td><td class="buy">BUY</td><td class="bull">25%</td>
+        <td>Post-merger drag ending; cheapest large-cap bank at 1.82x P/B; CASA 38% + loan growth re-acceleration = re-rating catalyst</td>
+      </tr>
+      <tr>
+        <td><strong>#3</strong></td><td><strong>Cholamandalam</strong></td><td>1,553</td><td>1,800</td>
+        <td class="bull">+16%</td><td class="buy">BUY</td><td>15%</td>
+        <td>Best vehicle-finance NBFC; ROE 19.4% expanding; benefits from rural demand recovery + rate cycle; superior execution history</td>
+      </tr>
+      <tr>
+        <td><strong>#4</strong></td><td><strong>Axis Bank</strong></td><td>1,236</td><td>1,450</td>
+        <td class="bull">+17%</td><td class="buy">BUY</td><td>12%</td>
+        <td>Transformation complete; highest FII holding (50%) = FII inflow beneficiary; P/E 12.8x cheapest among quality large-caps</td>
+      </tr>
+      <tr>
+        <td><strong>#5</strong></td><td><strong>Federal Bank</strong></td><td>206</td><td>250</td>
+        <td class="bull">+21%</td><td class="buy">BUY</td><td>8%</td>
+        <td>Fastest loan growth (+18%); South India retail franchise; NRI remittance moat; best mid-cap bank risk-reward</td>
+      </tr>
+      <tr>
+        <td><strong>#6</strong></td><td><strong>SBI</strong></td><td>812</td><td>950</td>
+        <td class="bull">+17%</td><td class="acc">ACCUMULATE</td><td>5%</td>
+        <td>Largest Indian bank; dividend yield 3.8%; ROE 15.4% strong for PSU; but government ownership limits re-rating ceiling</td>
+      </tr>
+      <tr>
+        <td><strong>#7</strong></td><td><strong>Kotak Mahindra</strong></td><td>1,942</td><td>2,200</td>
+        <td class="bull">+13%</td><td class="acc">ACCUMULATE</td><td>3%</td>
+        <td>Premium franchise but fully priced at 3.35x P/B; CEO succession risk; await correction to 3.0x P/B for BUY</td>
+      </tr>
+      <tr>
+        <td><strong>#8</strong></td><td><strong>Bandhan Bank</strong></td><td>160</td><td>175</td>
+        <td class="neu-b">+9%</td><td class="hold">HOLD</td><td>2%</td>
+        <td>MFI stress cycle not over; GNPA 4.15%; need 2 clean quarters before upgrading; high NIM 7.2% = eventual opportunity</td>
+      </tr>
+      <tr>
+        <td><strong>AVOID</strong></td><td><strong>IndusInd Bank</strong></td><td>863</td><td>900</td>
+        <td class="neu-b">+4%</td><td class="uw">UNDERWEIGHT</td><td>0%</td>
+        <td>Derivative loss scandal; GNPA 3.25% rising; ROE 1.36% crater; management credibility impaired; avoid until 3 clean quarters</td>
+      </tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="two-col" class="mt">
+    <div class="card">
+      <div class="card-title">Sector Scorecard — Banking (12 Criteria)</div>
+      <table>
+        <tr><th>Criteria</th><th>Weight</th><th>Score (/10)</th><th>Weighted</th></tr>
+        <tr><td>Macro Alignment</td><td>12%</td><td class="bull">8.5</td><td class="bull">10.2</td></tr>
+        <tr><td>Earnings Momentum</td><td>10%</td><td>7.0</td><td>7.0</td></tr>
+        <tr><td>Valuation Attractiveness</td><td>10%</td><td class="bull">8.0</td><td class="bull">8.0</td></tr>
+        <tr><td>Earnings Quality</td><td>8%</td><td>7.5</td><td>6.0</td></tr>
+        <tr><td>Balance Sheet Strength</td><td>8%</td><td>8.0</td><td>6.4</td></tr>
+        <tr><td>Cash Flow Generation</td><td>8%</td><td>7.0</td><td>5.6</td></tr>
+        <tr><td>Competitive Positioning</td><td>7%</td><td>7.5</td><td>5.3</td></tr>
+        <tr><td>Management Quality</td><td>7%</td><td>7.0</td><td>4.9</td></tr>
+        <tr><td>Regulatory Environment</td><td>6%</td><td>6.5</td><td>3.9</td></tr>
+        <tr><td>FII/DII Flows</td><td>8%</td><td class="bull">8.5</td><td class="bull">6.8</td></tr>
+        <tr><td>Technical Setup</td><td>8%</td><td>6.5</td><td>5.2</td></tr>
+        <tr><td>Event Catalyst</td><td>8%</td><td class="bull">8.0</td><td class="bull">6.4</td></tr>
+        <tr class="row-note"><td><strong>TOTAL</strong></td><td><strong>100%</strong></td><td></td><td class="bull"><strong>75.7 / 100</strong></td></tr>
+      </table>
+      <p style="color:#aaa;font-size:0.8em">Score 75.7 = <strong>OVERWEIGHT</strong> sector; 2nd highest after Pharma (78.2)</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Banking Sector Portfolio — Recommended Allocation</div>
+      <table>
+        <tr><th>Stock</th><th>% of Banking Bucket</th><th>Category</th><th>Risk</th></tr>
+        <tr><td>ICICI Bank</td><td class="bull">30%</td><td>Core-Large</td><td>Low</td></tr>
+        <tr><td>HDFC Bank</td><td class="bull">25%</td><td>Core-Large</td><td>Low</td></tr>
+        <tr><td>Cholamandalam</td><td>15%</td><td>Quality-NBFC</td><td>Med</td></tr>
+        <tr><td>Axis Bank</td><td>12%</td><td>Core-Large</td><td>Low-Med</td></tr>
+        <tr><td>Federal Bank</td><td>8%</td><td>Mid-Cap Alpha</td><td>Med</td></tr>
+        <tr><td>SBI</td><td>5%</td><td>Dividend-PSU</td><td>Low</td></tr>
+        <tr><td>Kotak Mahindra</td><td>3%</td><td>Quality Hold</td><td>Low</td></tr>
+        <tr><td>Bandhan Bank</td><td>2%</td><td>Tactical Watch</td><td>High</td></tr>
+        <tr><td>IndusInd Bank</td><td class="red-b">0%</td><td>AVOID</td><td class="red-b">Very High</td></tr>
+        <tr class="row-note"><td><strong>Total</strong></td><td><strong>100%</strong></td><td></td><td></td></tr>
+      </table>
+      <p style="color:#aaa;font-size:0.8em">Banking = 22% of total portfolio (Stage 4). Within banking bucket, above weights apply.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== TAB: NEW-AGE OVERVIEW ===== -->
+<div id="na_overview" class="tab">
+  <h2>🚀 New-Age / Digital Sector — Deep Dive Overview</h2>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Sector Thesis (Oct 2026)</div>
+      <p><strong>The Great Indian Profitability Inflection</strong> — After the 2022–23 funding winter and 2024–25 correction, India's new-age digital sector is at a defining juncture. ~60% of listed new-age companies have now crossed EBITDA breakeven (vs. 20% in 2023). The market is bifurcating sharply: <strong>profitable compounders vs. structural cash burners</strong>.</p>
+      <p>The key framework: <strong>Unit Economics Viability + Profitability Stage + Cash Runway</strong> determines investment merit. Companies that converted GMV/GOV growth into positive contribution margins AND are now approaching operating leverage are in a sweet spot. Companies still burning cash at scale without a clear path to profitability are value traps.</p>
+      <p><strong>Top-line growth alone is dead.</strong> Market now rewards PAT margin expansion, FCF generation, and ROCE improvement. The era of "grow at all costs" is definitively over.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Profitability Stage Map (Oct 2026)</div>
+      <table>
+        <tr><th>Stage</th><th>Description</th><th>Companies</th></tr>
+        <tr>
+          <td class="bull"><strong>Stage 5</strong></td>
+          <td>PAT profitable, FCF positive, scaling</td>
+          <td class="bull">IndiaMART, CarTrade, Naukri, PB Fintech, Ixigo</td>
+        </tr>
+        <tr>
+          <td class="bull"><strong>Stage 4</strong></td>
+          <td>EBITDA positive, PAT near-break or positive</td>
+          <td class="bull">Eternal (Zomato), Paytm, Honasa, Delhivery</td>
+        </tr>
+        <tr>
+          <td class="neu-b"><strong>Stage 3</strong></td>
+          <td>Contribution margin +ve, EBITDA -ve</td>
+          <td class="neu-b">Nykaa, Ola Electric (aspirational)</td>
+        </tr>
+        <tr>
+          <td class="red-b"><strong>Stage 2</strong></td>
+          <td>Gross margin +ve, contribution margin -ve</td>
+          <td class="red-b">Swiggy (contribution margin barely +ve)</td>
+        </tr>
+        <tr>
+          <td class="red-b"><strong>Stage 1</strong></td>
+          <td>Gross margin -ve; pre-unit economics</td>
+          <td class="red-b">—</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Unit Economics Framework</div>
+      <table>
+        <tr><th>Metric</th><th>Definition</th><th>Good Benchmark</th></tr>
+        <tr><td>GMV/GOV</td><td>Gross merchandise/order value (before discounts)</td><td>Growing 20%+ YoY</td></tr>
+        <tr><td>Take Rate</td><td>Revenue / GMV</td><td>&gt;15% for marketplace</td></tr>
+        <tr><td>Contribution Margin</td><td>Revenue - COGS - Delivery - Marketing per order</td><td>&gt;0% (ideally 5%+)</td></tr>
+        <tr><td>CAC</td><td>Customer Acquisition Cost</td><td>Declining YoY</td></tr>
+        <tr><td>LTV</td><td>Lifetime value of customer</td><td>LTV:CAC &gt; 3x</td></tr>
+        <tr><td>Cohort Retention</td><td>% of Year-1 cohort active in Year-3</td><td>&gt;50% for strong moats</td></tr>
+        <tr><td>EBITDA Margin</td><td>EBITDA / Revenue</td><td>Path to 15%+</td></tr>
+        <tr><td>FCF Conversion</td><td>FCF / EBITDA</td><td>&gt;80%</td></tr>
+        <tr><td>Cash Runway</td><td>Net Cash / Monthly Cash Burn</td><td>&gt;24 months</td></tr>
+        <tr><td>Profitability Stage</td><td>See stage map →</td><td>Stage 4 or 5</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">Valuation Framework for New-Age</div>
+      <table>
+        <tr><th>Stage</th><th>Preferred Metric</th><th>Why</th></tr>
+        <tr><td>Stage 5</td><td>P/E, FCF Yield, EV/EBIT</td><td>Traditional cash earnings</td></tr>
+        <tr><td>Stage 4</td><td>EV/EBITDA, P/S with margin path</td><td>EBITDA emerging</td></tr>
+        <tr><td>Stage 3</td><td>EV/Gross Profit, P/GMV</td><td>Revenue quality proxy</td></tr>
+        <tr><td>Stage 2</td><td>EV/Revenue with caution</td><td>Speculative; execution risk</td></tr>
+      </table>
+      <br>
+      <p><strong>Reverse DCF Check:</strong> For expensive valuations (P/E &gt;100x), back-calculate implied growth rate needed to justify current price. If implied growth &gt; historical sector maximum, the stock is priced for perfection.</p>
+      <table>
+        <tr><th>Stock</th><th>Current P/E</th><th>Implied 10Y Growth</th><th>Feasibility</th></tr>
+        <tr><td>Eternal (Zomato)</td><td class="red-b">714x</td><td>~45% CAGR</td><td class="red-b">Difficult</td></tr>
+        <tr><td>Nykaa</td><td class="red-b">362x</td><td>~38% CAGR</td><td class="red-b">Difficult</td></tr>
+        <tr><td>IndiaMART</td><td>52x</td><td>~22% CAGR</td><td class="bull">Feasible</td></tr>
+        <tr><td>PB Fintech</td><td>95x</td><td>~32% CAGR</td><td class="neu-b">Achievable</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">New-Age Sector — Bull / Base / Bear Scenarios</div>
+    <div class="two-col">
+      <div>
+        <p><strong class="bull">Bull Case (20% prob):</strong> India digital economy hits $500Bn by FY28 vs $250Bn today. Profitable companies see 25–30% PAT CAGR. Sector re-rates to 2x current multiples as FCF yields become visible. Eternal reaches EBITDA margin 10%, Paytm scales financial services GMV 3x.</p>
+        <p><strong class="neu-b">Base Case (55% prob):</strong> Sector consolidation continues. Top 5 profitable names (IndiaMART, Naukri, CarTrade, PB Fintech, Ixigo) compound at 18–22% CAGR. Stage 4 companies (Eternal, Paytm) expand margins by 200–300bps YoY. Swiggy and Ola Electric remain structurally challenged.</p>
+      </div>
+      <div>
+        <p><strong class="red-b">Bear Case (25% prob):</strong> Global risk-off triggers multiple compression. Loss-making cos face existential funding pressure. Eternal/Swiggy quick-commerce war intensifies, destroying economics. Ola Electric loses EV market share to Bajaj/TVS. Only Stage 5 companies survive re-rating intact.</p>
+        <p><strong>Key Risks:</strong> Regulatory risk (RBI on BNPL, SEBI on algo trading), competition from global players (Amazon Fresh, Jio Financial), talent costs resurgence, broader market PE compression amplifying high-multiple stocks' drawdown.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== TAB: NEW-AGE PEER TABLE ===== -->
+<div id="na_peer" class="tab">
+  <h2>📊 New-Age / Digital Companies — Peer Comparison</h2>
+  <p style="color:#aaa;font-size:0.85em">All data from Screener.in (19 Oct 2026) | FY26 = Full year reported | TTM where FY26 not yet fully reported | Prices as of 19 Oct 2026</p>
+
+  <div class="card">
+    <div class="card-title">Price, Valuation & Profitability Overview</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr>
+        <th>Company</th><th>CMP (₹)</th><th>Mcap (₹Cr)</th>
+        <th>P/E (x)</th><th>EV/EBITDA</th><th>P/S (x)</th>
+        <th>Revenue (₹Cr)</th><th>EBITDA Margin</th><th>PAT (₹Cr)</th>
+        <th>Stage</th><th>Rating</th>
+      </tr>
+      <tr>
+        <td><strong>Eternal (Zomato)</strong></td><td>320</td><td>2,86,000</td>
+        <td class="red-b">714x</td><td class="red-b">185x</td><td>14.5x</td>
+        <td>19,748</td><td class="bull">+2.1%</td><td class="neu-b">400</td>
+        <td class="bull">Stage 4→5</td><td class="acc">ACCUMULATE</td>
+      </tr>
+      <tr>
+        <td><strong>Swiggy</strong></td><td>229</td><td>48,700</td>
+        <td class="red-b">Loss</td><td class="red-b">Loss</td><td>2.2x</td>
+        <td>22,100</td><td class="red-b">-14%</td><td class="red-b">-4,154</td>
+        <td class="red-b">Stage 2</td><td class="avoid">AVOID</td>
+      </tr>
+      <tr>
+        <td><strong>PB Fintech</strong></td><td>1,035</td><td>47,500</td>
+        <td>95x</td><td>58x</td><td>8.5x</td>
+        <td>5,600</td><td class="bull">+12%</td><td class="bull">500</td>
+        <td class="bull">Stage 5</td><td class="buy">BUY</td>
+      </tr>
+      <tr>
+        <td><strong>Paytm (One97)</strong></td><td>1,686</td><td>1,07,100</td>
+        <td>180x</td><td>75x</td><td>11x</td>
+        <td>9,750</td><td class="bull">+6%</td><td class="bull">600</td>
+        <td class="bull">Stage 4</td><td class="acc">ACCUMULATE</td>
+      </tr>
+      <tr>
+        <td><strong>Naukri (Info Edge)</strong></td><td>7,935</td><td>68,500</td>
+        <td>56x</td><td>38x</td><td>12x</td>
+        <td>5,700</td><td class="bull">+31%</td><td class="bull">1,220</td>
+        <td class="bull">Stage 5</td><td class="buy">BUY</td>
+      </tr>
+      <tr>
+        <td><strong>IndiaMART</strong></td><td>1,596</td><td>10,000</td>
+        <td>52x</td><td>35x</td><td>8x</td>
+        <td>1,250</td><td class="bull">+35%</td><td class="bull">192</td>
+        <td class="bull">Stage 5</td><td class="sb">STRONG BUY</td>
+      </tr>
+      <tr>
+        <td><strong>Nykaa (FSN)</strong></td><td>337</td><td>29,200</td>
+        <td class="red-b">362x</td><td class="red-b">145x</td><td>4.5x</td>
+        <td>6,500</td><td class="neu-b">+4%</td><td class="neu-b">80</td>
+        <td class="neu-b">Stage 3→4</td><td class="hold">HOLD</td>
+      </tr>
+      <tr>
+        <td><strong>Delhivery</strong></td><td>400</td><td>28,900</td>
+        <td>350x</td><td>55x</td><td>3.5x</td>
+        <td>8,300</td><td class="neu-b">+1.5%</td><td class="neu-b">82</td>
+        <td class="bull">Stage 4</td><td class="acc">ACCUMULATE</td>
+      </tr>
+      <tr>
+        <td><strong>Ola Electric</strong></td><td>34.5</td><td>15,200</td>
+        <td class="red-b">Loss</td><td class="red-b">Loss</td><td>1.5x</td>
+        <td>10,000</td><td class="red-b">-18%</td><td class="red-b">-1,833</td>
+        <td class="red-b">Stage 2</td><td class="avoid">AVOID</td>
+      </tr>
+      <tr>
+        <td><strong>Honasa (Mamaearth)</strong></td><td>441</td><td>14,200</td>
+        <td>88x</td><td>52x</td><td>4.0x</td>
+        <td>3,550</td><td class="neu-b">+10%</td><td class="neu-b">160</td>
+        <td class="bull">Stage 4</td><td class="hold">HOLD</td>
+      </tr>
+      <tr>
+        <td><strong>CarTrade Tech</strong></td><td>3,033</td><td>7,200</td>
+        <td>62x</td><td>42x</td><td>12x</td>
+        <td>600</td><td class="bull">+33%</td><td class="bull">116</td>
+        <td class="bull">Stage 5</td><td class="buy">BUY</td>
+      </tr>
+      <tr>
+        <td><strong>Ixigo (Le Travenues)</strong></td><td>157</td><td>8,100</td>
+        <td>55x</td><td>32x</td><td>6x</td>
+        <td>1,350</td><td class="bull">+15%</td><td class="bull">147</td>
+        <td class="bull">Stage 5</td><td class="buy">BUY</td>
+      </tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="card" class="mt">
+    <div class="card-title">Operational Metrics — GMV/GOV, Take Rate, Cash Position</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr>
+        <th>Company</th><th>GMV/GOV FY26 (₹Cr)</th><th>Growth YoY</th>
+        <th>Take Rate</th><th>Revenue Growth YoY</th>
+        <th>Net Cash (₹Cr)</th><th>Cash Runway</th><th>FCF FY26 (₹Cr)</th>
+      </tr>
+      <tr>
+        <td><strong>Eternal (Zomato)</strong></td>
+        <td>1,20,000 (GOV)</td><td class="bull">+68%</td>
+        <td>16.5%</td><td class="bull">+74%</td>
+        <td class="bull">+12,000</td><td class="bull">5+ years</td><td class="bull">+2,100</td>
+      </tr>
+      <tr>
+        <td><strong>Swiggy</strong></td>
+        <td>95,000 (GOV)</td><td class="bull">+42%</td>
+        <td>23.3%</td><td class="bull">+35%</td>
+        <td class="neu-b">+5,200</td><td class="neu-b">18 months</td><td class="red-b">-3,809</td>
+      </tr>
+      <tr>
+        <td><strong>PB Fintech</strong></td>
+        <td>₹22,000Cr (GWP)</td><td class="bull">+32%</td>
+        <td>25.5%</td><td class="bull">+28%</td>
+        <td class="bull">+3,800</td><td class="bull">4+ years</td><td class="bull">+480</td>
+      </tr>
+      <tr>
+        <td><strong>Paytm</strong></td>
+        <td>₹2.4L Cr (GMV)</td><td class="bull">+25%</td>
+        <td>4.1%</td><td class="bull">+18%</td>
+        <td class="bull">+8,500</td><td class="bull">5+ years</td><td class="bull">+350</td>
+      </tr>
+      <tr>
+        <td><strong>IndiaMART</strong></td>
+        <td>N/A (B2B leads)</td><td>N/A</td>
+        <td>N/A</td><td class="bull">+18%</td>
+        <td class="bull">+3,792</td><td class="bull">7+ years</td><td class="bull">+420</td>
+      </tr>
+      <tr>
+        <td><strong>Nykaa</strong></td>
+        <td>₹18,000Cr (GMV)</td><td class="bull">+22%</td>
+        <td>36%</td><td class="bull">+24%</td>
+        <td class="neu-b">+800</td><td class="neu-b">3 years</td><td class="neu-b">+120</td>
+      </tr>
+      <tr>
+        <td><strong>Delhivery</strong></td>
+        <td>1.2Bn parcels</td><td class="bull">+22%</td>
+        <td>N/A</td><td class="bull">+20%</td>
+        <td class="neu-b">+1,200</td><td class="bull">3+ years</td><td class="neu-b">+180</td>
+      </tr>
+      <tr>
+        <td><strong>Ola Electric</strong></td>
+        <td>3.8L units (EV)</td><td class="red-b">-8%</td>
+        <td>N/A</td><td class="red-b">-5%</td>
+        <td class="red-b">+2,100</td><td class="red-b">14 months</td><td class="red-b">-2,400</td>
+      </tr>
+      <tr>
+        <td><strong>CarTrade</strong></td>
+        <td>8.5L listings</td><td class="bull">+18%</td>
+        <td>N/A</td><td class="bull">+22%</td>
+        <td class="bull">+1,800</td><td class="bull">8+ years</td><td class="bull">+195</td>
+      </tr>
+      <tr>
+        <td><strong>Ixigo</strong></td>
+        <td>₹15,000Cr (GTV)</td><td class="bull">+38%</td>
+        <td>9.0%</td><td class="bull">+32%</td>
+        <td class="bull">+1,200</td><td class="bull">5+ years</td><td class="bull">+165</td>
+      </tr>
+    </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== TAB: NEW-AGE RANKINGS ===== -->
+<div id="na_rank" class="tab">
+  <h2>🏆 New-Age Sector Rankings & Investment Ratings</h2>
+
+  <div class="card">
+    <div class="card-title">Top 5 — Best Risk-Reward in New-Age (Oct 2026)</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr>
+        <th>Rank</th><th>Company</th><th>CMP (₹)</th><th>TP (₹)</th><th>Upside</th>
+        <th>Rating</th><th>Why NOW</th>
+      </tr>
+      <tr>
+        <td><strong>#1</strong></td><td><strong>IndiaMART</strong></td><td>1,596</td><td>2,200</td>
+        <td class="bull">+38%</td><td class="sb">STRONG BUY</td>
+        <td>Stage 5 profitable, cash ₹3,792Cr (38% of Mcap), ROCE 28%, near-monopoly B2B SME marketplace, P/E 52x is cheap for quality compounder growing 18%+ with no capex needs</td>
+      </tr>
+      <tr>
+        <td><strong>#2</strong></td><td><strong>Ixigo</strong></td><td>157</td><td>225</td>
+        <td class="bull">+43%</td><td class="buy">BUY</td>
+        <td>Undiscovered gem; 5Y revenue CAGR 55%, FCF positive, GTV ₹15,000Cr growing 38%, P/E 55x for 35% EPS CAGR = PEG &lt;1.6x; Tier 2/3 India travel tailwind</td>
+      </tr>
+      <tr>
+        <td><strong>#3</strong></td><td><strong>PB Fintech</strong></td><td>1,035</td><td>1,400</td>
+        <td class="bull">+35%</td><td class="buy">BUY</td>
+        <td>Insurance distribution monopoly (Policybazaar), just turned PAT-profitable FY26, GWP growing 32%, cash ₹3,800Cr, unique regulatory moat vs. banks in insurance comparison</td>
+      </tr>
+      <tr>
+        <td><strong>#4</strong></td><td><strong>Naukri (Info Edge)</strong></td><td>7,935</td><td>9,500</td>
+        <td class="bull">+20%</td><td class="buy">BUY</td>
+        <td>Revenue CAGR 22%, OPM 31%, dominant in India's hiring market + Zomato/Policybazaar investor P/E. IT sector hiring recovery = direct tailwind</td>
+      </tr>
+      <tr>
+        <td><strong>#5</strong></td><td><strong>CarTrade Tech</strong></td><td>3,033</td><td>3,800</td>
+        <td class="bull">+25%</td><td class="buy">BUY</td>
+        <td>Highest EBITDA margin in New-Age (33%), debt-free, cash ₹1,800Cr (25% of Mcap), used-car market secular growth, B2B+B2C flywheel, most underrated profitable new-age</td>
+      </tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="card" class="mt">
+    <div class="card-title">5 to AVOID — Value Traps & Cash Burners</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr>
+        <th>Rank</th><th>Company</th><th>CMP (₹)</th><th>Why AVOID</th><th>Risk Level</th>
+      </tr>
+      <tr>
+        <td><strong>Avoid #1</strong></td><td><strong class="red-b">Swiggy</strong></td><td>229</td>
+        <td>FCF -₹3,809Cr, OPM -14%, loss ₹4,154Cr FY26. Quick-commerce capex war vs. Eternal has no end in sight. Cash runway 18 months — needs further dilution. -41% from IPO ₹390.</td>
+        <td class="red-b">VERY HIGH</td>
+      </tr>
+      <tr>
+        <td><strong>Avoid #2</strong></td><td><strong class="red-b">Ola Electric</strong></td><td>34.5</td>
+        <td>Loss ₹1,833Cr, revenue declining -5% (market share loss to Bajaj Chetak, TVS iQube), cash runway 14 months, FAME subsidy uncertainty, quality complaints. -85% from ₹233 high.</td>
+        <td class="red-b">VERY HIGH</td>
+      </tr>
+      <tr>
+        <td><strong>Avoid #3</strong></td><td><strong class="red-b">Nykaa (FSN)</strong></td><td>337</td>
+        <td>P/E 362x for 4% EBITDA margin. PAT ₹80Cr on revenue ₹6,500Cr = 1.2% PAT margin. Competition from Tira (Reliance), Amazon Beauty intensifying. Growth decelerating to 24% vs. 40% IPO promise.</td>
+        <td class="red-b">HIGH</td>
+      </tr>
+      <tr>
+        <td><strong>Avoid #4</strong></td><td><strong class="red-b">Eternal (Zomato)</strong></td><td>320</td>
+        <td>Not fundamental AVOID but valuation risk — P/E 714x implies 45% CAGR for 10 years. Blinkit quick-commerce dark store expansion capex is significant. Only buy on &gt;20% correction to sub-₹255 levels.</td>
+        <td class="neu-b">MEDIUM (Valuation Risk)</td>
+      </tr>
+      <tr>
+        <td><strong>Avoid #5</strong></td><td><strong class="red-b">Honasa (Mamaearth)</strong></td><td>441</td>
+        <td>D2C brands are not moats in India. Amazon Basics, Reliance Tira, private labels threatening. OPM 10% decent but P/E 88x prices in perfection. Founders sold ₹1,655Cr at IPO — skin in game concerns.</td>
+        <td class="red-b">HIGH</td>
+      </tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="two-col" class="mt">
+    <div class="card">
+      <div class="card-title">New-Age Sector Scorecard (12 Criteria)</div>
+      <table>
+        <tr><th>Criteria</th><th>Weight</th><th>Score /10</th><th>Weighted</th></tr>
+        <tr><td>Macro Alignment</td><td>12%</td><td>7.0</td><td>8.4</td></tr>
+        <tr><td>Earnings Momentum</td><td>10%</td><td>6.5</td><td>6.5</td></tr>
+        <tr><td>Valuation Attractiveness</td><td>10%</td><td class="red-b">3.0</td><td class="red-b">3.0</td></tr>
+        <tr><td>Earnings Quality</td><td>8%</td><td>5.5</td><td>4.4</td></tr>
+        <tr><td>Balance Sheet Strength</td><td>8%</td><td>6.0</td><td>4.8</td></tr>
+        <tr><td>Cash Flow Generation</td><td>8%</td><td>5.0</td><td>4.0</td></tr>
+        <tr><td>Competitive Positioning</td><td>7%</td><td class="bull">8.5</td><td class="bull">6.0</td></tr>
+        <tr><td>Management Quality</td><td>7%</td><td>7.0</td><td>4.9</td></tr>
+        <tr><td>Regulatory Environment</td><td>6%</td><td>5.5</td><td>3.3</td></tr>
+        <tr><td>FII/DII Flows</td><td>8%</td><td>6.0</td><td>4.8</td></tr>
+        <tr><td>Technical Setup</td><td>8%</td><td>5.5</td><td>4.4</td></tr>
+        <tr><td>Event Catalyst</td><td>8%</td><td>7.0</td><td>5.6</td></tr>
+        <tr class="row-note"><td><strong>TOTAL</strong></td><td><strong>100%</strong></td><td></td><td class="neu-b"><strong>60.1 / 100</strong></td></tr>
+      </table>
+      <p style="color:#aaa;font-size:0.8em">Score 60.1 = <strong>NEUTRAL/SELECTIVE</strong> — only buy profitable names (Stage 4/5). Avoid basket approach.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">New-Age Portfolio — Recommended Allocation</div>
+      <table>
+        <tr><th>Stock</th><th>% of New-Age Bucket</th><th>Category</th></tr>
+        <tr><td>IndiaMART</td><td class="bull">28%</td><td>Core-Compounder</td></tr>
+        <tr><td>PB Fintech</td><td class="bull">22%</td><td>Core-Growth</td></tr>
+        <tr><td>Ixigo</td><td>18%</td><td>Mid-Cap Alpha</td></tr>
+        <tr><td>Naukri</td><td>15%</td><td>Core-Quality</td></tr>
+        <tr><td>CarTrade</td><td>10%</td><td>Deep-Value Quality</td></tr>
+        <tr><td>Delhivery</td><td>7%</td><td>Tactical/Speculative</td></tr>
+        <tr><td>Paytm</td><td>0%*</td><td>WATCHLIST</td></tr>
+        <tr><td>Eternal/Zomato</td><td>0%*</td><td>WATCHLIST — BUY on dip</td></tr>
+        <tr><td>Swiggy</td><td class="red-b">0%</td><td>AVOID</td></tr>
+        <tr><td>Ola Electric</td><td class="red-b">0%</td><td>AVOID</td></tr>
+        <tr class="row-note"><td><strong>Total</strong></td><td><strong>100%</strong></td><td></td></tr>
+      </table>
+      <p style="color:#aaa;font-size:0.8em">*Paytm, Eternal: Watchlist — add only on 15–20% correction from current levels. New-Age = 10% of total portfolio.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== TAB: PORTFOLIO ===== -->
+<div id="portfolio" class="tab">
+  <h2>💼 Combined Portfolio — Banking + New-Age (Stage 2 Output)</h2>
+  <p style="color:#aaa;font-size:0.85em">Institutional equity portfolio combining Stage 2 Banking and New-Age sector deep dives | Oct 2026 | 12–24 month horizon</p>
+
+  <div class="card">
+    <div class="card-title">Combined Stage 2 Portfolio — 14 Positions</div>
+    <div class="tbl-wrap">
+    <table>
+      <tr>
+        <th>Sector</th><th>Company</th><th>CMP (₹)</th><th>TP (₹)</th>
+        <th>Upside</th><th>Rating</th>
+        <th>% of Portfolio</th><th>Horizon</th><th>Risk</th>
+      </tr>
+      <!-- Banking: 22% total -->
+      <tr class="row-banking">
+        <td rowspan="6"><strong>🏦 Banking</strong><br/>(22% total)</td>
+        <td>ICICI Bank</td><td>1,381</td><td>1,700</td>
+        <td class="bull">+23%</td><td class="sb">STRONG BUY</td>
+        <td class="bull">6.6%</td><td>12–18M</td><td>Low</td>
+      </tr>
+      <tr>
+        <td>HDFC Bank</td><td>712</td><td>850</td>
+        <td class="bull">+19%</td><td class="buy">BUY</td>
+        <td class="bull">5.5%</td><td>12–24M</td><td>Low</td>
+      </tr>
+      <tr>
+        <td>Cholamandalam</td><td>1,553</td><td>1,800</td>
+        <td class="bull">+16%</td><td class="buy">BUY</td>
+        <td>3.3%</td><td>12–24M</td><td>Med</td>
+      </tr>
+      <tr>
+        <td>Axis Bank</td><td>1,236</td><td>1,450</td>
+        <td class="bull">+17%</td><td class="buy">BUY</td>
+        <td>2.6%</td><td>12–18M</td><td>Low-Med</td>
+      </tr>
+      <tr>
+        <td>Federal Bank</td><td>206</td><td>250</td>
+        <td class="bull">+21%</td><td class="buy">BUY</td>
+        <td>1.8%</td><td>12–18M</td><td>Med</td>
+      </tr>
+      <tr>
+        <td>SBI</td><td>812</td><td>950</td>
+        <td class="bull">+17%</td><td class="acc">ACCUMULATE</td>
+        <td>1.1%</td><td>18–24M</td><td>Low</td>
+      </tr>
+      <!-- New-Age: 10% total -->
+      <tr class="row-newage">
+        <td rowspan="6"><strong>🚀 New-Age</strong><br/>(10% total)</td>
+        <td>IndiaMART</td><td>1,596</td><td>2,200</td>
+        <td class="bull">+38%</td><td class="sb">STRONG BUY</td>
+        <td class="bull">2.8%</td><td>18–24M</td><td>Low</td>
+      </tr>
+      <tr>
+        <td>PB Fintech</td><td>1,035</td><td>1,400</td>
+        <td class="bull">+35%</td><td class="buy">BUY</td>
+        <td class="bull">2.2%</td><td>18–24M</td><td>Med</td>
+      </tr>
+      <tr>
+        <td>Ixigo</td><td>157</td><td>225</td>
+        <td class="bull">+43%</td><td class="buy">BUY</td>
+        <td>1.8%</td><td>18–24M</td><td>Med</td>
+      </tr>
+      <tr>
+        <td>Naukri (Info Edge)</td><td>7,935</td><td>9,500</td>
+        <td class="bull">+20%</td><td class="buy">BUY</td>
+        <td>1.5%</td><td>12–18M</td><td>Low</td>
+      </tr>
+      <tr>
+        <td>CarTrade Tech</td><td>3,033</td><td>3,800</td>
+        <td class="bull">+25%</td><td class="buy">BUY</td>
+        <td>1.0%</td><td>18–24M</td><td>Med</td>
+      </tr>
+      <tr>
+        <td>Delhivery</td><td>400</td><td>480</td>
+        <td class="bull">+20%</td><td class="acc">ACCUMULATE</td>
+        <td>0.7%</td><td>18–24M</td><td>Med-High</td>
+      </tr>
+      <!-- Remaining 68% -->
+      <tr class="row-empty">
+        <td colspan="2"><em>Other Sectors (Pharma, IT, Infra — Stage 3/4)</em></td>
+        <td colspan="6" style="color:#888">68% — to be allocated in Stage 3 & 4</td>
+        <td>68%</td><td>—</td><td>—</td>
+      </tr>
+      <tr class="row-total">
+        <td colspan="2"><strong>TOTAL (Stage 2 Positions)</strong></td>
+        <td colspan="6"></td>
+        <td><strong>32%</strong></td><td></td><td></td>
+      </tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="two-col" class="mt">
+    <div class="card">
+      <div class="card-title">Portfolio Expected Returns — Weighted Average</div>
+      <table>
+        <tr><th>Scenario</th><th>Banking P-Weighted Return</th><th>New-Age P-Weighted Return</th><th>Stage 2 Portfolio Return</th></tr>
+        <tr><td class="bull">Bull (22.5% prob)</td><td class="bull">+32%</td><td class="bull">+58%</td><td class="bull">+38%</td></tr>
+        <tr><td class="base">Base (57.5% prob)</td><td class="base">+18%</td><td class="base">+28%</td><td class="base">+20%</td></tr>
+        <tr><td class="bear">Bear (20% prob)</td><td class="bear">-8%</td><td class="bear">-18%</td><td class="bear">-10%</td></tr>
+        <tr class="row-note"><td><strong>Expected Value</strong></td><td class="bull"><strong>+18.4%</strong></td><td class="bull"><strong>+24.3%</strong></td><td class="bull"><strong>+19.0%</strong></td></tr>
+      </table>
+      <p style="color:#aaa;font-size:0.8em">12-month forward returns. Banking EV 18.4% > Nifty base case 10% = significant alpha opportunity</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Stage 2 Key Portfolio Metrics</div>
+      <table>
+        <tr><th>Metric</th><th>Banking Sleeve</th><th>New-Age Sleeve</th><th>Combined</th></tr>
+        <tr><td>No. of Positions</td><td>6 (+ 1 HOLD)</td><td>6 (active)</td><td>12</td></tr>
+        <tr><td>Avg Upside to TP</td><td class="bull">+19%</td><td class="bull">+30%</td><td class="bull">+23%</td></tr>
+        <tr><td>Avg P/E (FY27E)</td><td>14x</td><td>62x</td><td>28x (blended)</td></tr>
+        <tr><td>Weighted ROE</td><td class="bull">17.5%</td><td class="bull">22%</td><td>18.5%</td></tr>
+        <tr><td>Avg FCF Yield</td><td>4.2%</td><td>1.8%</td><td>3.4%</td></tr>
+        <tr><td>Portfolio Beta</td><td>1.1</td><td>1.4</td><td>1.2</td></tr>
+        <tr><td>Max Drawdown Risk</td><td class="neu-b">18%</td><td class="red-b">28%</td><td class="neu-b">21%</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" class="mt">
+    <div class="card-title">Stage 2 — Conviction Summary & Next Steps</div>
+    <div class="two-col">
+      <div>
+        <p><strong>Banking — OVERWEIGHT (Target 22% of Final Portfolio):</strong></p>
+        <ul>
+          <li>ICICI Bank remains our top conviction across all sectors — best risk-reward in Indian equities</li>
+          <li>HDFC Bank is the contrarian play — cheapest quality bank at 1.82x P/B, merger drag resolving</li>
+          <li>Rate easing cycle provides 12–18 month sectoral tailwind; NIM trough Q2FY27</li>
+          <li>Key monitorable: Q3FY27 NIM prints (Dec 2026 results); credit growth data</li>
+          <li>AVOID: IndusInd — do not bottom-fish until 3 consecutive clean quarters confirmed</li>
+        </ul>
+      </div>
+      <div>
+        <p><strong>New-Age — SELECTIVE (Target 10% of Final Portfolio):</strong></p>
+        <ul>
+          <li>Only profitable, FCF-positive names qualify — IndiaMART, Ixigo, PB Fintech are our highest conviction</li>
+          <li>Valuation discipline critical — avoid P/E &gt;100x names (Eternal at 714x, Nykaa at 362x) at current levels</li>
+          <li>Structural AVOID: Swiggy (FCF -₹3,809Cr), Ola Electric (-85% from peak, losing share)</li>
+          <li>Watchlist: Eternal, Paytm — BUY only on 15–20% correction</li>
+          <li>Stage 3 (Unit Economics Deep Dive): Eternal, Swiggy, PB Fintech cohort-level analysis next</li>
+        </ul>
+      </div>
+    </div>
+    <hr style="border-color:#333;margin:1rem 0">
+    <p><strong>Pending Stages:</strong></p>
+    <ul>
+      <li><strong>Stage 3:</strong> New-Age Unit Economics Deep Dive — GOV per order, CAC/LTV breakdown, dark store economics for Eternal vs Swiggy, Paytm financial services GMV decomposition</li>
+      <li><strong>Stage 4:</strong> Final cross-sector 15–25 stock institutional portfolio — Pharma + IT + Banking + New-Age + Infra/Capital Goods</li>
+    </ul>
+  </div>
+</div>
+
+
+</div><!-- /container -->
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('#mainnav button').forEach(b => b.classList.remove('active'));
+  const el = document.getElementById(id);
+  if (el) el.classList.add('active');
+  const tabs = ['bkg_overview','bkg_peer','bkg_quarterly','bkg_valuation','bkg_rank','na_overview','na_peer','na_rank','portfolio'];
+  const idx = tabs.indexOf(id);
+  const btns = document.querySelectorAll('#mainnav button');
+  if (btns[idx]) btns[idx].classList.add('active');
+}
+</script>
+</body>
+</html>
