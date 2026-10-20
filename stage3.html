@@ -16,13 +16,16 @@ body { font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; background: #f0f
 .disclaimer { background: #fffbea; border-left: 4px solid #f0a500; padding: 10px 20px; font-size: 11px; color: #7d5a00; line-height: 1.6; }
 
 /* Nav */
-nav#mainnav { background: #fff; border-bottom: 2px solid #e0e6f0; display: flex; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
-nav#mainnav button { padding: 12px 16px; border: none; background: transparent; cursor: pointer; font-size: 12px; font-weight: 600; color: #546e8a; border-bottom: 3px solid transparent; white-space: nowrap; transition: all .18s ease; }
+.stage-bar { background: #0d1b4b; display: flex; align-items: center; padding: 0 16px; position: sticky; top: 0; z-index: 101; }
+.stage-bar a { display: inline-flex; align-items: center; gap: 5px; padding: 9px 14px; color: #94a3b8; font-size: 11px; font-weight: 600; text-decoration: none; border-bottom: 2px solid transparent; transition: all .15s; white-space: nowrap; }
+.stage-bar a:hover { color: #e2e8f0; border-bottom-color: #475569; }
+.stage-bar a.active { color: #f0a500; border-bottom-color: #f0a500; }
+.stage-bar .sep { width: 1px; height: 18px; background: #1e3a5f; margin: 0 4px; }
+nav#mainnav { background: #fff; border-bottom: 2px solid #e0e6f0; display: flex; flex-wrap: wrap; overflow-x: auto; position: sticky; top: 37px; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,.07); scrollbar-width: none; }
+nav#mainnav::-webkit-scrollbar { display: none; }
+nav#mainnav button { padding: 11px 16px; border: none; background: transparent; cursor: pointer; font-size: 12px; font-weight: 600; color: #546e8a; border-bottom: 3px solid transparent; white-space: nowrap; transition: all .18s ease; flex-shrink: 0; }
 nav#mainnav button:hover { color: #3a1a8f; background: #f4f0ff; }
 nav#mainnav button.active { color: #3a1a8f; border-bottom-color: #3a1a8f; background: #f0eeff; }
-nav#mainnav a.nav-link { display: flex; align-items: center; padding: 12px 16px; color: #546e8a; font-size: 12px; font-weight: 600; text-decoration: none; border-right: 1px solid #e0e6f0; white-space: nowrap; transition: all .18s; }
-nav#mainnav a.nav-link:last-child { border-right: none; border-left: 1px solid #e0e6f0; margin-left: auto; }
-nav#mainnav a.nav-link:hover { color: #3a1a8f; background: #f4f0ff; }
 
 /* Tabs */
 .tab { display: none; padding: 24px 28px; max-width: 1440px; margin: 0 auto; }
@@ -123,15 +126,22 @@ hr { border: none; border-top: 1px solid #e5e9f2; margin: 14px 0; }
 <div class="disclaimer">
   <strong>SOURCES:</strong> Screener.in (19 Oct 2026), company annual reports FY26, DRHP filings. Unit economics: management commentary from earnings calls, investor presentations. Reverse DCF assumptions: WACC 13%, terminal growth 5%. For investment decisions, verify with a SEBI-registered advisor.
 </div>
+<div class="stage-bar">
+  <a href="index.html">📊 Stage 1 — Market</a>
+  <div class="sep"></div>
+  <a href="stage2.html">🏦 Stage 2 — Banking & New-Age</a>
+  <div class="sep"></div>
+  <a href="stage3.html" class="active">📐 Stage 3 — Unit Economics</a>
+  <div class="sep"></div>
+  <a href="stage4.html">🏆 Stage 4 — Final Portfolio</a>
+</div>
 <nav id="mainnav">
-  <a class="nav-link" href="stage2.html">← Stage 2</a>
   <button class="active" onclick="showTab('framework')">📐 Framework</button>
   <button onclick="showTab('unit_econ')">⚙️ Unit Economics</button>
   <button onclick="showTab('co_profiles')">🏢 Company Profiles</button>
   <button onclick="showTab('reverse_dcf')">🔭 Reverse Valuation</button>
   <button onclick="showTab('top25')">🏆 Top 25 Rankings</button>
   <button onclick="showTab('s3_risks')">⚠️ Risks</button>
-  <a class="nav-link" href="stage4.html">Stage 4 →</a>
 </nav>
 
 <div class="container" style="background:#f0f4f8">

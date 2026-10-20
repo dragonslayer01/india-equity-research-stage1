@@ -54,6 +54,13 @@ tbody td{padding:7px 10px;border-bottom:1px solid #eaecf5;vertical-align:middle}
 .source-tag{font-size:9px;color:#999;display:block}
 nav a.nav-link{padding:10px 16px;border:none;background:transparent;cursor:pointer;font-size:12px;font-weight:600;color:#1565c0;border-bottom:3px solid transparent;white-space:nowrap;text-decoration:none;display:inline-block;transition:all .2s}
 nav a.nav-link:hover{color:#1a237e;border-bottom-color:#f0a500;background:#f5f7ff}
+.stage-bar{background:#0d1b4b;display:flex;align-items:center;padding:0 16px;position:sticky;top:0;z-index:101;}
+.stage-bar a{display:inline-flex;align-items:center;gap:5px;padding:9px 14px;color:#94a3b8;font-size:11px;font-weight:600;text-decoration:none;border-bottom:2px solid transparent;transition:all .15s;white-space:nowrap;}
+.stage-bar a:hover{color:#e2e8f0;border-bottom-color:#475569;}
+.stage-bar a.active{color:#f0a500;border-bottom-color:#f0a500;}
+.stage-bar .sep{width:1px;height:18px;background:#1e3a5f;margin:0 4px;}
+nav#mainnav{background:#fff;border-bottom:2px solid #1a237e;display:flex;flex-wrap:wrap;overflow-x:auto;position:sticky;top:37px;z-index:100;scrollbar-width:none;}
+nav#mainnav::-webkit-scrollbar{display:none;}
 </style>
 </head>
 <body>
@@ -79,6 +86,15 @@ nav a.nav-link:hover{color:#1a237e;border-bottom-color:#f0a500;background:#f5f7f
 <div class="disclaimer">
   <strong>DATA SOURCES:</strong> Stock prices as of 19 Oct 2026 from Screener.in and Yahoo Finance. RBI policy rates from rbi.org.in (Oct 7, 2026 MPC). Financial metrics from Screener.in company pages. Analyst views represent our independent analysis. This report is for analytical purposes only — not investment advice.
 </div>
+<div class="stage-bar">
+  <a href="index.html" class="active">📊 Stage 1 — Market</a>
+  <div class="sep"></div>
+  <a href="stage2.html">🏦 Stage 2 — Banking & New-Age</a>
+  <div class="sep"></div>
+  <a href="stage3.html">📐 Stage 3 — Unit Economics</a>
+  <div class="sep"></div>
+  <a href="stage4.html">🏆 Stage 4 — Final Portfolio</a>
+</div>
 <nav id="mainnav">
   <button class="active" onclick="showTab('macro')">📈 Macro &amp; Market Regime</button>
   <button onclick="showTab('sectors')">🏭 Sector Rankings</button>
@@ -87,9 +103,6 @@ nav a.nav-link:hover{color:#1a237e;border-bottom-color:#f0a500;background:#f5f7f
   <button onclick="showTab('newage')">🚀 New-Age Top 25</button>
   <button onclick="showTab('risks')">⚠ Risks &amp; Gaps</button>
   <button onclick="showTab('notes')">📋 Sources &amp; Notes</button>
-  <a class="nav-link" href="stage2.html">🔬 Stage 2 →</a>
-  <a class="nav-link" href="stage3.html">📐 Stage 3 →</a>
-  <a class="nav-link" href="stage4.html">🏆 Stage 4 →</a>
 </nav>
 
 <!-- ===== TAB 1: MACRO & MARKET REGIME ===== -->

@@ -66,19 +66,50 @@ body {
   line-height: 1.6;
 }
 
-/* ─── Nav ──────────────────────────────────────────────────────────────── */
+/* ─── Stage Bar (top strip) ────────────────────────────────────────────── */
+.stage-bar {
+  background: #0d1b4b;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  position: sticky;
+  top: 0;
+  z-index: 101;
+  box-shadow: 0 1px 0 rgba(255,255,255,.08);
+}
+.stage-bar a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 9px 14px;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all .15s;
+  white-space: nowrap;
+}
+.stage-bar a:hover  { color: #e2e8f0; border-bottom-color: #475569; }
+.stage-bar a.active { color: #f0a500; border-bottom-color: #f0a500; }
+.stage-bar .sep { width: 1px; height: 18px; background: #1e3a5f; margin: 0 4px; }
+
+/* ─── Tab Nav (below stage bar) ────────────────────────────────────────── */
 nav#mainnav {
   background: #fff;
   border-bottom: 2px solid #e0e6f0;
   display: flex;
   flex-wrap: wrap;
+  overflow-x: auto;
   position: sticky;
-  top: 0;
+  top: 37px;
   z-index: 100;
   box-shadow: 0 2px 8px rgba(0,0,0,.07);
+  scrollbar-width: none;
 }
+nav#mainnav::-webkit-scrollbar { display: none; }
 nav#mainnav button {
-  padding: 12px 18px;
+  padding: 11px 16px;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -88,22 +119,11 @@ nav#mainnav button {
   border-bottom: 3px solid transparent;
   white-space: nowrap;
   transition: all .18s ease;
-  letter-spacing: .2px;
+  flex-shrink: 0;
 }
-nav#mainnav button:hover {
-  color: #1a3a8f;
-  background: #f4f7ff;
-}
-nav#mainnav button.active {
-  color: #1a3a8f;
-  border-bottom-color: #1a3a8f;
-  background: #eef2ff;
-}
-/* Visual separator between Banking and New-Age tabs */
-nav#mainnav button:nth-child(6) {
-  border-left: 2px solid #e0e6f0;
-  margin-left: 4px;
-}
+nav#mainnav button:hover  { color: #1a3a8f; background: #f4f7ff; }
+nav#mainnav button.active { color: #1a3a8f; border-bottom-color: #1a3a8f; background: #eef2ff; }
+nav#mainnav .tab-sep { width: 1px; background: #e0e6f0; margin: 8px 0; align-self: stretch; }
 
 /* ─── Tab Layout ───────────────────────────────────────────────────────── */
 .tab { display: none; padding: 24px 28px; max-width: 1440px; margin: 0 auto; }
@@ -276,18 +296,26 @@ tr.row-total td   { background: #eef2ff; font-weight: 700; border-top: 2px solid
 <div class="disclaimer">
   <strong>SOURCES:</strong> All prices &amp; financials from Screener.in (19 Oct 2026). RBI rates from rbi.org.in (MPC Oct 5–7, 2026). Nifty data: Yahoo Finance/Investing.com. Analyst recommendations represent our independent analysis — not from a specific brokerage. For investment decisions, verify with a SEBI-registered advisor.
 </div>
+<div class="stage-bar">
+  <a href="index.html">📊 Stage 1 — Market</a>
+  <div class="sep"></div>
+  <a href="stage2.html" class="active">🏦 Stage 2 — Banking & New-Age</a>
+  <div class="sep"></div>
+  <a href="stage3.html">📐 Stage 3 — Unit Economics</a>
+  <div class="sep"></div>
+  <a href="stage4.html">🏆 Stage 4 — Final Portfolio</a>
+</div>
 <nav id="mainnav">
-  <a class="nav-link" href="index.html" style="display:flex;align-items:center;padding:12px 16px;color:#546e8a;font-size:12px;font-weight:600;text-decoration:none;border-right:1px solid #e0e6f0;white-space:nowrap">← Stage 1</a>
   <button class="active" onclick="showTab('bkg_overview')">🏦 Banking Overview</button>
-  <button onclick="showTab('bkg_peer')">📊 Banking Peer Table</button>
-  <button onclick="showTab('bkg_quarterly')">📅 Banking Quarterly</button>
-  <button onclick="showTab('bkg_valuation')">💰 Banking Valuation</button>
-  <button onclick="showTab('bkg_rank')">🏆 Banking Rankings</button>
+  <button onclick="showTab('bkg_peer')">📊 Peer Table</button>
+  <button onclick="showTab('bkg_quarterly')">📅 Quarterly</button>
+  <button onclick="showTab('bkg_valuation')">💰 Valuation</button>
+  <button onclick="showTab('bkg_rank')">🏆 Rankings</button>
+  <div class="tab-sep"></div>
   <button onclick="showTab('na_overview')">🚀 New-Age Overview</button>
-  <button onclick="showTab('na_peer')">📊 New-Age Peer Table</button>
+  <button onclick="showTab('na_peer')">📊 New-Age Peers</button>
   <button onclick="showTab('na_rank')">🏆 New-Age Rankings</button>
   <button onclick="showTab('portfolio')">💼 Portfolio</button>
-  <a class="nav-link" href="stage3.html" style="display:flex;align-items:center;padding:12px 16px;color:#546e8a;font-size:12px;font-weight:600;text-decoration:none;border-left:1px solid #e0e6f0;white-space:nowrap;margin-left:auto">Stage 3 →</a>
 </nav>
 
 <div class="container">

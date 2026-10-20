@@ -16,13 +16,16 @@ body { font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; background: #0f1
 .disclaimer { background: #1e2a1a; border-left: 4px solid #f0a500; padding: 10px 20px; font-size: 11px; color: #a3c48a; line-height: 1.6; }
 
 /* Nav */
-nav#mainnav { background: #0f1a2e; border-bottom: 2px solid #1e3a5f; display: flex; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.4); }
-nav#mainnav button { padding: 12px 16px; border: none; background: transparent; cursor: pointer; font-size: 12px; font-weight: 600; color: #64748b; border-bottom: 3px solid transparent; white-space: nowrap; transition: all .18s ease; }
+.stage-bar { background: #070c18; border-bottom: 1px solid #1e3a5f; display: flex; align-items: center; padding: 0 16px; position: sticky; top: 0; z-index: 101; }
+.stage-bar a { display: inline-flex; align-items: center; gap: 5px; padding: 9px 14px; color: #475569; font-size: 11px; font-weight: 600; text-decoration: none; border-bottom: 2px solid transparent; transition: all .15s; white-space: nowrap; }
+.stage-bar a:hover { color: #94a3b8; border-bottom-color: #334155; }
+.stage-bar a.active { color: #f0a500; border-bottom-color: #f0a500; }
+.stage-bar .sep { width: 1px; height: 18px; background: #1e3a5f; margin: 0 4px; }
+nav#mainnav { background: #0f1a2e; border-bottom: 2px solid #1e3a5f; display: flex; flex-wrap: wrap; overflow-x: auto; position: sticky; top: 37px; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.4); scrollbar-width: none; }
+nav#mainnav::-webkit-scrollbar { display: none; }
+nav#mainnav button { padding: 11px 16px; border: none; background: transparent; cursor: pointer; font-size: 12px; font-weight: 600; color: #64748b; border-bottom: 3px solid transparent; white-space: nowrap; transition: all .18s ease; flex-shrink: 0; }
 nav#mainnav button:hover { color: #93c5fd; background: #1a2744; }
 nav#mainnav button.active { color: #60a5fa; border-bottom-color: #60a5fa; background: #1a2744; }
-nav#mainnav a.nav-link { display: flex; align-items: center; padding: 12px 16px; color: #64748b; font-size: 12px; font-weight: 600; text-decoration: none; border-right: 1px solid #1e3a5f; white-space: nowrap; transition: all .18s; }
-nav#mainnav a.nav-link:last-child { border-right: none; border-left: 1px solid #1e3a5f; margin-left: auto; }
-nav#mainnav a.nav-link:hover { color: #93c5fd; background: #1a2744; }
 
 /* Tabs */
 .tab { display: none; padding: 24px 28px; max-width: 1440px; margin: 0 auto; }
@@ -127,15 +130,22 @@ hr { border: none; border-top: 1px solid #1e2a3e; margin: 14px 0; }
 <div class="disclaimer">
   <strong>FINAL PORTFOLIO:</strong> This represents the culmination of Stage 1 (Macro/Sector Framework), Stage 2 (Banking &amp; New-Age Deep Dive), and Stage 3 (Unit Economics). Portfolio is constructed for a domestic institutional investor with ₹500Cr+ AUM. Position sizing assumes conviction-weighted allocation. This is independent research — not a SEBI-registered advisory.
 </div>
+<div class="stage-bar">
+  <a href="index.html">📊 Stage 1 — Market</a>
+  <div class="sep"></div>
+  <a href="stage2.html">🏦 Stage 2 — Banking & New-Age</a>
+  <div class="sep"></div>
+  <a href="stage3.html">📐 Stage 3 — Unit Economics</a>
+  <div class="sep"></div>
+  <a href="stage4.html" class="active">🏆 Stage 4 — Final Portfolio</a>
+</div>
 <nav id="mainnav">
-  <a class="nav-link" href="stage3.html">← Stage 3</a>
   <button class="active" onclick="showTab('overview')">🎯 Portfolio Overview</button>
   <button onclick="showTab('holdings')">📋 20 Holdings</button>
   <button onclick="showTab('sector_alloc')">🥧 Sector Allocation</button>
   <button onclick="showTab('scenarios')">📈 Scenarios</button>
   <button onclick="showTab('risk_mgmt')">🛡️ Risk Management</button>
   <button onclick="showTab('monitor')">📡 Monitoring</button>
-  <a class="nav-link" href="index.html">Home</a>
 </nav>
 
 <div style="background:#0f1520">
