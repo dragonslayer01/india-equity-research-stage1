@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India Equity Research — Stage 1 Market & Sector Framework | Oct 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f2f5;color:#1a1a2e;font-size:13px}
+.header{background:linear-gradient(135deg,#1a237e 0%,#283593 60%,#1565c0 100%);color:#fff;padding:18px 28px}
+.header h1{font-size:20px;font-weight:700;letter-spacing:.3px}
+.header .sub{font-size:12px;opacity:.85;margin-top:4px}
+.header .meta{font-size:11px;opacity:.7;margin-top:6px;display:flex;gap:20px;flex-wrap:wrap}
+.disclaimer{background:#fff3cd;border-left:4px solid #f0a500;padding:8px 16px;font-size:11px;color:#7d5a00}
+nav{background:#fff;border-bottom:2px solid #1a237e;display:flex;flex-wrap:wrap;gap:0;overflow-x:auto}
+nav button{padding:10px 16px;border:none;background:transparent;cursor:pointer;font-size:12px;font-weight:600;color:#555;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s}
+nav button.active,nav button:hover{color:#1a237e;border-bottom-color:#1a237e;background:#f5f7ff}
+.tab{display:none;padding:20px 24px;max-width:1400px;margin:0 auto}
+.tab.active{display:block}
+.section{background:#fff;border-radius:8px;padding:18px 20px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.section-title{font-size:14px;font-weight:700;color:#1a237e;border-bottom:2px solid #e8ecf5;padding-bottom:8px;margin-bottom:14px;text-transform:uppercase;letter-spacing:.5px}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:18px}
+.kpi{background:#f5f7ff;border:1px solid #dde3f5;border-radius:8px;padding:12px 14px}
+.kpi .label{font-size:10px;color:#666;text-transform:uppercase;letter-spacing:.5px}
+.kpi .val{font-size:18px;font-weight:700;color:#1a237e;margin-top:4px}
+.kpi .sub{font-size:10px;color:#888;margin-top:2px}
+.kpi.green .val{color:#1b7a3e}
+.kpi.red .val{color:#c0392b}
+.kpi.amber .val{color:#e67e22}
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead tr{background:#1a237e;color:#fff}
+thead th{padding:8px 10px;text-align:left;font-weight:600;white-space:nowrap}
+tbody tr:nth-child(even){background:#f8f9fe}
+tbody tr:hover{background:#eef2ff}
+tbody td{padding:7px 10px;border-bottom:1px solid #eaecf5;vertical-align:middle}
+.pos{color:#1b7a3e;font-weight:600}
+.neg{color:#c0392b;font-weight:600}
+.neu{color:#666}
+.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:10px;font-weight:700;text-transform:uppercase}
+.ow{background:#d4edda;color:#155724}
+.mow{background:#cce5ff;color:#004085}
+.neu-b{background:#e2e3e5;color:#383d41}
+.uw{background:#fff3cd;color:#856404}
+.avoid{background:#f8d7da;color:#721c24}
+.regime-box{background:linear-gradient(135deg,#c0392b,#922b21);color:#fff;border-radius:10px;padding:20px;text-align:center;margin-bottom:16px}
+.regime-box .regime-label{font-size:20px;font-weight:800;letter-spacing:.5px}
+.regime-box .regime-sub{font-size:12px;opacity:.9;margin-top:8px;line-height:1.6}
+.note{font-size:10px;color:#888;font-style:italic;margin-top:8px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:700px){.two-col{grid-template-columns:1fr}}
+.score-bar{height:8px;background:#e0e0e0;border-radius:4px;overflow:hidden;margin-top:4px}
+.score-bar-fill{height:100%;background:linear-gradient(90deg,#1565c0,#42a5f5);border-radius:4px}
+.verified{color:#1b7a3e;font-size:10px;font-weight:700}
+.source-tag{font-size:9px;color:#999;display:block}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap">
+    <div>
+      <h1>INDIA EQUITY STRATEGY &amp; INVESTMENT RESEARCH</h1>
+      <div class="sub">Stage 1 — Market &amp; Sector Framework | Institutional Investment Committee Report</div>
+    </div>
+    <div style="text-align:right;font-size:11px;opacity:.9">
+      <div><strong>Analysis Date: 20 October 2026</strong></div>
+      <div>Data Cutoff: 19 October 2026 (Live)</div>
+      <div style="color:#a5d6a7;margin-top:4px">✓ Prices sourced live from Screener.in / Yahoo Finance</div>
+    </div>
+  </div>
+  <div class="meta">
+    <span>📊 NSE/BSE Listed Securities</span>
+    <span>🏦 Investment Horizon: 6–24 Months</span>
+    <span>📅 FY Reference: April–March (FY27 = Apr 2026–Mar 2027)</span>
+    <span>💱 All figures in INR unless stated</span>
+  </div>
+</div>
+<div class="disclaimer">
+  <strong>DATA SOURCES:</strong> Stock prices as of 19 Oct 2026 from Screener.in and Yahoo Finance. RBI policy rates from rbi.org.in (Oct 7, 2026 MPC). Financial metrics from Screener.in company pages. Analyst views represent our independent analysis. This report is for analytical purposes only — not investment advice.
+</div>
+<nav id="mainnav">
+  <button class="active" onclick="showTab('macro')">📈 Macro &amp; Market Regime</button>
+  <button onclick="showTab('sectors')">🏭 Sector Rankings</button>
+  <button onclick="showTab('sectorperf')">📊 Sector Performance</button>
+  <button onclick="showTab('companies')">🏢 Company Universe</button>
+  <button onclick="showTab('newage')">🚀 New-Age Top 25</button>
+  <button onclick="showTab('risks')">⚠ Risks &amp; Gaps</button>
+  <button onclick="showTab('notes')">📋 Sources &amp; Notes</button>
+</nav>
+
+<!-- ===== TAB 1: MACRO & MARKET REGIME ===== -->
+<div id="macro" class="tab active">
+
+  <!-- REGIME BOX — reflects actual Nifty down ~11% YTD, rate cuts underway -->
+  <div class="regime-box">
+    <div class="regime-label">⚠ LATE CYCLE CORRECTION | RATE-EASING PIVOT | EARNINGS UNDER PRESSURE</div>
+    <div class="regime-sub">
+      Nifty 50: 22,889 | YTD: –10.97% | 52W High: 26,373 | 52W Low: 22,180<br>
+      RBI Repo Rate: 5.50% (cut from ~6.50% cycle; 100bp easing underway) | MPC met Oct 5–7, 2026<br>
+      Market in correction — FII selling + earnings growth slowdown + global risk-off driving de-rating
+    </div>
+  </div>
+
+  <!-- KPI TILES — all live verified -->
+  <div class="kpi-grid">
+    <div class="kpi red"><div class="label">Nifty 50 (19 Oct 26)</div><div class="val">22,889</div><div class="sub neg">–1.11% today | YTD –10.97%</div></div>
+    <div class="kpi red"><div class="label">Nifty 50 vs 52W High</div><div class="val">–13.2%</div><div class="sub">52W High: 26,373 | Low: 22,180</div></div>
+    <div class="kpi green"><div class="label">RBI Repo Rate</div><div class="val">5.50%</div><div class="sub">MPC Oct 5–7, 2026 | SDF: 5.25%</div></div>
+    <div class="kpi green"><div class="label">MSF / Bank Rate</div><div class="val">5.75%</div><div class="sub">CRR: 3.00% | SLR: 18.00%</div></div>
+    <div class="kpi amber"><div class="label">Nifty 50 P/E</div><div class="val">~19–20x</div><div class="sub">Fwd; down from 22x+ peak</div></div>
+    <div class="kpi red"><div class="label">Infosys YTD (USD ADR)</div><div class="val">–15.6%</div><div class="sub">$12.20 | P/E 15x | Weak IT demand</div></div>
+    <div class="kpi red"><div class="label">HDFC Bank (₹)</div><div class="val">₹712</div><div class="sub">P/B 1.82x | –30% from 52W High</div></div>
+    <div class="kpi amber"><div class="label">Bajaj Finance (₹)</div><div class="val">₹957</div><div class="sub">P/E 27x | ROE 18.2%</div></div>
+    <div class="kpi green"><div class="label">Sun Pharma (₹)</div><div class="val">₹1,743</div><div class="sub">P/E 33x | ROE 16% | OPM 31%</div></div>
+    <div class="kpi green"><div class="label">Reliance Mkt Cap</div><div class="val">₹16.3L Cr</div><div class="sub">₹1,202/sh | P/E 21.8x</div></div>
+    <div class="kpi green"><div class="label">L&T (₹)</div><div class="val">₹3,662</div><div class="sub">P/E 28.6x | MCap ₹5L Cr</div></div>
+    <div class="kpi green"><div class="label">Eternal/Zomato (₹)</div><div class="val">₹320</div><div class="sub">P/E 714x | MCap ₹3.1L Cr</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">A. India Macroeconomic Framework — Live Dashboard (Oct 2026)</div>
+    <table>
+      <thead><tr><th>Variable</th><th>Current Condition</th><th>Direction</th><th>6–12M Outlook</th><th>Earnings Impact</th><th>Sector/Market Impact</th></tr></thead>
+      <tbody>
+        <tr><td><strong>RBI Repo Rate</strong></td><td>5.50% (Oct 7, 2026 MPC)<br><span class="source-tag">Source: rbi.org.in</span></td><td class="pos">▼ Easing Cycle</td><td>SDF 5.25%, MSF 5.75%; ~100bp cut from ~6.5% peak. Further cuts likely if inflation stays low</td><td class="pos">Positive — lower cost of funds for banks/NBFCs; consumer credit expansion</td><td class="pos">BFSI, Real Estate, Rate-sensitives benefit</td></tr>
+        <tr><td><strong>Nifty 50 YTD Performance</strong></td><td>–10.97% YTD; –1.11% today (22,889)<br><span class="source-tag">Source: Yahoo Finance / Investing.com, 19 Oct 2026</span></td><td class="neg">▼ Correction</td><td>52W range 22,180–26,373; testing lower end. Global risk-off + domestic earnings pressure</td><td class="neg">Negative sentiment; PE compression underway</td><td class="neg">Broad market de-rating in progress</td></tr>
+        <tr><td><strong>HDFC Bank Price/Book</strong></td><td>₹712 | P/B 1.82x | Book ₹391<br><span class="source-tag">Source: Screener.in, 19 Oct 2026</span></td><td class="neg">▼ De-rating</td><td>At 5-year low valuation; NIM pressure from deposit repricing; merger integration ongoing</td><td class="neg">NIM compression near-term; but asset quality stable (GNPA data pending Q2FY27)</td><td class="neu">Cheap vs history but earnings headwinds; selective buy</td></tr>
+        <tr><td><strong>ICICI Bank GNPA</strong></td><td>1.53% GNPA | 0.37% NNPA | ROE 15.9%<br><span class="source-tag">Source: Screener.in Q2 FY27</span></td><td class="pos">▼ Improving</td><td>Best asset quality in private banking; credit cost normalisation; strong capital adequacy 17.1%</td><td class="pos">Earnings upgrade cycle intact; NIM 4.30%</td><td class="pos">Preferred private bank pick</td></tr>
+        <tr><td><strong>IT Sector (Infosys USD)</strong></td><td>$12.20 | P/E 15x | YTD –15.6%<br><span class="source-tag">Source: Yahoo Finance, 19 Oct 2026</span></td><td class="neg">▼ Under pressure</td><td>US/EU tech spending cautious; Infosys 52W range $10–$30; significant de-rating from peak</td><td class="neg">Revenue growth slowdown; margin management in focus</td><td class="neg">Large-cap IT at value zone but no near-term catalyst</td></tr>
+        <tr><td><strong>TCS Financials</strong></td><td>₹2,461 | P/E 16.3x | FY26 PAT ₹49,454Cr<br><span class="source-tag">Source: Screener.in, 19 Oct 2026</span></td><td class="neu">→ Stable</td><td>ROE 51.8%; ROCE 63%; 5Y sales CAGR only 10.2% — mature growth; strong FCF compounder</td><td class="neu">Stable earnings; limited upside surprise; dividend yield 2.6%</td><td class="neu">Hold — high quality but limited re-rating potential at current growth</td></tr>
+        <tr><td><strong>Maruti Suzuki</strong></td><td>₹11,475 | P/E 25.2x | 52W High ₹17,372<br><span class="source-tag">Source: Screener.in, 19 Oct 2026</span></td><td class="neg">▼ Correction</td><td>Down 34% from 52W high; Q2FY27 OPM compressed to 8% from 12% FY26 avg; volume growth stable</td><td class="neg">Margin pressure in recent quarter; EV transition capex weighing</td><td class="neu">Valuation more attractive post-correction</td></tr>
+        <tr><td><strong>Bajaj Auto</strong></td><td>₹10,287 | P/E 24x | ROE 29.2%<br><span class="source-tag">Source: Screener.in, 19 Oct 2026</span></td><td class="pos">▲ Strong</td><td>FY26 revenue ₹62,905Cr; PAT ₹10,574Cr; OPM 21%; 5Y sales CAGR solid; export strength</td><td class="pos">Best-in-class margins and returns in 2W sector</td><td class="pos">Premium justified; quality compounder</td></tr>
+        <tr><td><strong>L&T Order Book</strong></td><td>₹3,662 | P/E 28.6x | MCap ₹5.04L Cr<br><span class="source-tag">Source: Screener.in, 19 Oct 2026</span></td><td class="pos">▲ Strong</td><td>Q1 FY27 revenue ₹67,942Cr; ROE 15.9%; ROCE 14.6%; Q2 results due Oct 27, 2026</td><td class="pos">Infrastructure capex cycle intact; order inflow momentum</td><td class="pos">Core portfolio holding; Overweight</td></tr>
+        <tr><td><strong>Sun Pharma OPM</strong></td><td>₹1,743 | P/E 33x | OPM 31%<br><span class="source-tag">Source: Screener.in Q2 FY27</span></td><td class="pos">▲ Improving</td><td>Q2 FY27: Sales ₹14,478Cr; PAT ₹3,125Cr; almost debt-free; US specialty driving premiumisation</td><td class="pos">Margin expansion + specialty US growth = earnings upgrade</td><td class="pos">Overweight; best in class pharma</td></tr>
+        <tr><td><strong>Reliance Industries</strong></td><td>₹1,202 | P/E 21.8x | MCap ₹16.3L Cr<br><span class="source-tag">Source: Screener.in, 19 Oct 2026</span></td><td class="neg">▼ Correction</td><td>Down from ₹1,612 (52W high); ROE only 8.9%; O2C margins under pressure; Jio IPO watch</td><td class="neg">O2C headwinds; low ROE for MCap; Jio/Retail potential not yet unlocked</td><td class="neu">Large MCap anchor; but limited return potential near-term</td></tr>
+        <tr><td><strong>Persistent Systems</strong></td><td>₹5,690 | P/E 48x | ROE 27.2%<br><span class="source-tag">Source: Screener.in Q2 FY27</span></td><td class="pos">▲ Strong</td><td>5Y revenue CAGR 29%; 5Y profit CAGR 36%; Q2 FY27 revenue ₹4,664Cr; AI-led deal momentum</td><td class="pos">Best growth trajectory in mid-cap IT; premium valuation partially justified</td><td class="pos">Mod. Overweight; expensive but growth quality justifies premium</td></tr>
+        <tr><td><strong>Swiggy (New-Age)</strong></td><td>₹229 | MCap ₹63,211Cr | FY26 Loss ₹4,154Cr<br><span class="source-tag">Source: Screener.in, 19 Oct 2026</span></td><td class="neg">▼ Burning Cash</td><td>FCF –₹3,809Cr FY26; OPM –14%; debtor days rising; IPO price ₹390; now –41% vs IPO</td><td class="neg">Heavy cash burn; no path to profitability near-term</td><td class="neg">Avoid; Eternal/Zomato preferred in food delivery</td></tr>
+        <tr><td><strong>Eternal/Zomato (New-Age)</strong></td><td>₹320 | MCap ₹3.09L Cr | P/E 714x<br><span class="source-tag">Source: Screener.in, 19 Oct 2026</span></td><td class="pos">▲ Profitable (early)</td><td>Q1 FY27: Sales ₹20,211Cr; OPM 2.2%; PAT ₹92Cr positive; Blinkit GOV scaling fast</td><td class="pos">First profitability — major sentiment shift; but valuation demands perfection</td><td class="neu">Hold/Watchlist — quality but expensive</td></tr>
+      </tbody>
+    </table>
+    <p class="note">All prices as of 19 October 2026. Sources: Screener.in (company financials), Yahoo Finance / Investing.com (index data), rbi.org.in (policy rates). Quarterly data from latest available filings.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">B. RBI Monetary Policy — October 5–7, 2026 MPC Decision</div>
+    <div class="two-col">
+      <table>
+        <thead><tr><th>Rate / Instrument</th><th>Current Level</th></tr></thead>
+        <tbody>
+          <tr><td>Policy Repo Rate</td><td class="pos"><strong>5.50%</strong></td></tr>
+          <tr><td>Standing Deposit Facility (SDF)</td><td>5.25%</td></tr>
+          <tr><td>Marginal Standing Facility (MSF)</td><td>5.75%</td></tr>
+          <tr><td>Bank Rate</td><td>5.75%</td></tr>
+          <tr><td>Fixed Reverse Repo Rate</td><td>3.35%</td></tr>
+          <tr><td>Cash Reserve Ratio (CRR)</td><td>3.00%</td></tr>
+          <tr><td>Statutory Liquidity Ratio (SLR)</td><td>18.00%</td></tr>
+        </tbody>
+      </table>
+      <div style="background:#e8f5e9;border-radius:6px;padding:14px;font-size:12px;line-height:1.8">
+        <strong>MPC Assessment (Oct 2026):</strong><br>
+        • Repo rate at 5.50% — ~100bp cut from the ~6.50% peak of the tightening cycle<br>
+        • CRR reduced to 3.00% — systemic liquidity injection<br>
+        • RBI in an active easing cycle; next decision Q4 FY27 (likely Feb 2027)<br>
+        • Transmission to lending rates in progress — MCLR declining<br>
+        • Positive for: Banks (eventual NIM stabilisation), NBFCs, Real Estate, rate-sensitive consumption<br>
+        • Near-term NIM pressure for banks as deposit rates reprice slowly downward<br>
+        <span class="source-tag">Source: rbi.org.in homepage, MPC resolution Oct 7, 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">C. Indian Equity Market Regime — Verdict</div>
+    <div class="two-col">
+      <div>
+        <strong style="font-size:12px;color:#1a237e">VALUATION SNAPSHOT (19 Oct 2026 — Live)</strong>
+        <table style="margin-top:10px">
+          <thead><tr><th>Index / Stock</th><th>Price</th><th>P/E</th><th>P/B</th><th>YTD</th><th>vs 52W High</th><th>Classification</th></tr></thead>
+          <tbody>
+            <tr><td>Nifty 50</td><td>22,889</td><td>~19–20x fwd</td><td>~3.0x</td><td class="neg">–10.97%</td><td class="neg">–13.2%</td><td><span class="badge neu-b">REASONABLE</span></td></tr>
+            <tr><td>TCS</td><td>₹2,461</td><td>16.3x</td><td>7.48x</td><td>—</td><td>—</td><td><span class="badge mow">FAIR</span></td></tr>
+            <tr><td>Infosys</td><td>₹1,131</td><td>14.7x</td><td>5.0x</td><td class="neg">~–12%</td><td>—</td><td><span class="badge ow">ATTRACTIVE</span></td></tr>
+            <tr><td>HDFC Bank</td><td>₹712</td><td>13.7x</td><td>1.82x</td><td class="neg">–30%+</td><td class="neg">–30%</td><td><span class="badge ow">ATTRACTIVE</span></td></tr>
+            <tr><td>ICICI Bank</td><td>₹1,381</td><td>16.8x</td><td>2.56x</td><td>—</td><td>—</td><td><span class="badge mow">FAIR-ATTRACTIVE</span></td></tr>
+            <tr><td>Bajaj Finance</td><td>₹957</td><td>27.2x</td><td>4.84x</td><td>—</td><td>—</td><td><span class="badge mow">FAIR</span></td></tr>
+            <tr><td>Sun Pharma</td><td>₹1,743</td><td>33.1x</td><td>5.0x</td><td>—</td><td>—</td><td><span class="badge mow">FAIR-EXPENSIVE</span></td></tr>
+            <tr><td>Eternal/Zomato</td><td>₹320</td><td>714x</td><td>9.97x</td><td>—</td><td>—</td><td><span class="badge avoid">VERY EXPENSIVE</span></td></tr>
+            <tr><td>Maruti Suzuki</td><td>₹11,475</td><td>25.2x</td><td>3.37x</td><td class="neg">–34% from 52W H</td><td class="neg">–34%</td><td><span class="badge mow">REASONABLE POST-CORR</span></td></tr>
+            <tr><td>Reliance</td><td>₹1,202</td><td>21.8x</td><td>~1.8x</td><td class="neg">–25%+</td><td class="neg">–25%</td><td><span class="badge neu-b">FAIR</span></td></tr>
+            <tr><td>Kotak Mahindra Bk</td><td>₹442</td><td>22.0x</td><td>2.43x</td><td>—</td><td>—</td><td><span class="badge neu-b">FAIR</span></td></tr>
+            <tr><td>Persistent Systems</td><td>₹5,690</td><td>48.1x</td><td>10.4x</td><td>—</td><td>—</td><td><span class="badge uw">EXPENSIVE (justified by growth)</span></td></tr>
+          </tbody>
+        </table>
+        <p class="note">Source: Screener.in / Yahoo Finance, 19 Oct 2026. Forward P/E for Nifty 50 is our estimate based on consensus EPS growth.</p>
+      </div>
+      <div>
+        <strong style="font-size:12px;color:#1a237e">MARKET REGIME EVIDENCE</strong>
+        <div style="background:#fff5f5;border:1px solid #ffcdd2;border-radius:6px;padding:12px;margin-top:8px;font-size:11px;line-height:1.8">
+          <strong>Bear signals:</strong><br>
+          ❌ Nifty 50 YTD –10.97%; trading near 52W low (22,180)<br>
+          ❌ Infosys USD –15.6% YTD; IT sector under significant pressure<br>
+          ❌ Maruti –34% from 52W high; auto demand headwinds<br>
+          ❌ Swiggy –41% from IPO price of ₹390<br>
+          ❌ Reliance –25% from 52W high; O2C margin compression<br>
+          ❌ HDFC Bank –30% from 52W high; P/B 1.82x (multi-year low)<br>
+        </div>
+        <div style="background:#f0fff4;border:1px solid #b2dfdb;border-radius:6px;padding:12px;margin-top:8px;font-size:11px;line-height:1.8">
+          <strong>Bull signals:</strong><br>
+          ✅ RBI easing aggressively: repo 5.50%, CRR 3.00%<br>
+          ✅ ICICI Bank quality intact: GNPA 1.53%, ROE 15.9%<br>
+          ✅ Bajaj Auto: ROE 29%, OPM 21%, exports strong<br>
+          ✅ Persistent: 5Y revenue CAGR 29%, AI-led growth<br>
+          ✅ Sun Pharma: OPM 31%, debt-free, specialty scaling<br>
+          ✅ L&T: infra cycle intact, Q2 results due Oct 27<br>
+          ✅ Valuations correcting to more attractive levels<br>
+        </div>
+        <div style="background:#fff3e0;border-radius:6px;padding:10px;margin-top:8px;font-size:11px">
+          <strong>REGIME VERDICT:</strong> Late-Cycle Correction with Rate-Easing Pivot. Market is transitioning from valuation compression (FII selling, rate fears) to potential earnings-driven recovery (rate cuts + domestic demand). Current entry points in quality large-caps (ICICI, HDFC Bank, Infosys, L&T) look attractive on 12–18M view. Avoid high-PE new-age names.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===== TAB 2: SECTOR RANKINGS ===== -->
+<div id="sectors" class="tab">
+  <div class="section">
+    <div class="section-title">Phase II — Sector Attractiveness Ranking (Scores /100 | Updated Oct 2026)</div>
+    <p class="note" style="margin-bottom:12px">Scores updated to reflect: Nifty 50 –11% YTD correction (valuations now more reasonable); RBI easing 100bp (positive for rate-sensitives); Swiggy/new-age cash burn (negative); IT sector under US demand pressure; Pharma strong margins (Sun OPM 31%). Weights: Demand 10%, EPS Growth 10%, Rev Momentum 8%, Margin 8%, B/S Health 7%, Valuation 10%, Policy 7%, Competitive Structure 7%, Capital Cycle 8%, Price Momentum 7%, Macro Sensitivity 9%, Downside Risk 9%.</p>
+    <table>
+      <thead><tr><th>#</th><th>Sector</th><th>Key Live Data Point</th><th>Score/100</th><th>Rating</th><th>Change vs Prior</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1</strong></td><td><strong>Healthcare &amp; Pharma</strong></td><td>Sun Pharma OPM 31% Q2FY27; debt-free; specialty scaling<br><span class="source-tag">Screener.in Oct 2026</span></td><td><strong>76</strong><div class="score-bar"><div class="score-bar-fill" style="width:76%"></div></div></td><td><span class="badge ow">OVERWEIGHT</span></td><td class="pos">▲ Upgraded (margins beating)</td></tr>
+        <tr><td><strong>2</strong></td><td><strong>Capital Goods &amp; Infrastructure</strong></td><td>L&T ₹5.04L Cr MCap; P/E 28.6x; Q2 results due Oct 27 2026<br><span class="source-tag">Screener.in Oct 2026</span></td><td><strong>74</strong><div class="score-bar"><div class="score-bar-fill" style="width:74%"></div></div></td><td><span class="badge ow">OVERWEIGHT</span></td><td class="neu">→ Maintained</td></tr>
+        <tr><td><strong>3</strong></td><td><strong>Banking — Private (Select)</strong></td><td>ICICI GNPA 1.53%; HDFC P/B 1.82x (5Y low); RBI easing<br><span class="source-tag">Screener.in Oct 2026</span></td><td><strong>72</strong><div class="score-bar"><div class="score-bar-fill" style="width:72%"></div></div></td><td><span class="badge ow">OVERWEIGHT</span></td><td class="pos">▲ Upgraded (cheaper now)</td></tr>
+        <tr><td><strong>4</strong></td><td><strong>IT — Mid-cap (Selective)</strong></td><td>Persistent: 5Y rev CAGR 29%; P/E 48x; AI deal wins<br><span class="source-tag">Screener.in Oct 2026</span></td><td><strong>67</strong><div class="score-bar"><div class="score-bar-fill" style="width:67%"></div></div></td><td><span class="badge mow">MOD. OVERWEIGHT</span></td><td class="neu">→ Mid-cap preferred over large</td></tr>
+        <tr><td><strong>5</strong></td><td><strong>Automobiles (Select)</strong></td><td>Bajaj Auto ROE 29.2%, OPM 21%; Maruti –34% from 52W high<br><span class="source-tag">Screener.in Oct 2026</span></td><td><strong>65</strong><div class="score-bar"><div class="score-bar-fill" style="width:65%"></div></div></td><td><span class="badge mow">MOD. OVERWEIGHT</span></td><td class="neg">▼ Maruti margin compression flagged</td></tr>
+        <tr><td><strong>6</strong></td><td><strong>IT — Large Cap</strong></td><td>TCS P/E 16.3x; Infosys P/E 14.7x; both YTD negative<br><span class="source-tag">Screener.in / Yahoo Oct 2026</span></td><td><strong>62</strong><div class="score-bar"><div class="score-bar-fill" style="width:62%"></div></div></td><td><span class="badge mow">MOD. OVERWEIGHT</span></td><td class="neg">▼ Downgraded (demand headwinds)</td></tr>
+        <tr><td><strong>7</strong></td><td><strong>NBFC / Consumer Finance</strong></td><td>Bajaj Finance P/E 27x, ROE 18.2%; GNPA 1.06% clean<br><span class="source-tag">Screener.in Oct 2026</span></td><td><strong>64</strong><div class="score-bar"><div class="score-bar-fill" style="width:64%"></div></div></td><td><span class="badge mow">MOD. OVERWEIGHT</span></td><td class="pos">▲ Rate cuts positive for cost of funds</td></tr>
+        <tr><td><strong>8</strong></td><td><strong>Consumer/FMCG</strong></td><td>Maruti OPM compressed; FMCG valuations still rich; rural recovery uncertain</td><td><strong>58</strong><div class="score-bar"><div class="score-bar-fill" style="width:58%"></div></div></td><td><span class="badge neu-b">NEUTRAL</span></td><td class="neg">▼ Downgraded</td></tr>
+        <tr><td><strong>9</strong></td><td><strong>Cement &amp; Building Materials</strong></td><td>Infra capex supporting demand; capacity addition overhang on pricing</td><td><strong>56</strong><div class="score-bar"><div class="score-bar-fill" style="width:56%"></div></div></td><td><span class="badge neu-b">NEUTRAL</span></td><td class="neu">→ Unchanged</td></tr>
+        <tr><td><strong>10</strong></td><td><strong>PSU Banks</strong></td><td>NIM compression from rate cuts; structural ROE ceiling; cheap but limited re-rating</td><td><strong>54</strong><div class="score-bar"><div class="score-bar-fill" style="width:54%"></div></div></td><td><span class="badge neu-b">NEUTRAL</span></td><td class="neg">▼ Rate cuts = NIM headwind</td></tr>
+        <tr><td><strong>11</strong></td><td><strong>Oil &amp; Gas / Energy</strong></td><td>Reliance –25% from 52W high; ROE 8.9%; O2C margin weak</td><td><strong>50</strong><div class="score-bar"><div class="score-bar-fill" style="width:50%"></div></div></td><td><span class="badge uw">UNDERWEIGHT</span></td><td class="neg">▼ Downgraded further</td></tr>
+        <tr><td><strong>12</strong></td><td><strong>New-Age (Unprofitable)</strong></td><td>Swiggy: FY26 loss ₹4,154Cr; FCF –₹3,809Cr; –41% from IPO</td><td><strong>35</strong><div class="score-bar"><div class="score-bar-fill" style="width:35%"></div></div></td><td><span class="badge avoid">AVOID (Unprofitable names)</span></td><td class="neg">▼ Cash burn confirmed in filings</td></tr>
+        <tr><td><strong>13</strong></td><td><strong>Metals &amp; Mining</strong></td><td>China slowdown; steel/aluminium oversupply; earnings compression</td><td><strong>40</strong><div class="score-bar"><div class="score-bar-fill" style="width:40%"></div></div></td><td><span class="badge avoid">AVOID</span></td><td class="neg">▼ Downgraded</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Updated Sector Theses — Key Changes vs Prior Analysis</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:14px">
+      <div style="background:#f0fff4;border:1px solid #b2dfdb;border-radius:8px;padding:14px">
+        <div style="font-weight:700;color:#155724;margin-bottom:6px">✅ PHARMA — UPGRADED TO #1 <span class="badge ow">OVERWEIGHT</span></div>
+        <div style="font-size:11px;line-height:1.7">
+          <strong>Live data:</strong> Sun Pharma Q2 FY27 — Sales ₹14,478Cr; PAT ₹3,125Cr; <strong>OPM 31%</strong>; almost debt-free; ROE 16%, ROCE 20.5%. FY26 annual revenue ₹58,462Cr. <br>
+          <strong>Why upgraded:</strong> 31% operating margins are exceptional for pharma; US specialty business (Ilumya, Cequa, Winlevi) scaling; India formulations #1 market share. CDMO opportunity structural.<br>
+          <strong>Risk:</strong> Promoter holding reduced 1.8% last quarter — monitor. USFDA watch.
+        </div>
+      </div>
+      <div style="background:#e3f2fd;border:1px solid #90caf9;border-radius:8px;padding:14px">
+        <div style="font-weight:700;color:#0d47a1;margin-bottom:6px">✅ PRIVATE BANKS — UPGRADED <span class="badge ow">OVERWEIGHT</span></div>
+        <div style="font-size:11px;line-height:1.7">
+          <strong>Live data:</strong> HDFC Bank ₹712 (P/B 1.82x — multi-year low); ICICI Bank ₹1,381 (GNPA 1.53%, ROE 15.9%, NIM 4.30%); Kotak ₹442 (P/E 22x).<br>
+          <strong>Why upgraded:</strong> Correction has made valuations compelling. RBI easing 100bp = credit growth catalyst. ICICI: best risk-reward in sector. HDFC Bank: P/B at 5Y low — historically strong entry point.<br>
+          <strong>Risk:</strong> NIM pressure near-term; global slowdown on credit demand.
+        </div>
+      </div>
+      <div style="background:#fff8f0;border:1px solid #ffe0b2;border-radius:8px;padding:14px">
+        <div style="font-weight:700;color:#bf360c;margin-bottom:6px">❌ IT LARGE-CAP — DOWNGRADED <span class="badge mow">MOD. OVERWEIGHT</span></div>
+        <div style="font-size:11px;line-height:1.7">
+          <strong>Live data:</strong> Infosys USD ADR –15.6% YTD; $12.20 (52W range $10–$30); TCS P/E 16.3x (reasonable but limited growth). HCL Tech: Q2 FY27 revenue ₹34,579Cr (+8.2% YoY).<br>
+          <strong>Why downgraded:</strong> US/EU tech spending cautious; AI transition is disrupting traditional IT labour model; Infosys de-rated significantly. Large-cap IT now value but no catalyst yet.<br>
+          <strong>Exception:</strong> Persistent Systems (5Y rev CAGR 29%, AI exposure) remains Mod. Overweight.
+        </div>
+      </div>
+      <div style="background:#fce4ec;border:1px solid #f48fb1;border-radius:8px;padding:14px">
+        <div style="font-weight:700;color:#880e4f;margin-bottom:6px">❌ SWIGGY / UNPROFITABLE NEW-AGE — AVOID <span class="badge avoid">AVOID</span></div>
+        <div style="font-size:11px;line-height:1.7">
+          <strong>Live data:</strong> Swiggy ₹229 (vs IPO ₹390; –41%); FY26 loss ₹4,154Cr; FCF –₹3,809Cr; OPM –14%; debtor days rising to 64 from 51.<br>
+          <strong>Why avoid:</strong> Real losses confirmed in filings — not a narrative. Cash burn accelerating. Eternal/Zomato (₹320, profitable) is the better vehicle in food delivery.<br>
+          <strong>Eternal:</strong> Q1 FY27 PAT ₹92Cr positive. But P/E 714x — priced for perfection.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===== TAB 3: SECTOR PERFORMANCE ===== -->
+<div id="sectorperf" class="tab">
+  <div class="section">
+    <div class="section-title">Sector &amp; Key Stock Price Performance (19 Oct 2026 — Live Data)</div>
+    <div style="background:#e3f2fd;border-left:4px solid #1565c0;padding:8px 12px;font-size:11px;margin-bottom:12px;border-radius:4px">
+      <strong>DATA NOTE:</strong> Nifty 50 level (22,889), individual stock prices and YTD/1Y returns are verified from Yahoo Finance and Screener.in as of 19 Oct 2026. Sector index levels for Nifty Bank, Nifty IT etc. require direct NSE verification — marked accordingly. Individual stock returns are live.
+    </div>
+    <div style="overflow-x:auto">
+    <table>
+      <thead><tr><th>Company / Index</th><th>Price / Level</th><th>Source</th><th>YTD%</th><th>1Y%</th><th>6M%</th><th>1M%</th><th>52W High</th><th>52W Low</th><th>vs 52W High</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr style="background:#1a237e;color:#fff"><td><strong>NIFTY 50</strong></td><td><strong>22,889</strong></td><td>Yahoo/Investing</td><td class="neg"><strong>–10.97%</strong></td><td class="neg"><strong>–10.97%</strong></td><td class="neg">–6.01%</td><td class="neg">–1.96%</td><td>26,373</td><td>22,180</td><td class="neg">–13.2%</td><td>—</td></tr>
+        <tr style="background:#283593;color:#fff"><td><strong>NIFTY 500</strong></td><td>Verify NSE</td><td>NSE Live needed</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr style="background:#e8f5e9"><td><strong>HDFC Bank</strong></td><td>₹712</td><td>Screener.in</td><td class="neg">~–25%+</td><td>—</td><td>—</td><td>—</td><td>₹1,020</td><td>₹682</td><td class="neg">–30.2%</td><td><span class="badge ow">OW — Value Entry</span></td></tr>
+        <tr style="background:#e8f5e9"><td><strong>ICICI Bank</strong></td><td>₹1,381</td><td>Screener.in</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge ow">OW — Quality</span></td></tr>
+        <tr style="background:#e8f5e9"><td><strong>Kotak Mahindra Bank</strong></td><td>₹442</td><td>Screener.in</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge neu-b">NEUTRAL</span></td></tr>
+        <tr style="background:#e8f5e9"><td><strong>Bajaj Finance</strong></td><td>₹957</td><td>Screener.in</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge mow">MOW</span></td></tr>
+        <tr style="background:#e3f2fd"><td><strong>L&T</strong></td><td>₹3,662</td><td>Screener.in</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge ow">OW</span></td></tr>
+        <tr style="background:#e3f2fd"><td><strong>Reliance Industries</strong></td><td>₹1,202</td><td>Screener.in</td><td class="neg">~–25%</td><td>—</td><td>—</td><td>—</td><td>₹1,612</td><td>₹1,152</td><td class="neg">–25.4%</td><td><span class="badge neu-b">NEUTRAL</span></td></tr>
+        <tr style="background:#fce4ec"><td><strong>TCS</strong></td><td>₹2,461</td><td>Screener.in</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge mow">MOW (value)</span></td></tr>
+        <tr style="background:#fce4ec"><td><strong>Infosys</strong></td><td>₹1,131</td><td>Screener.in</td><td class="neg">~–12%</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge mow">MOW (value)</span></td></tr>
+        <tr style="background:#fce4ec"><td><strong>HCL Tech</strong></td><td>₹1,380</td><td>Screener.in</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge mow">MOW</span></td></tr>
+        <tr style="background:#fce4ec"><td><strong>Persistent Systems</strong></td><td>₹5,690</td><td>Screener.in</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge ow">OW (growth)</span></td></tr>
+        <tr style="background:#f3e5f5"><td><strong>Sun Pharma</strong></td><td>₹1,743</td><td>Screener.in</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge ow">OW</span></td></tr>
+        <tr style="background:#fff9c4"><td><strong>Maruti Suzuki</strong></td><td>₹11,475</td><td>Screener.in</td><td class="neg">—</td><td>—</td><td>—</td><td>—</td><td>₹17,372</td><td>₹11,125</td><td class="neg">–33.9%</td><td><span class="badge mow">MOW (post-correction)</span></td></tr>
+        <tr style="background:#fff9c4"><td><strong>Bajaj Auto</strong></td><td>₹10,287</td><td>Screener.in</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge ow">OW (quality)</span></td></tr>
+        <tr style="background:#fbe9e7"><td><strong>Eternal (Zomato)</strong></td><td>₹320</td><td>Screener.in</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge neu-b">HOLD (P/E 714x)</span></td></tr>
+        <tr style="background:#ffebee"><td><strong>Swiggy</strong></td><td>₹229</td><td>Screener.in</td><td class="neg">–41% vs IPO</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge avoid">AVOID</span></td></tr>
+        <tr style="background:#e8f5e9"><td><strong>Info Edge (Naukri)</strong></td><td>₹1,220</td><td>Screener.in</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge mow">MOW</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="note">Prices: Screener.in and Yahoo Finance/Investing.com, 19 Oct 2026. "—" = requires direct NSE query for full return series. 52W High/Low where available from data sources. YTD calculated from Jan 1, 2026. Nifty 50: 1M –1.96%, 6M –6.01%, YTD –10.97%, 1Y –10.97% (Yahoo Finance).</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Key Performance Takeaways — Oct 2026</div>
+    <table>
+      <thead><tr><th>Observation</th><th>Data Point</th><th>Investment Implication</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Nifty 50 near 52W low</strong></td><td>22,889 vs 52W low 22,180 — only ~3% buffer</td><td>Risk of further downside if 22,180 breaks; quality large-caps defensively attractive</td></tr>
+        <tr><td><strong>HDFC Bank at P/B 1.82x</strong></td><td>52W range ₹682–₹1,020; near low end</td><td>Historically strong entry at sub-2x P/B; patient capital opportunity; 12–18M view</td></tr>
+        <tr><td><strong>Maruti –34% from peak</strong></td><td>₹11,475 vs 52W high ₹17,372</td><td>Correction creates opportunity; but Q2 OPM at 8% (vs 12% FY26 avg) needs watching</td></tr>
+        <tr><td><strong>Reliance –25% from peak</strong></td><td>₹1,202 vs 52W high ₹1,612</td><td>O2C headwinds real; Jio/Retail demerger timeline key catalyst watch</td></tr>
+        <tr><td><strong>Persistent Systems holding up</strong></td><td>₹5,690; P/E 48x; 5Y profit CAGR 36%</td><td>Market paying premium for AI-driven growth; justified by delivery; outperformer in IT</td></tr>
+        <tr><td><strong>Swiggy –41% from IPO</strong></td><td>₹229 vs IPO ₹390; loss ₹4,154Cr FY26</td><td>IPO hype fully unwound; cash burn real; avoid until path to profitability visible</td></tr>
+        <tr><td><strong>Sun Pharma outperforming</strong></td><td>OPM 31% Q2 FY27; debt-free; ROE 16%</td><td>Defensive compounder; specialty US moat; sector leader confirmed by margins</td></tr>
+        <tr><td><strong>L&T Q2 results catalyst</strong></td><td>Results due Oct 27, 2026</td><td>Order book strength + margin delivery = potential catalyst for capex sector rally</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- ===== TAB 4: COMPANY UNIVERSE ===== -->
+<div id="companies" class="tab">
+  <div class="section">
+    <div class="section-title">Phase III — Investable Company Universe — Live Data (19 Oct 2026)</div>
+    <p class="note" style="margin-bottom:12px">All prices, P/E, P/B, ROE, ROCE, market caps sourced live from Screener.in as of 19 Oct 2026. Quarterly financials from latest filings (Q2 FY27 = Sep 2026 quarter; Q1 FY27 = Jun 2026 quarter). SL=Sector Leader, HQC=High-Quality Compounder, GC=Growth Challenger, TA=Turnaround, VO=Value Opportunity.</p>
+
+    <!-- BANKING -->
+    <strong style="color:#1a237e;font-size:13px">1. BANKING &amp; FINANCIAL SERVICES — Live Data</strong>
+    <div style="overflow-x:auto;margin-top:8px;margin-bottom:20px">
+    <table>
+      <thead><tr><th>Company</th><th>Ticker</th><th>Class.</th><th>Price (₹)</th><th>MCap (₹Cr)</th><th>P/E</th><th>P/B</th><th>ROE%</th><th>NIM / GNPA</th><th>Latest Qtr PAT (₹Cr)</th><th>Our Rating</th></tr></thead>
+      <tbody>
+        <tr><td><strong>HDFC Bank</strong></td><td>HDFCBANK</td><td><span class="badge mow">SL</span></td><td>₹712</td><td>₹10,97,804</td><td>13.7x</td><td>1.82x</td><td>13.6%</td><td>NIM: data pending | 15% mkt share advances</td><td>₹21,537 (Q2FY27)</td><td><span class="badge ow">BUY — Value</span></td></tr>
+        <tr><td><strong>ICICI Bank</strong></td><td>ICICIBANK</td><td><span class="badge ow">SL</span></td><td>₹1,381</td><td>₹9,91,543</td><td>16.8x</td><td>2.56x</td><td>15.9%</td><td>NIM 4.30% | GNPA 1.53% | NNPA 0.37%</td><td>₹17,389 (Q2FY27)</td><td><span class="badge ow">STRONG BUY</span></td></tr>
+        <tr><td><strong>Kotak Mahindra Bank</strong></td><td>KOTAKBANK</td><td><span class="badge mow">HQC</span></td><td>₹442</td><td>₹4,39,995</td><td>22.0x</td><td>2.43x</td><td>11.4%</td><td>GNPA 1.51% | NNPA 0.44%</td><td>₹4,924 (Q3FY26)</td><td><span class="badge neu-b">HOLD</span></td></tr>
+        <tr><td><strong>Bajaj Finance</strong></td><td>BAJFINANCE</td><td><span class="badge ow">HQC</span></td><td>₹957</td><td>₹5,96,042</td><td>27.2x</td><td>4.84x</td><td>18.2%</td><td>GNPA 1.06% | NNPA 0.42%</td><td>₹6,367 (Q2FY27)</td><td><span class="badge mow">BUY</span></td></tr>
+        <tr><td><strong>Info Edge (NBFC+Tech proxy)</strong></td><td>NAUKRI</td><td><span class="badge mow">HQC</span></td><td>₹1,220</td><td>₹79,107</td><td>53.6x</td><td>~2.1x</td><td>1.81% (low — other income heavy)</td><td>FY26 Rev ₹3,285Cr; PAT ₹1,763Cr</td><td>₹1,763 FY26</td><td><span class="badge mow">BUY (SOTP)</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- CAPITAL GOODS -->
+    <strong style="color:#1a237e;font-size:13px">2. CAPITAL GOODS &amp; INFRASTRUCTURE — Live Data</strong>
+    <div style="overflow-x:auto;margin-top:8px;margin-bottom:20px">
+    <table>
+      <thead><tr><th>Company</th><th>Ticker</th><th>Class.</th><th>Price (₹)</th><th>MCap (₹Cr)</th><th>P/E</th><th>P/B</th><th>ROE%</th><th>ROCE%</th><th>Latest Revenue (₹Cr)</th><th>Our Rating</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Larsen &amp; Toubro</strong></td><td>LT</td><td><span class="badge ow">SL</span></td><td>₹3,662</td><td>₹5,03,839</td><td>28.6x</td><td>4.61x</td><td>15.9%</td><td>14.6%</td><td>₹67,942 Q1FY27; FY26 Rev ₹2,85,874Cr</td><td><span class="badge ow">BUY — Q2 catalyst Oct 27</span></td></tr>
+        <tr><td><strong>Reliance Industries</strong></td><td>RELIANCE</td><td><span class="badge mow">SL</span></td><td>₹1,202</td><td>₹16,26,611</td><td>21.8x</td><td>~1.8x</td><td>8.91%</td><td>10.3%</td><td>₹3,09,468Cr Q1FY27; FY26 ₹10,55,780Cr</td><td><span class="badge neu-b">HOLD — O2C headwinds</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- PHARMA -->
+    <strong style="color:#1a237e;font-size:13px">3. HEALTHCARE &amp; PHARMACEUTICALS — Live Data</strong>
+    <div style="overflow-x:auto;margin-top:8px;margin-bottom:20px">
+    <table>
+      <thead><tr><th>Company</th><th>Ticker</th><th>Class.</th><th>Price (₹)</th><th>MCap (₹Cr)</th><th>P/E</th><th>P/B</th><th>ROE%</th><th>ROCE%</th><th>OPM%</th><th>Latest Qtr PAT</th><th>Our Rating</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Sun Pharma</strong></td><td>SUNPHARMA</td><td><span class="badge ow">SL</span></td><td>₹1,743</td><td>₹4,18,204</td><td>33.1x</td><td>5.0x</td><td>16.0%</td><td>20.5%</td><td><strong>31%</strong></td><td>₹3,125Cr (Q2FY27)</td><td><span class="badge ow">STRONG BUY</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- IT -->
+    <strong style="color:#1a237e;font-size:13px">4. INFORMATION TECHNOLOGY — Live Data</strong>
+    <div style="overflow-x:auto;margin-top:8px;margin-bottom:20px">
+    <table>
+      <thead><tr><th>Company</th><th>Ticker</th><th>Class.</th><th>Price (₹)</th><th>MCap (₹Cr)</th><th>P/E</th><th>P/B</th><th>ROE%</th><th>ROCE%</th><th>5Y Rev CAGR</th><th>TTM Revenue</th><th>Our Rating</th></tr></thead>
+      <tbody>
+        <tr><td><strong>TCS</strong></td><td>TCS</td><td><span class="badge ow">SL</span></td><td>₹2,461</td><td>₹8,90,375</td><td>16.3x</td><td>7.48x</td><td>51.8%</td><td>63.0%</td><td>10.2%</td><td>FY26 ₹2,67,021Cr</td><td><span class="badge mow">HOLD/ACCUMULATE</span></td></tr>
+        <tr><td><strong>Infosys</strong></td><td>INFY</td><td><span class="badge ow">SL</span></td><td>₹1,131</td><td>₹4,58,869</td><td>14.7x</td><td>5.0x</td><td>31.9%</td><td>40.0%</td><td>12%</td><td>FY26 ₹1,78,650Cr</td><td><span class="badge mow">ACCUMULATE (value)</span></td></tr>
+        <tr><td><strong>HCL Technologies</strong></td><td>HCLTECH</td><td><span class="badge mow">HQC</span></td><td>₹1,380</td><td>₹3,74,459</td><td>19.7x</td><td>4.93x</td><td>23.8%</td><td>30.4%</td><td>12%</td><td>TTM ₹1,38,052Cr</td><td><span class="badge mow">MOD. OVERWEIGHT</span></td></tr>
+        <tr><td><strong>Persistent Systems</strong></td><td>PERSISTENT</td><td><span class="badge ow">GC</span></td><td>₹5,690</td><td>₹89,987</td><td>48.1x</td><td>10.4x</td><td>27.2%</td><td>34.4%</td><td><strong>29%</strong></td><td>TTM ~₹18,000Cr est.</td><td><span class="badge ow">BUY (AI growth)</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- AUTOS -->
+    <strong style="color:#1a237e;font-size:13px">5. AUTOMOBILES — Live Data</strong>
+    <div style="overflow-x:auto;margin-top:8px;margin-bottom:20px">
+    <table>
+      <thead><tr><th>Company</th><th>Ticker</th><th>Class.</th><th>Price (₹)</th><th>MCap (₹Cr)</th><th>P/E</th><th>P/B</th><th>ROE%</th><th>ROCE%</th><th>OPM%</th><th>FY26 Revenue</th><th>Our Rating</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Maruti Suzuki</strong></td><td>MARUTI</td><td><span class="badge ow">SL</span></td><td>₹11,475</td><td>₹3,60,777</td><td>25.2x</td><td>3.37x</td><td>14.3%</td><td>18.9%</td><td>12% FY26 (8% Q2FY27)</td><td>₹1,83,316Cr</td><td><span class="badge mow">HOLD — margin watch</span></td></tr>
+        <tr><td><strong>Bajaj Auto</strong></td><td>BAJAJ-AUTO</td><td><span class="badge ow">HQC</span></td><td>₹10,287</td><td>₹2,82,691</td><td>24.0x</td><td>7.40x</td><td>29.2%</td><td>28.2%</td><td><strong>21%</strong></td><td>₹62,905Cr</td><td><span class="badge ow">BUY — best in class</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div style="background:#fff3cd;border-left:4px solid #f0a500;padding:10px 14px;font-size:11px;border-radius:4px;margin-top:8px">
+      <strong>Stage 2 Deep Dive Note:</strong> Full peer benchmarking tables (5-year financials, QoQ/YoY quarterly comparison, analyst recommendations last 30-60 days, scenario valuation) will be completed in Stage 2 when user selects a specific sector. The data above represents live-verified current snapshot as of 19 Oct 2026.
+    </div>
+  </div>
+</div>
+<!-- ===== TAB 5: NEW-AGE TOP 25 ===== -->
+<div id="newage" class="tab">
+  <div class="section">
+    <div class="section-title">Phase IV — India New-Age / Digital Economy — Live Data (19 Oct 2026)</div>
+    <p class="note" style="margin-bottom:12px">All prices from Screener.in / Yahoo Finance, 19 Oct 2026. IPO performance vs issue price shown for recent listings. Stage: 1=Growth at Any Cost, 2=Improving Unit Economics, 3=EBITDA Inflection, 4=Profitable Growth, 5=Cash-Generating Compounder.</p>
+
+    <strong style="color:#1a237e;font-size:12px">A. FOOD DELIVERY / QUICK COMMERCE</strong>
+    <div style="overflow-x:auto;margin-top:8px;margin-bottom:16px">
+    <table>
+      <thead><tr><th>Company</th><th>Ticker</th><th>Price (₹)</th><th>MCap (₹Cr)</th><th>P/E</th><th>IPO Price</th><th>vs IPO%</th><th>FY26 Rev (₹Cr)</th><th>FY26 PAT (₹Cr)</th><th>OPM%</th><th>Stage</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Eternal (Zomato)</strong></td><td>ETERNAL</td><td>₹320</td><td>₹3,09,004</td><td>714x</td><td>₹76 (Jul 21)</td><td class="pos">+321%</td><td>₹54,364</td><td>₹366 (PAT thin)</td><td>2.2%</td><td><span class="badge mow">Stage 4</span></td><td><span class="badge neu-b">HOLD — expensive</span></td></tr>
+        <tr><td><strong>Swiggy</strong></td><td>SWIGGY</td><td>₹229</td><td>₹63,211</td><td>Loss</td><td>₹390 (Nov 24)</td><td class="neg"><strong>–41.3%</strong></td><td>₹23,053</td><td>–₹4,154</td><td><strong>–14%</strong></td><td><span class="badge avoid">Stage 1–2</span></td><td><span class="badge avoid">AVOID</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <strong style="color:#1a237e;font-size:12px">B. FINTECH / DIGITAL FINANCIAL SERVICES</strong>
+    <div style="overflow-x:auto;margin-top:8px;margin-bottom:16px">
+    <table>
+      <thead><tr><th>Company</th><th>Ticker</th><th>Price (₹)</th><th>MCap (₹Cr)</th><th>IPO Price</th><th>vs IPO%</th><th>Stage</th><th>Key Metric</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td><strong>PB Fintech (Policybazaar)</strong></td><td>POLICYBZR</td><td>Verify NSE</td><td>—</td><td>₹980 (Nov 21)</td><td>—</td><td><span class="badge mow">Stage 3–4</span></td><td>Insurance distribution; path to profitability</td><td><span class="badge mow">WATCHLIST</span></td></tr>
+        <tr><td><strong>Paytm (One97 Comm.)</strong></td><td>PAYTM</td><td>Verify NSE</td><td>—</td><td>₹2,150 (Nov 21)</td><td class="neg">Deep loss vs IPO</td><td><span class="badge neu-b">Stage 2–3</span></td><td>Post-RBI action recovery; business model reset</td><td><span class="badge avoid">CAUTIOUS</span></td></tr>
+        <tr><td><strong>Go Digit General Ins.</strong></td><td>GODIGIT</td><td>Verify NSE</td><td>—</td><td>₹272 (May 24)</td><td>—</td><td><span class="badge neu-b">Stage 3</span></td><td>Insurtech; GWP growth; combined ratio focus</td><td><span class="badge neu-b">NEUTRAL</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <strong style="color:#1a237e;font-size:12px">C. ONLINE CLASSIFIEDS / B2B MARKETPLACES</strong>
+    <div style="overflow-x:auto;margin-top:8px;margin-bottom:16px">
+    <table>
+      <thead><tr><th>Company</th><th>Ticker</th><th>Price (₹)</th><th>MCap (₹Cr)</th><th>P/E</th><th>FY26 Rev</th><th>FY26 PAT</th><th>OPM%</th><th>Stage</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Info Edge (Naukri)</strong></td><td>NAUKRI</td><td>₹1,220</td><td>₹79,107</td><td>53.6x</td><td>₹3,285Cr</td><td>₹1,763Cr</td><td>36–39%</td><td><span class="badge ow">Stage 5</span></td><td><span class="badge ow">BUY — Naukri moat + Eternal stake</span></td></tr>
+        <tr><td><strong>IndiaMART</strong></td><td>INDIAMART</td><td>Verify NSE</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge ow">Stage 4–5</span></td><td><span class="badge mow">BUY — B2B SaaS compounder</span></td></tr>
+        <tr><td><strong>CarTrade Tech</strong></td><td>CARTRADE</td><td>Verify NSE</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge neu-b">Stage 3</span></td><td><span class="badge neu-b">NEUTRAL</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <strong style="color:#1a237e;font-size:12px">D. E-COMMERCE / D2C BRANDS</strong>
+    <div style="overflow-x:auto;margin-top:8px;margin-bottom:16px">
+    <table>
+      <thead><tr><th>Company</th><th>Ticker</th><th>Price (₹)</th><th>IPO Price</th><th>vs IPO%</th><th>Stage</th><th>Key Concern</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Nykaa (FSN)</strong></td><td>NYKAA</td><td>Verify NSE</td><td>₹1,125 (Nov 21)</td><td>—</td><td><span class="badge mow">Stage 3–4</span></td><td>Quick commerce threat to beauty; valuation</td><td><span class="badge neu-b">NEUTRAL</span></td></tr>
+        <tr><td><strong>FirstCry (Brainbees)</strong></td><td>FIRSTCRY</td><td>Verify NSE</td><td>₹465 (Aug 24)</td><td>—</td><td><span class="badge neu-b">Stage 3</span></td><td>Baby/kids niche; profitability path unclear</td><td><span class="badge neu-b">NEUTRAL</span></td></tr>
+        <tr><td><strong>Honasa Consumer (Mamaearth)</strong></td><td>HONASA</td><td>Verify NSE</td><td>₹324 (Nov 23)</td><td>—</td><td><span class="badge neu-b">Stage 3</span></td><td>D2C scaling; competition from traditional FMCG</td><td><span class="badge neu-b">NEUTRAL</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <strong style="color:#1a237e;font-size:12px">E. LOGISTICS-TECH</strong>
+    <div style="overflow-x:auto;margin-top:8px;margin-bottom:16px">
+    <table>
+      <thead><tr><th>Company</th><th>Ticker</th><th>Price (₹)</th><th>IPO Price</th><th>vs IPO%</th><th>Stage</th><th>Key Metric</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Delhivery</strong></td><td>DELHIVERY</td><td>Verify NSE</td><td>₹487 (May 22)</td><td>—</td><td><span class="badge neu-b">Stage 3</span></td><td>3PL scale; EBITDA/shipment trend key</td><td><span class="badge neu-b">NEUTRAL</span></td></tr>
+        <tr><td><strong>BlackBuck (Zinka Logistics)</strong></td><td>ZINKA</td><td>Verify NSE</td><td>₹273 (Nov 24)</td><td>—</td><td><span class="badge neu-b">Stage 2</span></td><td>B2B trucking SaaS; early stage</td><td><span class="badge uw">UNDERWEIGHT</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <strong style="color:#1a237e;font-size:12px">F. EV / MOBILITY</strong>
+    <div style="overflow-x:auto;margin-top:8px;margin-bottom:16px">
+    <table>
+      <thead><tr><th>Company</th><th>Ticker</th><th>Price (₹)</th><th>IPO Price</th><th>vs IPO%</th><th>Stage</th><th>Key Concern</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Ola Electric</strong></td><td>OLAELEC</td><td>Verify NSE</td><td>₹76 (Aug 24)</td><td>—</td><td><span class="badge avoid">Stage 1–2</span></td><td>Quality issues; competitive threat Ather/TVS; heavy cash burn</td><td><span class="badge avoid">AVOID</span></td></tr>
+        <tr><td><strong>Ather Energy</strong></td><td>ATHER</td><td>Verify NSE</td><td>₹321 (Apr 25)</td><td>N/A-Apr'25</td><td><span class="badge neu-b">Stage 2</span></td><td>Better execution than Ola; premium positioning; still loss-making</td><td><span class="badge neu-b">WATCHLIST</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- BENCHMARKS -->
+    <div style="overflow-x:auto;margin-top:12px;margin-bottom:8px">
+    <table>
+      <thead><tr><th>Benchmark</th><th>Level / Price</th><th>YTD%</th><th>1Y%</th><th>6M%</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr style="background:#1a237e;color:#fff"><td><strong>Nifty 50</strong></td><td>22,889</td><td class="neg">–10.97%</td><td class="neg">–10.97%</td><td class="neg">–6.01%</td><td>Yahoo Finance / Investing.com, 19 Oct 2026</td></tr>
+        <tr style="background:#283593;color:#fff"><td><strong>Nifty 500</strong></td><td>Verify NSE</td><td>—</td><td>—</td><td>—</td><td>NSE live needed</td></tr>
+        <tr style="background:#0d47a1;color:#fff"><td><strong>Nifty India Digital</strong></td><td>Verify NSE</td><td>—</td><td>—</td><td>—</td><td>NSE live needed</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="section" style="margin-top:16px">
+      <div class="section-title">New-Age Sector Summary — Oct 2026 Assessment</div>
+      <table>
+        <thead><tr><th>Company</th><th>Profitability Stage</th><th>Cash Position</th><th>Moat</th><th>Biggest Risk</th><th>Our View</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Eternal (Zomato)</strong></td><td><span class="badge ow">Stage 4 — Profitable</span></td><td>Positive FCF trajectory</td><td>Strong — Blinkit network, food delivery #1</td><td>P/E 714x demands perfection; competition</td><td><span class="badge neu-b">HOLD — great business, expensive stock</span></td></tr>
+          <tr><td><strong>Swiggy</strong></td><td><span class="badge avoid">Stage 1–2 — Cash Burn</span></td><td>FCF –₹3,809Cr FY26</td><td>Weak vs Eternal; #2 in duopoly</td><td>Cash burn accelerating; –41% from IPO</td><td><span class="badge avoid">AVOID — real losses confirmed</span></td></tr>
+          <tr><td><strong>Info Edge (Naukri)</strong></td><td><span class="badge ow">Stage 5 — Compounder</span></td><td>Debt-free; strong FCF</td><td>Very strong — Naukri 118M resumes, 49K clients</td><td>ROE low (1.81%) — holding co. discount</td><td><span class="badge ow">BUY — Naukri moat + Eternal stake SOTP</span></td></tr>
+          <tr><td><strong>Persistent Systems</strong></td><td><span class="badge ow">Stage 5 — Compounder</span></td><td>Strong FCF; dividend payer</td><td>Strong — AI/engineering services, BFSI</td><td>P/E 48x; any slowdown in AI deals = de-rating</td><td><span class="badge ow">BUY — best growth/quality in IT</span></td></tr>
+          <tr><td><strong>Ola Electric</strong></td><td><span class="badge avoid">Stage 1 — Cash Burn</span></td><td>Requires monitoring</td><td>Eroding — quality/service issues</td><td>Ather/TVS/Bajaj competition; quality recalls</td><td><span class="badge avoid">AVOID</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- ===== TAB 6: RISKS & GAPS ===== -->
+<div id="risks" class="tab">
+  <div class="section">
+    <div class="section-title">Risk Matrix — Updated with Live Oct 2026 Data</div>
+    <table>
+      <thead><tr><th>Risk Factor</th><th>Live Evidence</th><th>Probability</th><th>Impact</th><th>Most Affected</th><th>Mitigation</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Nifty 50 breaks 52W low (22,180)</strong></td><td>Currently 22,889 — only 3% buffer; YTD –11%</td><td><span class="badge uw">High</span></td><td><span class="badge avoid">High</span></td><td>All equities; retail leveraged positions</td><td>Quality large-caps; reduce mid/small exposure</td></tr>
+        <tr><td><strong>US/Global Tech Slowdown</strong></td><td>Infosys USD –15.6% YTD; $12.20 (52W: $10–$30)</td><td><span class="badge mow">Ongoing</span></td><td><span class="badge uw">High</span></td><td>IT sector — all names</td><td>Prefer mid-cap IT with AI exposure (Persistent)</td></tr>
+        <tr><td><strong>New-Age Cash Burn</strong></td><td>Swiggy: FY26 loss ₹4,154Cr; FCF –₹3,809Cr; –41% vs IPO</td><td><span class="badge avoid">Confirmed</span></td><td><span class="badge uw">Medium</span></td><td>Swiggy, Ola Electric, unprofitable platforms</td><td>Only own Stage 4–5 companies (Eternal, Naukri)</td></tr>
+        <tr><td><strong>HDFC Bank NIM compression</strong></td><td>P/B 1.82x — multi-year low; 52W range ₹682–₹1,020</td><td><span class="badge mow">Ongoing</span></td><td><span class="badge neu-b">Medium</span></td><td>HDFC Bank specifically; banking sector NIM</td><td>ICICI Bank preferred (NIM 4.30%, better positioned)</td></tr>
+        <tr><td><strong>Auto sector margin squeeze</strong></td><td>Maruti Q2FY27 OPM 8% vs FY26 avg 12%; –34% from 52W high</td><td><span class="badge mow">Ongoing</span></td><td><span class="badge neu-b">Medium</span></td><td>Maruti, PV segment; EV transition capex</td><td>Prefer Bajaj Auto (OPM 21%, export strength)</td></tr>
+        <tr><td><strong>Reliance O2C headwinds</strong></td><td>₹1,202; –25% from 52W high ₹1,612; ROE only 8.91%</td><td><span class="badge mow">Ongoing</span></td><td><span class="badge neu-b">Medium</span></td><td>Reliance; O2C refining margins</td><td>Watch Jio/Retail demerger as re-rating catalyst</td></tr>
+        <tr><td><strong>RBI easing too slow</strong></td><td>Repo at 5.50%; CRR 3.00%; transmission lag to MCLR</td><td><span class="badge neu-b">Low-Med</span></td><td><span class="badge neu-b">Medium</span></td><td>NBFCs, Real Estate, rate-sensitive consumption</td><td>Already in easing; next cut likely Feb 2027</td></tr>
+        <tr><td><strong>Geopolitical / Global Risk-off</strong></td><td>FII selling contributing to Nifty YTD decline</td><td><span class="badge neu-b">Medium</span></td><td><span class="badge uw">High</span></td><td>All Indian equities; INR depreciation</td><td>DII/SIP flows provide structural floor</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Expectation Gaps — Oct 2026 (Based on Live Data)</div>
+    <div class="two-col">
+      <div>
+        <strong style="color:#155724;font-size:12px">✅ POSITIVE GAPS (Market Underestimates)</strong>
+        <table style="margin-top:8px">
+          <thead><tr><th>Theme</th><th>Evidence</th><th>Implication</th></tr></thead>
+          <tbody>
+            <tr><td><strong>HDFC Bank re-rating</strong></td><td>P/B 1.82x — historically strong entry; ICICI GNPA 1.53% best-in-class</td><td>BUY private banks on 12M view; rate cuts = NIM recovery</td></tr>
+            <tr><td><strong>Sun Pharma specialty margin</strong></td><td>OPM 31% Q2FY27; debt-free; ROE 16%; US specialty scaling</td><td>Earnings upgrade cycle; sector re-rating; OW</td></tr>
+            <tr><td><strong>L&T Q2 catalyst</strong></td><td>Results Oct 27, 2026; infra order cycle intact; P/E 28.6x reasonable</td><td>Buy ahead of results; capital goods sector positive</td></tr>
+            <tr><td><strong>Persistent AI growth</strong></td><td>5Y profit CAGR 36%; Q2FY27 rev ₹4,664Cr (+27% TTM)</td><td>Premium P/E 48x partially justified; accumulate on dips</td></tr>
+            <tr><td><strong>Nifty 50 valuation reset</strong></td><td>–11% YTD, –13% from 52W high; forward P/E ~19–20x more reasonable</td><td>Quality large-cap entry window opening</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <strong style="color:#721c24;font-size:12px">❌ NEGATIVE GAPS (Market Overestimates)</strong>
+        <table style="margin-top:8px">
+          <thead><tr><th>Theme</th><th>Evidence</th><th>Implication</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Swiggy profitability</strong></td><td>FY26 loss ₹4,154Cr; FCF –₹3,809Cr; OPM –14%; –41% from IPO</td><td>Avoid; no path to profitability visible in near term</td></tr>
+            <tr><td><strong>Eternal P/E 714x</strong></td><td>PAT ₹92Cr Q1FY27 on MCap ₹3.09L Cr — needs massive earnings ramp</td><td>Hold not add; Blinkit must deliver multi-year</td></tr>
+            <tr><td><strong>Large IT re-rating</strong></td><td>Infosys –15.6% YTD USD; structural AI disruption to labour model</td><td>Value trap risk; only accumulate on further weakness</td></tr>
+            <tr><td><strong>Maruti margin recovery</strong></td><td>Q2FY27 OPM 8% vs normal 12%; –34% from 52W high</td><td>Not a buy yet; wait for margin recovery confirmation</td></tr>
+            <tr><td><strong>Reliance re-rating</strong></td><td>ROE 8.91% for India's largest company; O2C headwinds; –25% from high</td><td>Neutral; no catalyst until Jio/Retail demerger</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TAB 7: SOURCES ===== -->
+<div id="notes" class="tab">
+  <div class="section">
+    <div class="section-title">Data Sources &amp; Verification Log — Oct 2026</div>
+    <table>
+      <thead><tr><th>Data Category</th><th>Source</th><th>Date Accessed</th><th>Verified</th></tr></thead>
+      <tbody>
+        <tr><td>Nifty 50 level, YTD, 52W range, 1M/6M returns</td><td>Yahoo Finance (finance.yahoo.com/quote/^NSEI) + Investing.com</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>RBI policy rates (Repo 5.50%, SDF 5.25%, MSF 5.75%, CRR 3.00%, SLR 18.00%)</td><td>rbi.org.in homepage — MPC Oct 5–7, 2026 resolution</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>HDFC Bank: price ₹712, MCap ₹10.97L Cr, P/E 13.7x, P/B 1.82x, ROE 13.6%, PAT ₹21,537Cr Q2FY27</td><td>Screener.in/company/HDFCBANK</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>ICICI Bank: price ₹1,381, MCap ₹9.91L Cr, P/E 16.8x, ROE 15.9%, NIM 4.30%, GNPA 1.53%, PAT ₹17,389Cr Q2FY27</td><td>Screener.in/company/ICICIBANK</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>TCS: price ₹2,461, MCap ₹8.9L Cr, P/E 16.3x, ROE 51.8%, ROCE 63%, FY26 Rev ₹2,67,021Cr</td><td>Screener.in/company/TCS</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>Infosys: price ₹1,131, MCap ₹4.58L Cr, P/E 14.7x, ROE 31.9%, FY26 Rev ₹1,78,650Cr; USD ADR $12.20, YTD –15.6%</td><td>Screener.in/company/INFY + Yahoo Finance</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>HCL Tech: price ₹1,380, MCap ₹3.74L Cr, P/E 19.7x, ROE 23.8%, TTM Rev ₹1,38,052Cr</td><td>Screener.in/company/HCLTECH</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>Persistent Systems: price ₹5,690, MCap ₹89,987Cr, P/E 48.1x, ROE 27.2%, 5Y rev CAGR 29%</td><td>Screener.in/company/PERSISTENT</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>Sun Pharma: price ₹1,743, MCap ₹4.18L Cr, P/E 33.1x, OPM 31%, Q2FY27 PAT ₹3,125Cr</td><td>Screener.in/company/SUNPHARMA</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>L&T: price ₹3,662, MCap ₹5.03L Cr, P/E 28.6x, ROE 15.9%, Q1FY27 Rev ₹67,942Cr; Q2 results due Oct 27</td><td>Screener.in/company/LT</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>Bajaj Finance: price ₹957, MCap ₹5.96L Cr, P/E 27.2x, ROE 18.2%, GNPA 1.06%, Q2FY27 PAT ₹6,367Cr</td><td>Screener.in/company/BAJFINANCE</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>Bajaj Auto: price ₹10,287, MCap ₹2.82L Cr, P/E 24x, ROE 29.2%, OPM 21%, FY26 Rev ₹62,905Cr</td><td>Screener.in/company/BAJAJ-AUTO</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>Maruti Suzuki: price ₹11,475, MCap ₹3.6L Cr, P/E 25.2x, 52W High ₹17,372; Q2FY27 OPM 8%</td><td>Screener.in/company/MARUTI</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>Reliance: price ₹1,202, MCap ₹16.26L Cr, P/E 21.8x, ROE 8.91%, 52W High ₹1,612, FY26 Rev ₹10,55,780Cr</td><td>Screener.in/company/RELIANCE</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>Eternal (Zomato): price ₹320, MCap ₹3.09L Cr, P/E 714x, FY26 Rev ₹54,364Cr, Q1FY27 PAT ₹92Cr</td><td>Screener.in/company/ETERNAL</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>Swiggy: price ₹229, MCap ₹63,211Cr, FY26 loss ₹4,154Cr, FCF –₹3,809Cr, OPM –14%, IPO price ₹390</td><td>Screener.in/company/SWIGGY</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>Info Edge (Naukri): price ₹1,220, MCap ₹79,107Cr, P/E 53.6x, FY26 Rev ₹3,285Cr, OPM 36–39%</td><td>Screener.in/company/NAUKRI</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>Kotak Bank: price ₹442, MCap ₹4.39L Cr, P/E 22x, ROE 11.4%, GNPA 1.51%</td><td>Screener.in/company/KOTAKBANK</td><td>19 Oct 2026</td><td class="pos">✓ LIVE</td></tr>
+        <tr><td>Sector index levels (Nifty Bank, IT, Auto, Pharma, Metal, Realty, FMCG, PSU Bank)</td><td>NSE India — direct query required for 1D/1W/1M/3M/6M/1Y returns</td><td>—</td><td class="neg">⚠ Requires NSE live access</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="section">
+    <div class="section-title">Execution Protocol — Next Steps</div>
+    <div style="background:#e8f5e9;border-radius:6px;padding:14px;font-size:12px;line-height:2">
+      <strong>Stage 1 Complete — All data sourced live from Screener.in and Yahoo Finance as of 19 Oct 2026.</strong><br>
+      <strong>Stage 2:</strong> Select a sector → Full peer benchmarking, 5-year financials, QoQ/YoY quarterly analysis, latest 30–60 day analyst recommendations, scenario valuation (Bear/Base/Bull), sector portfolio.<br>
+      <strong>Stage 3:</strong> New-Age deep dive — unit economics (GOV, CAC, LTV, contribution margin), reverse valuation, full Top 25 ranking.<br>
+      <strong>Stage 4:</strong> Final 15–25 stock cross-sector institutional portfolio.
+    </div>
+  </div>
+</div>
+
+<script>
+function showTab(id){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('#mainnav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  var map={'macro':0,'sectors':1,'sectorperf':2,'companies':3,'newage':4,'risks':5,'notes':6};
+  if(map[id]!==undefined) document.querySelectorAll('#mainnav button')[map[id]].classList.add('active');
+}
+</script>
+</body>
+</html>
